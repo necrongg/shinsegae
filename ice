@@ -73,7 +73,6 @@
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
                         sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
                         dC_IOB_TYP: document.querySelector('[name*="DC_IOB_TYP"]'),
-                        oRDER_CNFM_YN: document.querySelector('[name*="ORDER_CNFM_YN"]'),
                         oUTB_TCDN: document.querySelector('[name*="OUTB_TCD"]'),
                         oUTB_WH: document.querySelector('[name*="OUTB_WH"]')
                     };
@@ -82,7 +81,6 @@
                         oUTB_WH: '01114,01115,04736',
                         oUTB_TCDN: 'IOOBDCNMXXXX',
                         sTRR_ID: '0100037,0037396',
-                        oRDER_CNFM_YN: '',
                         iTEM_GCD: 'A007',
                         sHIPTO_TCD: '20',
                         dC_IOB_TYP: 'DC출고'
@@ -122,12 +120,10 @@
                     const elements = {
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
                         sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
-                        oRDER_CNFM_YN: document.querySelector('[name*="ORDER_CNFM_YN"]'),
                         cUST_CD: document.querySelector('[name*="CUST_CD"]'),
                     };
 
                     const values = {
-                        oRDER_CNFM_YN: '',
                         iTEM_GCD: 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051',
                         sHIPTO_TCD: '20',
                         cUST_CD:'5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
@@ -146,6 +142,50 @@
                 targetEl.appendChild(dongoneDiv);
                 dongoneDiv.appendChild(dongoneChildDiv);
                 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ동원홈푸드 세팅(끝)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ푸디스트 세팅ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                // 새로운 div 컨테이너 생성
+                const foodyDiv = document.createElement('div');
+                foodyDiv.style.position = 'absolute';
+                foodyDiv.style.cursor = 'pointer';
+                foodyDiv.style.left = '1431px';
+                foodyDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+                // 내부 아이콘
+                const foodyDivChildDiv = document.createElement('div');
+                foodyDivChildDiv.classList.add('x-tool-tool-el');
+                foodyDivChildDiv.style.background = 'URL(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70bjyI5MQiET7vXjCXGQ7woiysYgQcQsxhA&s) no-repeat';
+                foodyDivChildDiv.style.backgroundSize = '16px 16px';
+                foodyDivChildDiv.title = '푸디스트';
+
+                // 클릭 이벤트
+                foodyDivChildDiv.addEventListener('click', function() {
+                    const elements = {
+                        iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
+                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
+                        cUST_CD: document.querySelector('[name*="CUST_CD"]'),
+                    };
+
+                    const values = {
+                        iTEM_GCD: 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051',
+                        sHIPTO_TCD: '20',
+                        cUST_CD:'6984101,8077601,8218701,8218001',
+                    };
+
+                    for (const [key, element] of Object.entries(elements)) {
+                        if (element) {
+                            element.value = values[key];
+                        } else {
+                            console.error(`Input element with name* "${key}" not found.`);
+                        }
+                    }
+                });
+
+                // 생성한 div를 target 요소에 추가합니다.
+                targetEl.appendChild(foodyDiv);
+                foodyDiv.appendChild(foodyDivChildDiv);
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ푸디스트 세팅(끝)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
                 // observer 중지
                 observer.disconnect();
