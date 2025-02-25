@@ -28,7 +28,7 @@
                 const item_gcdDiv = document.createElement('div');
                 item_gcdDiv.style.position = 'absolute';
                 item_gcdDiv.style.cursor = 'pointer';
-                item_gcdDiv.style.left = '1512px';
+                item_gcdDiv.style.left = '1490px';
                 item_gcdDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
                 // 내부 아이콘
@@ -42,7 +42,7 @@
                 item_gcdDiv.addEventListener('click', function() {
                     const inputElement = document.querySelector('[name*="ITEM_GCD"]');
                     if (inputElement) {
-                        inputElement.value = 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051';
+                        inputElement.value = 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047';
                     } else {
                         console.error('Input element with name* "ITEM_GCD" not found.');
                     }
@@ -58,15 +58,15 @@
                 const thd3plDiv = document.createElement('div');
                 thd3plDiv.style.position = 'absolute';
                 thd3plDiv.style.cursor = 'pointer';
-                thd3plDiv.style.left = '1485px';
+                thd3plDiv.style.left = '1464px';
                 thd3plDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
                 // 내부 아이콘
                 const thd3plChildDiv = document.createElement('div');
                 thd3plChildDiv.classList.add('x-tool-tool-el');
-                thd3plChildDiv.style.background = 'URL(https://icons-for-free.com/iff/png/512/pizza-131982518891951236.png) no-repeat';
                 thd3plChildDiv.style.backgroundSize = '16px 16px';
                 thd3plChildDiv.title = '물류대행(미피,스무디킹)';
+                thd3plChildDiv.textContent="🍕";
 
                 // 클릭 이벤트
                 thd3plDiv.addEventListener('click', function() {
@@ -74,18 +74,12 @@
                         sTRR_ID: document.querySelector('[name*="STRR_ID"]'),
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
                         sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
-                        dC_IOB_TYP: document.querySelector('[name*="DC_IOB_TYP"]'),
-                        oUTB_TCDN: document.querySelector('[name*="OUTB_TCD"]'),
-                        //oUTB_WH: document.querySelector('[name*="OUTB_WH"]')
                     };
 
                     const values = {
-                        //oUTB_WH: '01114,01115,04736',
-                        oUTB_TCDN: 'IOOBDCNMXXXX',
                         sTRR_ID: '0100037,0037396',
-                        iTEM_GCD: 'A007',
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
                         sHIPTO_TCD: '20',
-                        dC_IOB_TYP: 'DC출고'
                     };
 
                     for (const [key, element] of Object.entries(elements)) {
@@ -107,7 +101,7 @@
                 const dongoneDiv = document.createElement('div');
                 dongoneDiv.style.position = 'absolute';
                 dongoneDiv.style.cursor = 'pointer';
-                dongoneDiv.style.left = '1458px';
+                dongoneDiv.style.left = '1438px';
                 dongoneDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
                 // 내부 아이콘
@@ -127,7 +121,7 @@
                     };
 
                     const values = {
-                        iTEM_GCD: 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051',
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
                         sHIPTO_TCD: '20',
                         cUST_CD:'5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                         sHIPTO_ID:'5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
@@ -152,7 +146,7 @@
                 const foodyDiv = document.createElement('div');
                 foodyDiv.style.position = 'absolute';
                 foodyDiv.style.cursor = 'pointer';
-                foodyDiv.style.left = '1431px';
+                foodyDiv.style.left = '1412px';
                 foodyDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
                 // 내부 아이콘
@@ -172,7 +166,7 @@
                     };
 
                     const values = {
-                        iTEM_GCD: 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051',
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
                         sHIPTO_TCD: '20',
                         cUST_CD:'6984101,8077601,8218701,8218001',
                         sHIPTO_ID:'6984101,8077601,8218701,8218001',
@@ -197,7 +191,7 @@
                 const mBkDiv = document.createElement('div');
                 mBkDiv.style.position = 'absolute';
                 mBkDiv.style.cursor = 'pointer';
-                mBkDiv.style.left = '1405px'; //신규 추가시 앞 -26px
+                mBkDiv.style.left = '1379px'; //신규 추가시 앞 -26px
                 mBkDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
                 // 내부 아이콘
@@ -217,7 +211,7 @@
                     };
 
                     const values = {
-                        iTEM_GCD: 'A003,A004,A007,A013,A039,A41,A42,A044,A045,A047,A051',
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
                         sHIPTO_TCD: '20',
                         cUST_CD:'0039656',
                         sTRR_ID: '0039656',
@@ -236,61 +230,97 @@
                 targetEl.appendChild(mBkDiv);
                 mBkDiv.appendChild(mBkChildDiv);
                 //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡMBK 세팅(끝)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ경인 세팅ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                // 새로운 div 컨테이너 생성
+                const cDiv = document.createElement('div');
+                cDiv.style.position = 'absolute';
+                cDiv.style.cursor = 'pointer';
+                cDiv.style.left = '1353px'; //신규 추가시 앞 -26px
+                cDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+                // 내부 아이콘
+                const cChildDiv = document.createElement('div');
+                cChildDiv.classList.add('x-tool-tool-el');
+                cChildDiv.style.backgroundColor = 'red';
+                cChildDiv.style.backgroundSize = '16px 16px';
+                cChildDiv.title = '경인';
+                cChildDiv.textContent="경";
+
+                // 클릭 이벤트
+                cChildDiv.addEventListener('click', function() {
+                    const elements = {
+                        iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
+                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
+                        oUTB_TCDN: document.querySelector('[name*="OUTB_TCD"]'),
+                    };
+
+                    const values = {
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        sHIPTO_TCD: '20',
+                        oUTB_TCDN: 'IOOBDCNMXXXX',
+                    };
+
+                    for (const [key, element] of Object.entries(elements)) {
+                        if (element) {
+                            element.value = values[key];
+                        } else {
+                            console.error(`Input element with name* "${key}" not found.`);
+                        }
+                    }
+                });
+
+                // 생성한 div를 target 요소에 추가합니다.
+                targetEl.appendChild(cDiv);
+                cDiv.appendChild(cChildDiv);
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ경인 세팅(끝)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ지방 세팅ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                // 새로운 div 컨테이너 생성
+                const jDiv = document.createElement('div');
+                jDiv.style.position = 'absolute';
+                jDiv.style.cursor = 'pointer';
+                jDiv.style.left = '1327px'; //신규 추가시 앞 -26px
+                jDiv.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+                // 내부 아이콘
+                const jChildDiv = document.createElement('div');
+                jChildDiv.classList.add('x-tool-tool-el');
+                jChildDiv.style.backgroundColor = 'orange';
+                jChildDiv.style.backgroundSize = '16px 16px';
+                jChildDiv.title = '지방';
+                jChildDiv.textContent="지";
+
+                // 클릭 이벤트
+                jChildDiv.addEventListener('click', function() {
+                    const elements = {
+                        iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
+                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
+                        oUTB_WH: document.querySelector('[name*="OUTB_WH"]'),
+                    };
+
+                    const values = {
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        sHIPTO_TCD: '20',
+                        oUTB_WH:'01114,01115,04736',
+                    };
+
+                    for (const [key, element] of Object.entries(elements)) {
+                        if (element) {
+                            element.value = values[key];
+                        } else {
+                            console.error(`Input element with name* "${key}" not found.`);
+                        }
+                    }
+                });
+
+                // 생성한 div를 target 요소에 추가합니다.
+                targetEl.appendChild(jDiv);
+                jDiv.appendChild(jChildDiv);
+                //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ지방 세팅(끝)ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
                 // observer 중지
                 observer.disconnect();
             }
             // ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ단축 버튼 생성(끝)
-
-
-            // ■테스트 버튼 생성■
-
-            // 이동탭 확인, 헤더감지
-            const cellLotMoveHeader = document.querySelector("#cellLotMoveHeaderTopToolBar-innerCt");
-            if (cellLotMoveHeader) {
-                // 새로운 div 컨테이너 생성
-                const moveAllBtn = document.createElement('div');
-                moveAllBtn.style.position = 'absolute';
-                moveAllBtn.style.cursor = 'pointer';
-                moveAllBtn.style.left = '1265px';
-                moveAllBtn.classList.add('x-btn','x-unselectable','x-box-item','x-toolbar-item','x-btn-default-toolbar-small');
-
-                cellLotMoveHeader.appendChild(moveAllBtn);
-
-                // 버튼 클릭 이벤트
-                moveAllBtn.addEventListener('click', function() {
-                    if (window.confirm("모든 수량을 이동하시겠습니까?")) {
-                        let componentDiv = document.querySelector('[data-componentid="gridview-1117"]');
-                        if (componentDiv) {
-                            let tables = componentDiv.querySelectorAll('div > table');
-                            console.log(`Table 요소의 개수: ${tables.length}`);
-                        } else {
-                            console.error('componentid 속성을 가진 div 요소를 찾을 수 없습니다.');
-                        }
-
-                        // gridview-1117-record-110부터 시작하는 모든 요소를 선택합니다.
-                        let index = 110;
-                        let cellLotMove_grid;
-                        while ((cellLotMove_grid = document.querySelector(`#gridview-1117-record-${index}`)) !== null) {
-
-                            let eA_QTY_TO_MOVE = cellLotMove_grid.querySelector('[data-columnid="EA_QTY_TO_MOVE"] > div');
-                            let mOV_QTY = cellLotMove_grid.querySelector('[data-columnid="MOV_QTY"] > div');
-                            let tO_WCELL_NO = cellLotMove_grid.querySelector('[data-columnid="TO_WCELL_NO"] > div');
-                            let fIX_CELL_NO = cellLotMove_grid.querySelector('[data-columnid="FIX_CELL_NO"] > div');
-
-                            if (eA_QTY_TO_MOVE && mOV_QTY && tO_WCELL_NO && fIX_CELL_NO) {
-                                eA_QTY_TO_MOVE.textContent = mOV_QTY.textContent;
-                                tO_WCELL_NO.textContent = fIX_CELL_NO.textContent;
-                            } else {
-                                console.error(`필요한 요소를 ${index}번째 항목에서 찾을 수 없습니다.`);
-                            }
-                            index++;
-                        }
-                    }
-                });
-            }
-
-            // ■테스트 버튼 생성(끝)■
         });
     });
 
