@@ -115,14 +115,12 @@
                 dongoneChildDiv.addEventListener('click', function() {
                     const elements = {
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
-                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
                         cUST_CD: document.querySelector('[name*="CUST_CD"]'),
                         sHIPTO_ID: document.querySelector('[name*="SHIPTO_ID"]'),
                     };
 
                     const values = {
                         iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        sHIPTO_TCD: '20',
                         cUST_CD:'5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                         sHIPTO_ID:'5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                     };
@@ -160,14 +158,12 @@
                 foodyDivChildDiv.addEventListener('click', function() {
                     const elements = {
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
-                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
                         cUST_CD: document.querySelector('[name*="CUST_CD"]'),
                         sHIPTO_ID: document.querySelector('[name*="SHIPTO_ID"]'),
                     };
 
                     const values = {
                         iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        sHIPTO_TCD: '20',
                         cUST_CD:'6984101,8077601,8218701,8218001',
                         sHIPTO_ID:'6984101,8077601,8218701,8218001',
                     };
@@ -206,13 +202,11 @@
                 mBkChildDiv.addEventListener('click', function() {
                     const elements = {
                         iTEM_GCD: document.querySelector('[name*="ITEM_GCD"]'),
-                        sHIPTO_TCD: document.querySelector('[name*="SHIPTO_TCD"]'),
                         sTRR_ID: document.querySelector('[name*="STRR_ID"]'),
                     };
 
                     const values = {
                         iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        sHIPTO_TCD: '20',
                         cUST_CD:'0039656',
                         sTRR_ID: '0039656',
                     };
