@@ -13,6 +13,12 @@
 (function() {
     'use strict';
 
+    // STRR_ID : 화주
+    // ITEM_GCD : 품목그룹
+    // OUTB_TCD : 출고유형
+    // OUTB_WH : 배송센터
+    // SHIPTO_ID : 배송처
+
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             console.log("DOM변경");
@@ -21,46 +27,77 @@
 
             if (targetEl) {
                 // 품목그룹 추가
-                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '0 -256px', 'red', () => {
+                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '냉동','', 'red', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
                 });
 
-                // 물류대행 세팅(미피,스무디킹)
-                createButton(targetEl, '1464px', '물류대행(미피,스무디킹)', '🍕', '', () => {
+                // 미스터피자 세팅
+                createButton(targetEl, '1469px', '미스터피자,스무디킹', '🍕','', '', () => {
                     setElementsValues({
-                        sTRR_ID: '0100037,0037396',
-                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        sHIPTO_TCD: ''
+                        STRR_ID: '0100037,0037396',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        OUTB_TCD: 'IOOBDCNMXXXX',
+                        OUTB_WH: '01114,01115,04736'
                     });
                 });
 
                 // 동원홈푸드 세팅
-                createButton(targetEl, '1438px', '동원홈푸드', 'URL(https://logo-resources.thevc.kr/organizations/200x200/381f9714b27d7dbd5017d3ca895060d6df7be57e8880641d5dd90b3a8e4a63fb_1658280708536923.jpg) no-repeat', '', () => {
+                createButton(targetEl, '1448px', '동원홈푸드', '동','', 'blue', () => {
                     setElementsValues({
-                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        cUST_CD: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                        sHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402'
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
                     });
                 });
 
                 // 푸디스트 세팅
-                createButton(targetEl, '1412px', '푸디스트', 'URL(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70bjyI5MQiET7vXjCXGQ7woiysYgQcQsxhA&s) no-repeat', '', () => {
+                createButton(targetEl, '1427px', '푸디스트', '푸','', 'orange', () => {
                     setElementsValues({
-                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        cUST_CD: '6984101,8077601,8218701,8218001',
-                        sHIPTO_ID: '6984101,8077601,8218701,8218001'
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        SHIPTO_ID: '6984101,8077601,8218701,8218001',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
                     });
                 });
 
                 // MBK 세팅
-                createButton(targetEl, '1379px', 'MBK 마켓빌더즈코리아', '', 'black', () => {
+                createButton(targetEl, '1406px', 'MBK 마켓빌더즈코리아', 'M','', 'black', () => {
                     setElementsValues({
-                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        cUST_CD: '0039656',
-                        sTRR_ID: '0039656'
+                        STRR_ID: '0039656',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        SHIPTO_ID: '',
+                        OUTB_TCD: 'IOOBDCNMXXXX',
+                        OUTB_WH: '01114,01115,04736'
                     });
                 });
 
+                // 경인 세팅
+                createButton(targetEl, '1385px', '경인', '경','', 'RED', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: 'IOOBDCNMXXXX',
+                        OUTB_WH: ''
+                    });
+                });
+
+                // 지방 세팅
+                createButton(targetEl, '1364px', '지방', '지','', 'orange', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: '01114,01115,04736'
+
+                    });
+                });
                 observer.disconnect();
             }
         });
@@ -68,7 +105,7 @@
 
     observer.observe(document.body, { childList: true });
 
-    function createButton(targetEl, left, title, background, bgColor, callback) {
+    function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
         const div = document.createElement('div');
         div.style.position = 'absolute';
         div.style.cursor = 'pointer';
@@ -76,9 +113,10 @@
         div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
         const childDiv = document.createElement('div');
-        childDiv.classList.add('x-tool-tool-el', 'x-tool-img');
-        childDiv.style.backgroundPosition = background;
+        childDiv.classList.add('x-tool-tool-el');
         childDiv.style.backgroundColor = bgColor;
+        childDiv.style.color = color;
+        childDiv.textContent = textContent;
         childDiv.title = title;
 
         div.addEventListener('click', callback);
