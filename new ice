@@ -1,0 +1,104 @@
+// ==UserScript==
+// @name         냉동파트 추가 기능
+// @namespace    https://slp-new.shinsegaefood.com/*
+// @version      2024-11-22
+// @description  try to take over the world!
+// @author       You
+// @match        https://slp-new.shinsegaefood.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=shinsegaefood.com
+// @grant unsafeWindow
+// @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            console.log("DOM변경");
+
+            const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+
+            if (targetEl) {
+                // 품목그룹 추가
+                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '0 -256px', 'red', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
+                });
+
+                // 물류대행 세팅(미피,스무디킹)
+                createButton(targetEl, '1464px', '물류대행(미피,스무디킹)', '🍕', '', () => {
+                    setElementsValues({
+                        sTRR_ID: '0100037,0037396',
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        sHIPTO_TCD: ''
+                    });
+                });
+
+                // 동원홈푸드 세팅
+                createButton(targetEl, '1438px', '동원홈푸드', 'URL(https://logo-resources.thevc.kr/organizations/200x200/381f9714b27d7dbd5017d3ca895060d6df7be57e8880641d5dd90b3a8e4a63fb_1658280708536923.jpg) no-repeat', '', () => {
+                    setElementsValues({
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        cUST_CD: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                        sHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402'
+                    });
+                });
+
+                // 푸디스트 세팅
+                createButton(targetEl, '1412px', '푸디스트', 'URL(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70bjyI5MQiET7vXjCXGQ7woiysYgQcQsxhA&s) no-repeat', '', () => {
+                    setElementsValues({
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        cUST_CD: '6984101,8077601,8218701,8218001',
+                        sHIPTO_ID: '6984101,8077601,8218701,8218001'
+                    });
+                });
+
+                // MBK 세팅
+                createButton(targetEl, '1379px', 'MBK 마켓빌더즈코리아', '', 'black', () => {
+                    setElementsValues({
+                        iTEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        cUST_CD: '0039656',
+                        sTRR_ID: '0039656'
+                    });
+                });
+
+                observer.disconnect();
+            }
+        });
+    });
+
+    observer.observe(document.body, { childList: true });
+
+    function createButton(targetEl, left, title, background, bgColor, callback) {
+        const div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.cursor = 'pointer';
+        div.style.left = left;
+        div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+        const childDiv = document.createElement('div');
+        childDiv.classList.add('x-tool-tool-el', 'x-tool-img');
+        childDiv.style.backgroundPosition = background;
+        childDiv.style.backgroundColor = bgColor;
+        childDiv.title = title;
+
+        div.addEventListener('click', callback);
+
+        targetEl.appendChild(div);
+        div.appendChild(childDiv);
+    }
+
+    function setElementValue(selector, value) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.value = value;
+        } else {
+            console.error(`Input element with selector "${selector}" not found.`);
+        }
+    }
+
+    function setElementsValues(values) {
+        Object.entries(values).forEach(([key, value]) => {
+            setElementValue(`[name*="${key}"]`, value);
+        });
+    }
+})();
