@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         냉동파트 추가 기능
+// @name         신세계wms 추가 기능
 // @namespace    https://slp-new.shinsegaefood.com/*
 // @version      2025-03-05
 // @description  신세계wms 간편 버튼 생성기
@@ -17,8 +17,10 @@
     function loadScriptFromGitHub() {
 
         // GitHub 스크립트 URL
-        const githubScriptUrl = 'git 주소입력';
-            // 냉동축산 - https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze
+        const githubScriptUrl = 'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze';
+
+            // 파트마다 URL 마지막 수정
+            // 냉동축산 - freeze
             // 세린,CK - 
 
         // 다른 CORS 우회 서비스 사용
