@@ -18,6 +18,7 @@
     // OUTB_TCD : 출고유형
     // OUTB_WH : 배송센터
     // SHIPTO_ID : 배송처
+    // SHIPTO_TCD : 물류관리부서
 
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
@@ -27,12 +28,12 @@
 
             if (targetEl) {
                 // 품목그룹 추가
-                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '냉동','', 'red', () => {
+                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '품목','black', 'gold', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
                 });
 
                 // 미스터피자 세팅
-                createButton(targetEl, '1469px', '미스터피자,스무디킹', '🍕','', '', () => {
+                createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', '', () => {
                     setElementsValues({
                         STRR_ID: '0100037,0037396',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -42,7 +43,7 @@
                 });
 
                 // 동원홈푸드 세팅
-                createButton(targetEl, '1448px', '동원홈푸드', '동','', 'blue', () => {
+                createButton(targetEl, '1396px', '동원홈푸드', '동원','', 'blue', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -53,7 +54,7 @@
                 });
 
                 // 푸디스트 세팅
-                createButton(targetEl, '1427px', '푸디스트', '푸','', 'orange', () => {
+                createButton(targetEl, '1349px', '푸디스트', '푸디','', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -64,7 +65,7 @@
                 });
 
                 // MBK 세팅
-                createButton(targetEl, '1406px', 'MBK 마켓빌더즈코리아', 'M','', 'black', () => {
+                createButton(targetEl, '1302px', 'MBK 마켓빌더즈코리아', 'MBK','', 'black', () => {
                     setElementsValues({
                         STRR_ID: '0039656',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -75,7 +76,7 @@
                 });
 
                 // 경인 세팅
-                createButton(targetEl, '1385px', '경인', '경','', 'RED', () => {
+                createButton(targetEl, '1255px', '경인', '경인','', 'RED', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -87,7 +88,7 @@
                 });
 
                 // 지방 세팅
-                createButton(targetEl, '1364px', '지방', '지','', 'orange', () => {
+                createButton(targetEl, '1208px', '지방', '지방','', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -116,6 +117,8 @@
         childDiv.classList.add('x-tool-tool-el');
         childDiv.style.backgroundColor = bgColor;
         childDiv.style.color = color;
+        childDiv.style.heigth ='32px';
+        childDiv.style.width ='32px';
         childDiv.textContent = textContent;
         childDiv.title = title;
 
