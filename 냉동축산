@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         냉동파트 추가 기능
 // @namespace    https://slp-new.shinsegaefood.com/*
-// @version      2024-11-22
-// @description  try to take over the world!
+// @version      2025-03-05
+// @description  신세계wms 간편 버튼 생성기
 // @author       You
 // @match        https://slp-new.shinsegaefood.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shinsegaefood.com
@@ -33,7 +33,7 @@
                 });
 
                 // 미스터피자 세팅
-                createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', '', () => {
+                createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', 'white', () => {
                     setElementsValues({
                         STRR_ID: '0100037,0037396',
                         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -117,7 +117,6 @@
         childDiv.classList.add('x-tool-tool-el');
         childDiv.style.backgroundColor = bgColor;
         childDiv.style.color = color;
-        childDiv.style.heigth ='32px';
         childDiv.style.width ='32px';
         childDiv.textContent = textContent;
         childDiv.title = title;
