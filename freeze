@@ -1,125 +1,124 @@
+// 냉동 축산
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        console.log("DOM변경");
 
+        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
 
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            console.log("DOM변경");
+        if (targetEl) {
+            // 품목그룹 추가
+            createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '품목','black', 'gold', () => {
+                setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
+            });
 
-            const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
-
-            if (targetEl) {
-                // 품목그룹 추가
-                createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '품목','black', 'gold', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
+            // 미스터피자 세팅
+            createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', 'white', () => {
+                setElementsValues({
+                    STRR_ID: '0100037,0037396',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    OUTB_TCD: 'IOOBDCNMXXXX',
+                    OUTB_WH: '01114,01115,04736'
                 });
+            });
 
-                // 미스터피자 세팅
-                createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', 'white', () => {
-                    setElementsValues({
-                        STRR_ID: '0100037,0037396',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        OUTB_TCD: 'IOOBDCNMXXXX',
-                        OUTB_WH: '01114,01115,04736'
-                    });
+            // 동원홈푸드 세팅
+            createButton(targetEl, '1396px', '동원홈푸드', '동원','', 'blue', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                    CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
                 });
+            });
 
-                // 동원홈푸드 세팅
-                createButton(targetEl, '1396px', '동원홈푸드', '동원','', 'blue', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                        CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
-                    });
+            // 푸디스트 세팅
+            createButton(targetEl, '1349px', '푸디스트', '푸디','', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    SHIPTO_ID: '6984101,8077601,8218701,8218001',
+                    CUST_CD : '6984101,8077601,8218701,8218001',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
                 });
+            });
 
-                // 푸디스트 세팅
-                createButton(targetEl, '1349px', '푸디스트', '푸디','', 'orange', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        SHIPTO_ID: '6984101,8077601,8218701,8218001',
-                        CUST_CD : '6984101,8077601,8218701,8218001',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
-                    });
+            // MBK 세팅
+            createButton(targetEl, '1302px', 'MBK 마켓빌더즈코리아', 'MBK','', 'black', () => {
+                setElementsValues({
+                    STRR_ID: '0039656',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    SHIPTO_ID: '',
+                    OUTB_TCD: 'IOOBDCNMXXXX',
+                    OUTB_WH: '01114,01115,04736'
                 });
+            });
 
-                // MBK 세팅
-                createButton(targetEl, '1302px', 'MBK 마켓빌더즈코리아', 'MBK','', 'black', () => {
-                    setElementsValues({
-                        STRR_ID: '0039656',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        SHIPTO_ID: '',
-                        OUTB_TCD: 'IOOBDCNMXXXX',
-                        OUTB_WH: '01114,01115,04736'
-                    });
+            // 경인 세팅
+            createButton(targetEl, '1255px', '경인', '경인','', 'RED', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: 'IOOBDCNMXXXX',
+                    OUTB_WH: ''
                 });
+            });
 
-                // 경인 세팅
-                createButton(targetEl, '1255px', '경인', '경인','', 'RED', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '20',
-                        OUTB_TCD: 'IOOBDCNMXXXX',
-                        OUTB_WH: ''
-                    });
+            // 지방 세팅
+            createButton(targetEl, '1208px', '지방', '지방','', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: '01114,01115,04736'
+
                 });
-
-                // 지방 세팅
-                createButton(targetEl, '1208px', '지방', '지방','', 'orange', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '20',
-                        OUTB_TCD: '',
-                        OUTB_WH: '01114,01115,04736'
-
-                    });
-                });
-                observer.disconnect();
-            }
-        });
-    });
-
-    observer.observe(document.body, { childList: true });
-
-    function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
-        const div = document.createElement('div');
-        div.style.position = 'absolute';
-        div.style.cursor = 'pointer';
-        div.style.left = left;
-        div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
-
-        const childDiv = document.createElement('div');
-        childDiv.classList.add('x-tool-tool-el');
-        childDiv.style.backgroundColor = bgColor;
-        childDiv.style.color = color;
-        childDiv.style.width ='32px';
-        childDiv.textContent = textContent;
-        childDiv.title = title;
-
-        div.addEventListener('click', callback);
-
-        targetEl.appendChild(div);
-        div.appendChild(childDiv);
-    }
-
-    function setElementValue(selector, value) {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.value = value;
-        } else {
-            console.error(`Input element with selector "${selector}" not found.`);
+            });
+            observer.disconnect();
         }
-    }
+    });
+});
 
-    function setElementsValues(values) {
-        Object.entries(values).forEach(([key, value]) => {
-            setElementValue(`[name*="${key}"]`, value);
-        });
+observer.observe(document.body, { childList: true });
+
+function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
+    const div = document.createElement('div');
+    div.style.position = 'absolute';
+    div.style.cursor = 'pointer';
+    div.style.left = left;
+    div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+    const childDiv = document.createElement('div');
+    childDiv.classList.add('x-tool-tool-el');
+    childDiv.style.backgroundColor = bgColor;
+    childDiv.style.color = color;
+    childDiv.style.width ='32px';
+    childDiv.textContent = textContent;
+    childDiv.title = title;
+
+    div.addEventListener('click', callback);
+
+    targetEl.appendChild(div);
+    div.appendChild(childDiv);
+}
+
+function setElementValue(selector, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.value = value;
+    } else {
+        console.error(`Input element with selector "${selector}" not found.`);
     }
+}
+
+function setElementsValues(values) {
+    Object.entries(values).forEach(([key, value]) => {
+        setElementValue(`[name*="${key}"]`, value);
+    });
+}
