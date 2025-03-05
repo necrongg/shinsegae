@@ -9,8 +9,10 @@ https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmp
 
 
 **-신세계 WMS 세팅 간편화 HTML CSS 수정-**
+
     1. 세팅 간편화 간이 버튼 생성 HTML, CSS를 수정합니다.
     2. 간단 버튼을 생성합니다.
+
 
 **🧊냉동/축산파트🧊**
 
