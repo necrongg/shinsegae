@@ -5,15 +5,14 @@
 
 https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?pli=1
 
+
+
+
 **-신세계 WMS 세팅 간편화 HTML CSS 수정-**
+    1. 세팅 간편화 간이 버튼 생성 HTML, CSS를 수정합니다.
+    2. 간단 버튼을 생성합니다.
 
-간이 버튼 생성
+**🧊냉동/축산파트🧊**
 
-    // STRR_ID : 화주
-    // ITEM_GCD : 품목그룹
-    // OUTB_TCD : 출고유형
-    // OUTB_WH : 배송센터
-    // SHIPTO_ID : 배송처
-    // SHIPTO_TCD : 물류관리부서
-    
-    냉동파트 ICE 
+    -품목 : 품목코드만 기입합니다. 
+            A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047
