@@ -7,6 +7,11 @@ https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmp
 
 
 
+**개발자모드 활성화 필요**
+
+![image](https://github.com/user-attachments/assets/1633f0d7-6526-4b32-917c-d8cd8f7674c5)
+
+
 
 **-신세계 WMS 세팅 간편화 HTML CSS 수정-**
 
