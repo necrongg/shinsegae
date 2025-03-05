@@ -1,0 +1,49 @@
+// ==UserScript==
+// @name         냉동파트 추가 기능
+// @namespace    https://slp-new.shinsegaefood.com/*
+// @version      2025-03-05
+// @description  신세계wms 간편 버튼 생성기
+// @author       You
+// @match        https://slp-new.shinsegaefood.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=shinsegaefood.com
+// @grant unsafeWindow
+// @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // GitHub에서 JavaScript 파일을 동적으로 로드하는 함수
+    function loadScriptFromGitHub() {
+
+        // GitHub 스크립트 URL
+        const githubScriptUrl = 'git 주소입력';
+            // 냉동축산 - https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze
+            // 세린,CK - 
+
+        // 다른 CORS 우회 서비스 사용
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+        const proxiedUrl = proxyUrl + encodeURIComponent(githubScriptUrl);
+
+        const script = document.createElement('script');
+        script.src = proxiedUrl;
+        script.type = 'text/javascript';
+        script.async = true;
+
+        script.onload = function() {
+            console.log('GitHub 스크립트가 성공적으로 로드되었습니다.');
+        };
+
+        script.onerror = function(error) {
+            console.error('GitHub 스크립트 로드 중 오류 발생:', error);
+        };
+
+        document.head.appendChild(script);
+
+
+    }
+
+    // GitHub 스크립트를 로드합니다.
+    loadScriptFromGitHub();
+
+})();
