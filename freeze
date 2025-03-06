@@ -111,6 +111,7 @@ function createButton(targetEl, left, title, textContent, color, bgColor, callba
 
     childDiv.style.backgroundColor = bgColor;
     childDiv.style.color = color;
+    childDiv.style.opacity = '1';
     childDiv.style.borderRadius ='10px';
     childDiv.style.width ='32px';
 
