@@ -8,7 +8,7 @@
 
 // 냉동 축산
 const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
+    for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
@@ -90,13 +90,14 @@ const observer = new MutationObserver((mutations) => {
 
                 });
             });
-            observer.disconnect();
+
+            observer.disconnect();  // observer 즉시 종료
+            break;  // 루프 탈출
         }
-    });
+    }
 });
 
-observer.observe(document.body, { childList: true });
-
+observer.observe(document.body, { childList: true, subtree: true });
 
 function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
     const div = document.createElement('div');
