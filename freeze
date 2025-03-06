@@ -97,3 +97,41 @@ const observer = new MutationObserver((mutations) => {
 
 observer.observe(document.body, { childList: true });
 
+
+function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
+    const div = document.createElement('div');
+    div.style.position = 'absolute';
+    div.style.cursor = 'pointer';
+    div.style.left = left;
+    div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
+
+    const childDiv = document.createElement('div');
+    childDiv.classList.add('x-tool-tool-el');
+    childDiv.style.backgroundColor = bgColor;
+    childDiv.style.color = color;
+    childDiv.style.borderRadius ='10px';
+    childDiv.style.width ='32px';
+    childDiv.textContent = textContent;
+    childDiv.title = title;
+
+    div.addEventListener('click', callback);
+
+    targetEl.appendChild(div);
+    div.appendChild(childDiv);
+}
+
+function setElementValue(selector, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.value = value;
+    } else {
+        console.error(`Input element with selector "${selector}" not found.`);
+    }
+}
+
+function setElementsValues(values) {
+    Object.entries(values).forEach(([key, value]) => {
+        setElementValue(`[name*="${key}"]`, value);
+    });
+}
+
