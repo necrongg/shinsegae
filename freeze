@@ -6,6 +6,32 @@
 // SHIPTO_ID : 배송처
 // SHIPTO_TCD : 물류관리부서
 
+// CSS 분리
+const style = document.createElement('style');
+style.textContent = `
+  .custom-button {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .custom-button-inner {
+    opacity: 1;
+    border-radius: 10px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .custom-button-inner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+`;
+document.head.appendChild(style);
+
 // 냉동 축산
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
@@ -101,20 +127,13 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
     const div = document.createElement('div');
-    div.style.position = 'absolute';
-    div.style.cursor = 'pointer';
+    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
     div.style.left = left;
-    div.classList.add('x-tool', 'x-box-item', 'x-tool-default', 'x-tool-after-title');
 
     const childDiv = document.createElement('div');
-    childDiv.classList.add('x-tool-tool-el');
-
+    childDiv.className = 'x-tool-tool-el custom-button-inner';
     childDiv.style.backgroundColor = bgColor;
     childDiv.style.color = color;
-    childDiv.style.opacity = '1';
-    childDiv.style.borderRadius ='10px';
-    childDiv.style.width ='32px';
-
     childDiv.textContent = textContent;
     childDiv.title = title;
 
