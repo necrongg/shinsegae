@@ -21,7 +21,7 @@ style.textContent = `
     width: 32px;
     text-align: center;
     font-weight: bold;
-    transition: all 0.2s;
+    transition: all 0.1s;
     border: 1px solid rgba(0,0,0,0.1);
   }
 
