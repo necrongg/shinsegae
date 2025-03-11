@@ -41,12 +41,17 @@ const observer = new MutationObserver((mutations) => {
 
         if (targetEl) {
             // 품목그룹 추가
-            createButton(targetEl, '1490px', '품목그룹 추가(냉동)', '품목','black', 'gold', () => {
+            createButton(targetEl, '1490px', '품목그룹(축산)', '축산','black', 'gold', () => {
                 setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
+            });
+            
+            // 품목그룹 추가
+            createButton(targetEl, '1443px', '품목그룹(축산+세린)', '축/세','black', 'gold', () => {
+                setElementValue('[name*="ITEM_GCD"]', 'A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046');
             });
 
             // 미스터피자 세팅
-            createButton(targetEl, '1443px', '미스터피자,스무디킹', '🥤🍕','', 'white', () => {
+            createButton(targetEl, '1396px', '미스터피자,스무디킹', '🥤🍕','', 'white', () => {
                 setElementsValues({
                     STRR_ID: '0100037,0037396',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -56,7 +61,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 동원홈푸드 세팅
-            createButton(targetEl, '1396px', '동원홈푸드', '동원','', 'blue', () => {
+            createButton(targetEl, '1349px', '동원홈푸드', '동원','', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -69,7 +74,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 푸디스트 세팅
-            createButton(targetEl, '1349px', '푸디스트', '푸디','', 'orange', () => {
+            createButton(targetEl, '1302px', '푸디스트', '푸디','', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -82,7 +87,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // MBK 세팅
-            createButton(targetEl, '1302px', 'MBK 마켓빌더즈코리아', 'MBK','', 'black', () => {
+            createButton(targetEl, '1255px', 'MBK 마켓빌더즈코리아', 'MBK','', 'black', () => {
                 setElementsValues({
                     STRR_ID: '0039656',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -93,7 +98,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 경인 세팅
-            createButton(targetEl, '1255px', '경인', '경인','', 'RED', () => {
+            createButton(targetEl, '1161px', '경인', '경인','', 'RED', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
