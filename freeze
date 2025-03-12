@@ -40,12 +40,12 @@ const observer = new MutationObserver((mutations) => {
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
 
         if (targetEl) {
-            // 품목그룹 추가
+            // 품목그룹 추가(축산)
             createButton(targetEl, '1490px', '품목그룹(축산)', '축산','black', 'gold', () => {
                 setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
             });
             
-            // 품목그룹 추가
+            // 품목그룹 추가(축산+세린)
             createButton(targetEl, '1443px', '품목그룹(축산+세린)', '축/세','black', 'Goldenrod', () => {
                 setElementValue('[name*="ITEM_GCD"]', 'A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046');
             });
