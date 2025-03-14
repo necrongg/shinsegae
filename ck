@@ -49,7 +49,7 @@ const observer = new MutationObserver((mutations) => {
             //});
 
             // 세린CK 세팅
-            createButton(targetEl, '1490px', '세린CK', '세린CK','', 'RED', () => {
+            createButton(targetEl, '1490px', '세린CK', '세+C','', 'RED', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055 ',
@@ -62,7 +62,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 현대삼성 세팅
-            createButton(targetEl, '1443px', '현대삼성', '현대삼성','', 'orange', () => {
+            createButton(targetEl, '1443px', '현대삼성', '현대','', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008',
