@@ -105,7 +105,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 경인 세팅
-            createButton(targetEl, '1208px', '경인', '경인','', 'RED', () => {
+            createButton(targetEl, '1208px', '경인', '경인','', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',

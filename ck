@@ -44,7 +44,7 @@ const observer = new MutationObserver((mutations) => {
 
         if (targetEl) {
             // 세린+CK 세팅
-            createButton(targetEl, '1490px', '세린+CK', '세+C','white', 'RED', () => {
+            createButton(targetEl, '1490px', '세린+CK', '세+C',' white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
@@ -57,7 +57,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK 세팅
-            createButton(targetEl, '1443px', 'CK', 'CK','white', 'GREEN', () => {
+            createButton(targetEl, '1443px', 'CK', 'CK','white', 'green', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061',
@@ -70,7 +70,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 세린 세팅
-            createButton(targetEl, '1396px', '세린', '세린','BLACK', 'YELLOW', () => {
+            createButton(targetEl, '1396px', '세린', '세린','black', 'yellow', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A043,A028,A046,A055',
@@ -83,7 +83,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK냉장 세팅
-            createButton(targetEl, '1349px', 'CK냉장', 'CK냉장','WHITE', 'BLUE', () => {
+            createButton(targetEl, '1349px', 'CK냉장', 'CK냉장','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A055,A057,A058',
