@@ -44,7 +44,7 @@ const observer = new MutationObserver((mutations) => {
 
         if (targetEl) {
             // 세린+CK 세팅
-            createButton(targetEl, '1490px', '세린CK', '세+C','white', 'RED', () => {
+            createButton(targetEl, '1490px', '세린+CK', '세+C','white', 'RED', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
