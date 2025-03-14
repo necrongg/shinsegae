@@ -57,7 +57,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK 세팅
-            createButton(targetEl, '1443px', 'CK', 'CK','BLACK', 'GREEN', () => {
+            createButton(targetEl, '1443px', 'CK', 'CK','white', 'GREEN', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061',
