@@ -43,16 +43,50 @@ const observer = new MutationObserver((mutations) => {
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
 
         if (targetEl) {
-            // 품목그룹 추가(CK)
-            //createButton(targetEl, '1490px', '품목그룹(CK)', 'CK','black', 'gold', () => {
-            //    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
-            //});
-
-            // 세린CK 세팅
+            // 세린+CK 세팅
             createButton(targetEl, '1490px', '세린CK', '세+C','white', 'RED', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055 ',
+                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // CK 세팅
+            createButton(targetEl, '1443px', 'CK', 'CK','BLACK', 'GREEN', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 세린 세팅
+            createButton(targetEl, '1396px', '세린', '세린','BLACK', 'YELLOW', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A043,A028,A046,A055',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // CK냉장 세팅
+            createButton(targetEl, '1349px', 'CK냉장', 'CK냉장','WHITE', 'BLUE', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A005,A055,A057,A058',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
@@ -62,7 +96,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 현대삼성 세팅
-            createButton(targetEl, '1443px', '현대삼성', '현대','black', 'orange', () => {
+            createButton(targetEl, '1302px', '현대삼성', '현대','black', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008',
