@@ -47,7 +47,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(targetEl, '1490px', '세린+CK', '세+C',' white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
+                    ITEM_GCD: 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
@@ -60,7 +60,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(targetEl, '1443px', 'CK', 'CK','white', 'green', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061',
+                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
