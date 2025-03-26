@@ -21,7 +21,7 @@
 
         // 파트마다 URL 마지막 수정
         // 냉동축산 - freeze
-        // 세린,CK -
+        // 세린,CK - ck
 
         // 다른 CORS 우회 서비스 사용
         const proxyUrl = 'https://api.allorigins.win/raw?url=';
