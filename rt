@@ -61,7 +61,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 스무디-경인 세팅
-            createButton(targetEl, '1396px', '스무디킹-경인', '🥤경인','', 'white', () => {
+            createButton(targetEl, '1396px', '스무디킹-경인', '🥤경인','', 'indigo', () => {
                 setElementsValues({
                     STRR_ID: '0037396',
                     ITEM_GCD: 'A006',
@@ -74,7 +74,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 스무디-지방 세팅
-            createButton(targetEl, '1349px', '스무디킹-지방', '🥤지방','', 'white', () => {
+            createButton(targetEl, '1349px', '스무디킹-지방', '🥤지방','', 'indigo', () => {
                 setElementsValues({
                     STRR_ID: '0037396',
                     ITEM_GCD: 'A006',
@@ -87,7 +87,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 미스터피자-경인 세팅
-            createButton(targetEl, '1302px', '미스터피자-경인', '🍕경인','', 'white', () => {
+            createButton(targetEl, '1302px', '미스터피자-경인', '🍕경인','', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '0100037',
                     ITEM_GCD: 'A006,A008',
@@ -100,7 +100,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 미스터피자-지방 세팅
-            createButton(targetEl, '1255px', '미스터피자-지방', '🍕지방','', 'white', () => {
+            createButton(targetEl, '1255px', '미스터피자-지방', '🍕지방','', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '0100037',
                     ITEM_GCD: 'A006,A008',
