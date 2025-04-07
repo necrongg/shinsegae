@@ -20,6 +20,7 @@
         const githubScriptUrl = 'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze';
 
         // 파트마다 URL 마지막 수정
+        // 상온냉장 - rt
         // 냉동축산 - freeze
         // 세린,CK - ck
 
