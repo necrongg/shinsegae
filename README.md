@@ -3,9 +3,14 @@
 
 **Tampermonkey**
 
+**1. 설치**
+
 https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?pli=1
 
 
+
+
+**2. 세팅**
 
 **개발자모드 활성화 필요**
 
