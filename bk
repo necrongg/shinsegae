@@ -148,7 +148,7 @@ const observer = new MutationObserver((mutations) => {
                     ITEM_CD: '',
                     ITEM_GCD: 'A018,A021,A022,A037,A050',
                     CUST_CD: '5184201,5894501,7620101,5462501,5481001,4580801',
-                    SHIPTO_ID: '5184201,5894501,7620101,5462501,5481001,4580801,
+                    SHIPTO_ID: '5184201,5894501,7620101,5462501,5481001,4580801',
                     SHIPTO_TCD: '76',
                     OUTB_TCD: '',
                     OUTB_WH: ''
