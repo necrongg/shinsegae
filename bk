@@ -183,6 +183,19 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
+            // 이마트 중계 세팅
+            createButton(targetEl, '1020px', '이마트 중계', '중계','black', 'gold', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
             observer.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
