@@ -35,7 +35,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// 냉동 축산
+// 음성ck
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경_수정본");
@@ -109,6 +109,19 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
+             // 이마트중계 세팅
+                createButton(targetEl, '1255px', '이마트 중계', '중계','black', 'orange', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A028,A043,A046,A042',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+
+                    });
+                });
             observer.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
