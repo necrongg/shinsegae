@@ -1,0 +1,226 @@
+// STRR_ID : 화주
+// ITEM_CD : 품목코드
+// ITEM_GCD : 품목그룹
+// OUTB_TCD : 출고유형
+// OUTB_WH : 배송센터
+// CUST_CD : 배송처코드
+// SHIPTO_ID : 배송처
+// SHIPTO_TCD : 물류관리부서
+// OUTB_ECT_DATE : 출고일자
+// EMART_CENTER_RCV_DATE : 이마트 센터 입고일
+
+// CSS 분리
+const style = document.createElement('style');
+style.textContent = `
+  .custom-button {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .custom-button-inner {
+    opacity: 1;
+    border-radius: 10px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.1s;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .custom-button-inner:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+`;
+document.head.appendChild(style);
+
+// 베이커리
+const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {  // forEach 대신 for...of 사용
+        console.log("DOM변경_수정본");
+
+        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+
+        if (targetEl) {
+            // 소터1
+            createButton(targetEl, '1490px', '소터1', '소1','white', 'blue', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '255132,335484',
+                    ITEM_GCD: '',
+                    CUST_CD : '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '130,135',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 소터2
+            createButton(targetEl, '1443px', '소터2', '소2','white', 'red', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A021',
+                    CUST_CD : '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '135',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 식재 세팅
+            createButton(targetEl, '1396px', '식재', '식재','white', 'indigo', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '10',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 복합 세팅
+            createButton(targetEl, '1349px', '복합', '복합','white', 'indigo', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '130,135',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 천안직납 세팅
+            createButton(targetEl, '1302px', '천안 직납', '직납','white', 'chocolate', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '76',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 오산공장 세팅
+            createButton(targetEl, '1255px', '오산공장', '오산','white', 'chocolate', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '80',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 천안공장 세팅
+            createButton(targetEl, '1208px', '천안공장', '천안','white', 'black', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '79',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 삼성웰스토리 세팅
+            createButton(targetEl, '1161px', '경인', '경인','white', 'red', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '5184201, 5894501, 7620101, 5462501, 5481001, 4580801',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '76',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 특판 세팅
+            createButton(targetEl, '1114px', '특판', '특판','white', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '77',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 외부판매 세팅
+            createButton(targetEl, '1067px', '외부판매', '외부','white', 'black', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '30',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            observer.disconnect();  // observer 즉시 종료
+            break;  // 루프 탈출
+        }
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
+    const div = document.createElement('div');
+    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
+    div.style.left = left;
+
+    const childDiv = document.createElement('div');
+    childDiv.className = 'x-tool-tool-el custom-button-inner';
+    childDiv.style.backgroundColor = bgColor;
+    childDiv.style.color = color;
+    childDiv.textContent = textContent;
+    childDiv.title = title;
+
+    div.addEventListener('click', callback);
+
+    targetEl.appendChild(div);
+    div.appendChild(childDiv);
+}
+
+function setElementValue(selector, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.value = value;
+    } else {
+        console.error(`Input element with selector "${selector}" not found.`);
+    }
+}
+
+function setElementsValues(values) {
+    Object.entries(values).forEach(([key, value]) => {
+        setElementValue(`[name*="${key}"]`, value);
+    });
+}
+
