@@ -23,6 +23,7 @@
         // 상온냉장 - rt
         // 냉동축산 - freeze
         // 세린,CK - ck
+        // 베이커리 - bk
 
         // 다른 CORS 우회 서비스 사용
         const proxyUrl = 'https://api.allorigins.win/raw?url=';
