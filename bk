@@ -100,7 +100,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 천안직납 세팅
-            createButton(targetEl, '1302px', '천안 직납', '직납','white', 'chocolate', () => {
+            createButton(targetEl, '1302px', '천안 직납', '직납','black', 'yellow', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -128,7 +128,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 천안공장 세팅
-            createButton(targetEl, '1208px', '천안공장', '천안','white', 'black', () => {
+            createButton(targetEl, '1208px', '천안공장', '천안','white', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -142,7 +142,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 삼성웰스토리 세팅
-            createButton(targetEl, '1161px', '경인', '경인','white', 'red', () => {
+            createButton(targetEl, '1161px', '삼성', '삼성','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
