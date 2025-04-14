@@ -1,3 +1,8 @@
+**
+모든 오류 및 분쟁에 대해 책임지지 않습니다.
+반박시 니말맞음**
+
+
 
 ![image](https://github.com/user-attachments/assets/9cbea85a-a7d0-4fb2-b7df-32a613cf7d3c)
 
@@ -22,6 +27,8 @@ https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmp
 
     1. 세팅 간편화 간이 버튼 생성 HTML, CSS를 수정합니다.
     2. 간단 버튼을 생성합니다.
+
+    
 **
 모든 오류 및 분쟁에 대해 책임지지 않습니다.
 반박시 니말맞음**
