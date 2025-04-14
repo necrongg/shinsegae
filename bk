@@ -142,7 +142,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 삼성웰스토리 세팅
-            createButton(targetEl, '1161px', '삼성', '삼성','white', 'red', () => {
+            createButton(targetEl, '1161px', '삼성웰스토리', '삼성','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
