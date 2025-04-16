@@ -110,7 +110,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
              // 이마트중계 세팅
-                createButton(targetEl, '1255px', '이마트 중계', '중계','black', 'orange', () => {
+                createButton(targetEl, '1255px', '이마트 중계', '중계','white', 'black', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A028,A043,A046,A042',
