@@ -41,6 +41,10 @@ const observer = new MutationObserver((mutations) => {
         console.log("DOM변경_수정본");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+
+        // 제목이 '사전재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정
+        const shipToTcdValue = (titleEl && titleEl.textContent === "사전 재고보충") ? '30' : '20';
 
         if (targetEl) {
             // 세린+CK 세팅
@@ -50,7 +54,7 @@ const observer = new MutationObserver((mutations) => {
                     ITEM_GCD: 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
                     CUST_CD: '',
                     SHIPTO_ID: '',
-                    SHIPTO_TCD: '20',
+                    SHIPTO_TCD: shipToTcdValue,
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
@@ -102,7 +106,7 @@ const observer = new MutationObserver((mutations) => {
                     ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008',
                     CUST_CD: '',
                     SHIPTO_ID: '',
-                    SHIPTO_TCD: '20',
+                    SHIPTO_TCD: shipToTcdValue,
                     OUTB_TCD: '',
                     OUTB_WH: ''
 
