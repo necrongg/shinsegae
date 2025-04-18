@@ -34,7 +34,18 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 // 자동조회 중지
-        if (false) {
+    var shouldSearch = false;
+
+        // 화면이 로드된 후 조건에 따라 search 함수 호출 제어
+        window.onload = function() {
+            if (shouldSearch) {
+                search();
+            }
+        };
+
+        // 이 함수가 호출되면 조건을 true로 바꿔서 검색 실행
+        function triggerSearch() {
+            shouldSearch = true;
             search();
         }
 
