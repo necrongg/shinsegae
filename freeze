@@ -35,14 +35,9 @@ style.textContent = `
 document.head.appendChild(style);
 
 // 냉동 축산
-const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {  // forEach 대신 for...of 사용
-        console.log("DOM변경_수정본");
-
-        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        // 임박재고현황 자동 세팅 조회
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        // 임박재고현황 자동 세팅 조회
         if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
             // 자동조회 중지
             var isAutoSearchEnabled = false;
@@ -64,6 +59,14 @@ const observer = new MutationObserver((mutations) => {
                 });
             }
         }
+const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {  // forEach 대신 for...of 사용
+        console.log("DOM변경_수정본");
+
+        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+
+
+
 
         if (targetEl) {
             // 품목그룹 추가(축산)
