@@ -34,9 +34,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-
 // 냉동 축산
-
     // 자동조회 중지
     let shouldSearch = false;
 
@@ -53,7 +51,7 @@ document.head.appendChild(style);
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
-        console.log("DOM변경_수정본");
+        console.log("DOM변경_수정본9");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
