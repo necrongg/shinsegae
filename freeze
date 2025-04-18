@@ -52,7 +52,7 @@ document.head.appendChild(style);
         console.log("🛑 search 차단됨");
     };
 
-    // 3. search 함수 복원(1초 후)
+    // 3. search 함수 복원(2초 후)
     setTimeout(() => {
         if (window.search.toString().includes("🛑 search 차단됨")) {
             window.search = realSearch;
@@ -62,7 +62,7 @@ document.head.appendChild(style);
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-        console.log("DOM변경_수정본1");
+        console.log("DOM변경_수정본2");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
