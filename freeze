@@ -33,16 +33,17 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+// 자동조회 중지
+        if (false) {
+            search();
+        }
 
 // 냉동 축산
         // 임박재고현황 자동 세팅 조회
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
-            // 자동조회 중지
-            if (false) {
-                search();
-            }
+
 
             const button = document.getElementById("commonGrid-1033Button0");
             if (button) {
