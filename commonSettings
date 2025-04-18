@@ -12,6 +12,7 @@ document.addEventListener("keydown", function (e) {
 // 자동조회 차단
 if (!window._searchPatchInitialized) {
     console.log("초기화");
+
     window._searchPatchInitialized = true;
 
     // 1. 원래 search 함수 백업
