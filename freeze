@@ -63,7 +63,7 @@ const observer = new MutationObserver((mutations) => {
                 if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
                     const button = document.getElementById("commonGrid-1033Button0");
                     if (button) {
-                        // 비동기 처리 함수로 묶어서 실행
+                        // 동기 함수로 값 세팅
                         setElementsValues({
                             STRR_ID: '',
                             ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
@@ -72,13 +72,14 @@ const observer = new MutationObserver((mutations) => {
                             SHIPTO_TCD: '',
                             OUTB_TCD: '',
                             OUTB_WH: ''
-                        }).then(() => {
+                        });
+
+                        // 100ms 후에 클릭 및 search 복원
+                        setTimeout(() => {
                             button.click();
                             window.search = realSearch;
                             console.log("✅ search 복원됨");
-                        }).catch((error) => {
-                            console.error("비동기 처리 오류:", error);
-                        });
+                        }, 100);
                     }
                 }
 
