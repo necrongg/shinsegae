@@ -52,36 +52,30 @@ document.head.appendChild(style);
         console.log("🛑 search 차단됨");
     };
 
-    // 3. search 함수 복원(2초 후)
-    setTimeout(() => {
-        if (window.search.toString().includes("🛑 search 차단됨")) {
-            window.search = realSearch;
-            console.log("✅ search 복원됨");
-        }
-    }, 2000);
-
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-        console.log("DOM변경_수정본2");
+        console.log("DOM변경_수정본");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        // 임박재고현황 자동 세팅 조회
+        // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
                 if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
-
                     const button = document.getElementById("commonGrid-1033Button0");
                     if (button) {
-                        setElementsValues({
-                                            STRR_ID: '',
-                                            ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                                            CUST_CD: '',
-                                            SHIPTO_ID: '',
-                                            SHIPTO_TCD: '',
-                                            OUTB_TCD: '',
-                                            OUTB_WH: ''
+                        await setElementsValues({
+                            STRR_ID: '',
+                            ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                            CUST_CD: '',
+                            SHIPTO_ID: '',
+                            SHIPTO_TCD: '',
+                            OUTB_TCD: '',
+                            OUTB_WH: ''
                         });
+
                         button.click();
+                        window.search = realSearch;
+                        console.log("✅ search 복원됨");
                     }
                 }
 
