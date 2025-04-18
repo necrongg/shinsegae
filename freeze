@@ -52,6 +52,21 @@ document.head.appendChild(style);
         console.log("🛑 search 차단됨");
     };
 
+    function restoreSearch() {
+        window.search = realSearch;
+        console.log("✅ search 복원됨 (버튼 클릭 감지)");
+    }
+
+    // 모든 버튼 클릭 감지
+    document.addEventListener("click", function (e) {
+        const target = e.target;
+
+        // 버튼 요소이거나 버튼 안의 자식 요소인 경우
+        if (target.tagName === "BUTTON" || target.closest("button")) {
+            restoreSearch();
+        }
+    });
+
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
         console.log("DOM변경_수정본");
@@ -81,13 +96,6 @@ const observer = new MutationObserver((mutations) => {
                             console.log("✅ search 복원됨");
                         }, 500);
                     }
-                } else {
-                    // 500ms 후에 클릭 및 search 복원
-                    setTimeout(() => {
-                        button.click();
-                        window.search = realSearch;
-                        console.log("✅ search 복원됨");
-                    }, 500);
                 }
 
         if (targetEl) {
