@@ -10,24 +10,28 @@ document.addEventListener("keydown", function (e) {
 });
 
 // 자동조회 차단
-// 1. 원래 search 함수 백업
-const realSearch = window.search || function () {};
-console.log("🔧 원래 search 함수 백업됨:", realSearch);
+if (!window._searchPatchInitialized) {
+    window._searchPatchInitialized = true;
 
-// // 2. 임시로 search 함수 무효화
-// window.search = function () {
-//     console.log("🛑 search 차단됨");
-// };
-//
-// function restoreSearch() {
-//     window.search = realSearch;
-//     console.log("✅ search 복원됨 (버튼 클릭 감지)");
-// }
-//
-// // ✅ 모든 버튼 클릭 시 search 복원
-// document.addEventListener("click", function (e) {
-//     const button = e.target.closest("button");
-//     if (button) {
-//         restoreSearch();
-//     }
-// });
+    // 1. 원래 search 함수 백업
+    const realSearch = window.search || function () {};
+    console.log("🔧 원래 search 함수 백업됨:", realSearch);
+
+    // 2. 임시로 search 함수 무효화
+    window.search = function () {
+        console.log("🛑 search 차단됨");
+    };
+
+    function restoreSearch() {
+        window.search = realSearch;
+        console.log("✅ search 복원됨 (버튼 클릭 감지)");
+    }
+
+    // ✅ 모든 버튼 클릭 시 search 복원
+    document.addEventListener("click", function (e) {
+        const button = e.target.closest("button");
+        if (button) {
+            restoreSearch();
+        }
+    });
+}
