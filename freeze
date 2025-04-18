@@ -46,19 +46,19 @@ const observer = new MutationObserver((mutations) => {
         if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
             const button = document.getElementById("commonGrid-1033Button0");
             if (button) {
-                (async () => {
-                    await setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                        CUST_CD: '',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
-                    });
+                setElementsValues({
+                                    STRR_ID: '',
+                                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                                    CUST_CD: '',
+                                    SHIPTO_ID: '',
+                                    SHIPTO_TCD: '',
+                                    OUTB_TCD: '',
+                                    OUTB_WH: ''
+                });
 
+                setTimeout(function() {
                     button.click();
-                })();
+                }, 300);
             }
         }
 
