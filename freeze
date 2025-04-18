@@ -40,15 +40,17 @@ document.head.appendChild(style);
 
     // 2. 임시로 search 함수 무효화
     window.search = function () {
-        console.log("🛑 자동 search 차단됨 (최초 1회)");
+        console.log("🛑 자동 search 차단됨");
     };
+
+    // 3. search 함수 복원
+    setTimeout(() => {
+        window.search = realSearch;
+        console.log("✅ search 복원 완료");
+    }, 1000);
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-
-    //search 함수 복원
-        window.search = realSearch;
-
         console.log("DOM변경_수정본");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
