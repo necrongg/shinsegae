@@ -40,9 +40,7 @@ document.head.appendChild(style);
 
         if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
             // 자동조회 중지
-            var isAutoSearchEnabled = false;
-
-            if (isAutoSearchEnabled) {
+            if (false) {
                 search();
             }
 
@@ -59,14 +57,12 @@ document.head.appendChild(style);
                 });
             }
         }
+
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경_수정본");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
-
-
-
 
         if (targetEl) {
             // 품목그룹 추가(축산)
