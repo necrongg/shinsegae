@@ -40,13 +40,13 @@ document.head.appendChild(style);
 
     // 2. 임시로 search 함수 무효화
     window.search = function () {
-        console.log("🛑 자동 search 차단됨");
+        console.log("🛑 search 차단됨");
     };
 
-    // 3. search 함수 복원
+    // 3. search 함수 복원(1초)
     setTimeout(() => {
         window.search = realSearch;
-        console.log("✅ search 복원 완료");
+        console.log("✅ search 복원됨");
     }, 1000);
 
 const observer = new MutationObserver((mutations) => {
@@ -70,6 +70,7 @@ const observer = new MutationObserver((mutations) => {
                                             OUTB_TCD: '',
                                             OUTB_WH: ''
                         });
+                        button.click();
                     }
                 }
 
