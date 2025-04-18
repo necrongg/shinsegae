@@ -43,15 +43,17 @@ document.head.appendChild(style);
         console.log("🛑 search 차단됨");
     };
 
-    // 3. search 함수 복원(1초)
+    // 3. search 함수 복원(1초 후)
     setTimeout(() => {
-        window.search = realSearch;
-        console.log("✅ search 복원됨");
+        if (window.search.toString().includes("🛑 search 차단됨")) {
+            window.search = realSearch;
+            console.log("✅ search 복원됨");
+        }
     }, 1000);
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-        console.log("DOM변경_수정본");
+        console.log("DOM변경_수정본1");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
