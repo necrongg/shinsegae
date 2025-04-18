@@ -44,6 +44,13 @@ const observer = new MutationObserver((mutations) => {
 
         // 임박재고현황 자동 세팅 조회
         if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
+            // 자동조회 중지
+            var isAutoSearchEnabled = false;
+
+            if (isAutoSearchEnabled) {
+                search();
+            }
+
             const button = document.getElementById("commonGrid-1033Button0");
             if (button) {
                 setElementsValues({
@@ -56,9 +63,8 @@ const observer = new MutationObserver((mutations) => {
                                     OUTB_WH: ''
                 });
 
-                setTimeout(function() {
-                    button.click();
-                }, 300);
+                button.click();
+
             }
         }
 
