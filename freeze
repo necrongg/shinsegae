@@ -93,8 +93,8 @@ const observer = new MutationObserver((mutations) => {
                         setTimeout(() => {
                             button.click();
                             window.search = realSearch;
-                            console.log("✅ search 복원됨");
-                        }, 500);
+                            console.log("✅ search 복원됨(1초)");
+                        }, 1000);
                     }
                 }
 
