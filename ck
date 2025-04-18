@@ -43,7 +43,7 @@ const observer = new MutationObserver((mutations) => {
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        // 제목이 '사전재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정
+        // 제목이 '사전 재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정
         const shipToTcdValue = (titleEl && titleEl.textContent === "사전 재고보충") ? '30' : '20';
 
         if (targetEl) {
