@@ -35,23 +35,15 @@ style.textContent = `
 document.head.appendChild(style);
 
 // 냉동 축산
-    // 자동조회 중지
-    let shouldSearch = false;
-
-    window.onload = function () {
-        if (shouldSearch) {
-            search();
-        }
+    // 1. 일단 search 함수 덮어쓰기 (빈 함수로)
+    const realSearch = window.search || function() {};
+    window.search = function () {
+        console.log("자동 조회 차단됨");
     };
-
-    function triggerSearch() {
-        shouldSearch = true;
-        search();
-    }
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
-        console.log("DOM변경_수정본9");
+        console.log("DOM변경_수정본10");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
