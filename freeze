@@ -87,12 +87,9 @@ const observer = new MutationObserver((mutations) => {
                             OUTB_WH: ''
                         });
 
-                        // 500ms 후에 클릭 및 search 복원
                         setTimeout(() => {
                             button.click();
-                            window.search = realSearch;
-                            console.log("✅ search 복원됨(자동조회 후 1초)");
-                        }, 1000);
+                        }, 500);
                     }
                 }
 
