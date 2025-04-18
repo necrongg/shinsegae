@@ -35,14 +35,27 @@ style.textContent = `
 document.head.appendChild(style);
 
 // 냉동 축산
-    // 1. 일단 search 함수 덮어쓰기 (빈 함수로)
+    // 1. 원래 search 백업
     const realSearch = window.search || function() {};
-    window.search = function () {
-        console.log("자동 조회 차단됨");
-    };
+
+    // 2. 최초 onload 시에만 search 무력화
+    (function preventInitialSearchOnce() {
+        // search를 임시로 덮어쓰기
+        window.search = function () {
+            console.log("🛑 자동 search 차단됨 (최초 1회)");
+        };
+
+        // onload 이벤트가 끝나면 원상복구
+        window.addEventListener('load', function () {
+            // search 원래대로 복원
+            window.search = realSearch;
+            console.log("✅ search 복원 완료");
+        });
+    })();
+
 
 const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {  // forEach 대신 for...of 사용
+    for (const mutation of mutations) {
         console.log("DOM변경_수정본10");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
