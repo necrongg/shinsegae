@@ -57,12 +57,10 @@ document.head.appendChild(style);
         console.log("✅ search 복원됨 (버튼 클릭 감지)");
     }
 
-    // 모든 버튼 클릭 감지
+    // ✅ 모든 버튼 클릭 시 search 복원
     document.addEventListener("click", function (e) {
-        const target = e.target;
-
-        // 버튼 요소이거나 버튼 안의 자식 요소인 경우
-        if (target.tagName === "BUTTON" || target.closest("button")) {
+        const button = e.target.closest("button");
+        if (button) {
             restoreSearch();
         }
     });
