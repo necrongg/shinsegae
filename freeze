@@ -33,48 +33,51 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-// 자동조회 중지
-    var shouldSearch = false;
 
-        // 화면이 로드된 후 조건에 따라 search 함수 호출 제어
-        window.onload = function() {
-            if (shouldSearch) {
-                search();
-            }
-        };
-
-        // 이 함수가 호출되면 조건을 true로 바꿔서 검색 실행
-        function triggerSearch() {
-            shouldSearch = true;
-            search();
-        }
 
 // 냉동 축산
-        // 임박재고현황 자동 세팅 조회
-        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
-
-
-            const button = document.getElementById("commonGrid-1033Button0");
-            if (button) {
-                setElementsValues({
-                                    STRR_ID: '',
-                                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                                    CUST_CD: '',
-                                    SHIPTO_ID: '',
-                                    SHIPTO_TCD: '',
-                                    OUTB_TCD: '',
-                                    OUTB_WH: ''
-                });
-            }
-        }
 
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경_수정본");
 
+        // 자동조회 중지
+            var shouldSearch = false;
+
+                // 화면이 로드된 후 조건에 따라 search 함수 호출 제어
+                window.onload = function() {
+                    if (shouldSearch) {
+                        search();
+                    }
+                };
+
+                // 이 함수가 호출되면 조건을 true 로 바꿔서 검색 실행
+                function triggerSearch() {
+                    shouldSearch = true;
+                    search();
+                }
+
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+
+        // 임박재고현황 자동 세팅 조회
+                if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
+
+
+                    const button = document.getElementById("commonGrid-1033Button0");
+                    if (button) {
+                        setElementsValues({
+                                            STRR_ID: '',
+                                            ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                                            CUST_CD: '',
+                                            SHIPTO_ID: '',
+                                            SHIPTO_TCD: '',
+                                            OUTB_TCD: '',
+                                            OUTB_WH: ''
+                        });
+                    }
+                }
 
         if (targetEl) {
             // 품목그룹 추가(축산)
