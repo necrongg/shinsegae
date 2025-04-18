@@ -56,7 +56,9 @@ const observer = new MutationObserver((mutations) => {
                                     OUTB_WH: ''
                 });
 
-                button.click();
+                setTimeout(function() {
+                    button.click();
+                }, 300);
             }
         }
 
