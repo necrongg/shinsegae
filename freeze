@@ -79,8 +79,11 @@ const observer = new MutationObserver((mutations) => {
                             button.click();
                             window.search = realSearch;
                             console.log("✅ search 복원됨");
-                        }, 100);
+                        }, 200);
                     }
+                } else {
+                    window.search = realSearch;
+                    console.log("✅ search 복원됨");
                 }
 
         if (targetEl) {
