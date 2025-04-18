@@ -35,6 +35,15 @@ style.textContent = `
 document.head.appendChild(style);
 
 // 냉동 축산
+    // 새로고침 차단
+    document.addEventListener("keydown", function (e) {
+        // Ctrl + R 또는 F5 방지
+        if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
+            e.preventDefault();
+            console.log("🔒 새로고침 차단됨");
+        }
+    });
+
     // 1. 원래 search 함수 백업
     const realSearch = window.search || function () {};
 
