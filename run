@@ -6,48 +6,39 @@
 // @author       You
 // @match        https://slp-new.shinsegaefood.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shinsegaefood.com
-// @grant unsafeWindow
-// @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// @grant        unsafeWindow
+// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    // GitHub에서 JavaScript 파일을 동적으로 로드하는 함수
-    function loadScriptFromGitHub() {
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
-        // GitHub 스크립트 URL
-        const githubScriptUrl = 'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze';
+    const scriptsToLoad = [
+        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/commonSettings',
+        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze'
+    ];
 
-        // 파트마다 URL 마지막 수정
-        // 상온냉장 - rt
-        // 냉동축산 - freeze
-        // 세린,CK - ck
-        // 베이커리 - bk
+    function loadScriptSequentially(index = 0) {
+        if (index >= scriptsToLoad.length) return;
 
-        // 다른 CORS 우회 서비스 사용
-        const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const proxiedUrl = proxyUrl + encodeURIComponent(githubScriptUrl);
+        const scriptUrl = proxyUrl + encodeURIComponent(scriptsToLoad[index]);
 
         const script = document.createElement('script');
-        script.src = proxiedUrl;
+        script.src = scriptUrl;
         script.type = 'text/javascript';
-        script.async = true;
-
-        script.onload = function() {
-            console.log('GitHub 스크립트가 성공적으로 로드되었습니다.');
+        script.async = false; // 순차 로드를 위해 false
+        script.onload = function () {
+            console.log(`✅ [${scriptsToLoad[index]}] 로드 완료`);
+            loadScriptSequentially(index + 1); // 다음 스크립트 로드
         };
-
-        script.onerror = function(error) {
-            console.error('GitHub 스크립트 로드 중 오류 발생:', error);
+        script.onerror = function (error) {
+            console.error(`❌ [${scriptsToLoad[index]}] 로드 실패:`, error);
         };
 
         document.head.appendChild(script);
-
-
     }
 
-    // GitHub 스크립트를 로드합니다.
-    loadScriptFromGitHub();
-
+    loadScriptSequentially(); // 시작
 })();
