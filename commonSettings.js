@@ -3,6 +3,7 @@ console.log("기본세팅");
 
 function createScriptSelector(titleEl, right = '300px') {
     const container = document.createElement('div');
+    container.id = 'drop-custom';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
     container.style.right = right;
 
@@ -40,8 +41,6 @@ function createScriptSelector(titleEl, right = '300px') {
 
 // 전역으로 노출
 window.createScriptSelector = createScriptSelector;
-
-
 
 // 새로고침 차단
 document.addEventListener("keydown", function (e) {
