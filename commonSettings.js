@@ -34,13 +34,25 @@ function createScriptSelector(textEl, left = '100px') {
         if (!val) return;
 
         const selectedScript = `${val}.js`;
+
+        // 표시용 이름 매핑
+        const nameMap = {
+            freeze: '냉동',
+            bk: 'BK',
+            ck: '세린',
+            rt: 'RT'
+        };
+        const displayName = nameMap[val] || val;
+
         localStorage.setItem('wmsScriptSet', JSON.stringify([
             'css.css',
             'commonSettings.js',
             selectedScript
         ]));
-        alert(`✅ 파트 설정이 [${selectedScript}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
+
+        alert(`✅ 파트 설정이 [${displayName}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
     });
+
 
     container.appendChild(select);
     textEl.appendChild(container);
@@ -48,7 +60,7 @@ function createScriptSelector(textEl, left = '100px') {
     // 선택값 없을 경우 안내 팝업
     if (!selectedValue) {
         setTimeout(() => {
-            alert("👋 사용자 스크립트를 먼저 선택해주세요!\n(화면 상단 우측 드롭다운)");
+            alert("👋 사용자 스크립트를 먼저 선택해주세요!\n(화면 상단 좌측 드롭다운)");
         }, 500);
     }
 }
