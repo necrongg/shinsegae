@@ -62,9 +62,6 @@ const observer = new MutationObserver((mutations) => {
                     console.log("강제조회");
                 }, 1000);
             }
-        }else {
-            console.log(titleEl);
-            console.log(titleEl.textContent.trim());
         }
 
         // 제목이 '사전 재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정

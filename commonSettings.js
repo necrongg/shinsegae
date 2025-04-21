@@ -42,7 +42,7 @@ function createScriptSelector(textEl, left = '100px') {
     options.forEach(opt => {
         const option = document.createElement('option');
         option.value = opt;
-        option.textContent = opt ? labelMap[opt] || opt.toUpperCase() : '-- 선택 --';
+        option.textContent = opt ? labelMap[opt] || opt.toUpperCase() : 'ㅡ 선택 ㅡ';
         select.appendChild(option);
     });
 
@@ -84,7 +84,7 @@ document.addEventListener("keydown", function (e) {
     // Ctrl + R 또는 F5 방지
     if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
         e.preventDefault();
-        console.log("🔒 새로고침 차단됨");
+        alert("🔒 새로고침 차단됨");
     }
 });
 

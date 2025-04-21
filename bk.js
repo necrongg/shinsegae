@@ -62,9 +62,6 @@ const observer = new MutationObserver((mutations) => {
                     console.log("강제조회");
                 }, 1000);
             }
-        }else {
-            console.log(titleEl);
-            console.log(titleEl.textContent.trim());
         }
 
         if (targetEl) {
