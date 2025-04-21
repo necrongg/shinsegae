@@ -1,7 +1,7 @@
 //commonSetting.js
 console.log("기본세팅");
 
-//파트 선택 드롭다운
+// ✅ 파트 선택 드롭다운
 function createScriptSelector(textEl, right = '300px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
@@ -50,10 +50,9 @@ function createScriptSelector(textEl, right = '300px') {
         }, 500);
     }
 }
-
 window.createScriptSelector = createScriptSelector;
 
-// 새로고침 차단
+// ✅ 새로고침 차단
 document.addEventListener("keydown", function (e) {
     // Ctrl + R 또는 F5 방지
     if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
@@ -61,8 +60,6 @@ document.addEventListener("keydown", function (e) {
         console.log("🔒 새로고침 차단됨");
     }
 });
-
-
 
 // ✅ 공통 드롭다운 삽입
 const observer = new MutationObserver((mutations) => {
@@ -78,7 +75,6 @@ const observer = new MutationObserver((mutations) => {
         }
     }
 });
-
 observer.observe(document.body, { childList: true, subtree: true });
 
 // // 자동조회 차단
