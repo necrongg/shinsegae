@@ -2,17 +2,18 @@
 console.log("기본세팅");
 
 // ✅ 파트 선택 드롭다운
-function createScriptSelector(textEl, right = '300px') {
+function createScriptSelector(textEl, left = '100px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    container.style.right = right;
+    container.style.left = left;
 
     const select = document.createElement('select');
-    select.className = 'x-tool-tool-el custom-button-inner';
+    select.className = 'custom-button-inner';
     select.style.backgroundColor = 'lightgray';
     select.style.color = 'black';
     select.title = '사용자 스크립트 설정';
+
 
     const options = ['', 'freeze', 'bk', 'ck', 'rt'];
     options.forEach(opt => {
@@ -62,15 +63,14 @@ document.addEventListener("keydown", function (e) {
 });
 
 // ✅ 공통 드롭다운 삽입
-const observer = new MutationObserver((mutations, obs) => {
+const commonObserver = new MutationObserver((mutations, obs) => {
     const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
     if (textEl && typeof createScriptSelector === 'function') {
         createScriptSelector(textEl);
-        obs.disconnect(); // ✅ 드롭다운 추가 후 observer 종료
+        obs.disconnect();
     }
 });
-
-observer.observe(document.body, { childList: true, subtree: true });
+commonObserver.observe(document.body, { childList: true, subtree: true });
 
 // // 자동조회 차단
 // if (!window._searchPatchInitialized) {
