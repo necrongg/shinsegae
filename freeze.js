@@ -62,7 +62,8 @@ const observer = new MutationObserver((mutations) => {
                         }, 500);
                     }
                 }else {
-                    console.log("왜안됌?");
+                    console.log(titleEl);
+                    console.log(titleEl.textContent.trim());
                 }
 
         if (targetEl) {
