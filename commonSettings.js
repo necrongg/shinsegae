@@ -15,20 +15,24 @@ function createScriptSelector(titleEl2, right = '300px') {
     select.style.color = 'black';
     select.title = '사용자 스크립트 설정';
 
-    const options = ['freeze', 'bk', 'ck', 'rt'];
+    const options = ['', 'freeze', 'bk', 'ck', 'rt']; // 공백 포함
     options.forEach(opt => {
         const option = document.createElement('option');
         option.value = opt;
-        option.textContent = opt.toUpperCase();
+        option.textContent = opt ? opt.toUpperCase() : '-- 선택 --';
         select.appendChild(option);
     });
 
-    // 초기 선택값 반영
-    const current = localStorage.getItem('wmsScriptSet') || 'freeze.js';
-    select.value = current.replace('.js', '');
+    const current = localStorage.getItem('wmsScriptSet');
+    const selectedValue = current ? JSON.parse(current).find(f => f.endsWith('.js') && f !== 'commonSettings.js')?.replace('.js', '') : '';
+
+    select.value = selectedValue || '';
 
     select.addEventListener('change', (e) => {
-        const selectedScript = `${e.target.value}.js`;
+        const val = e.target.value;
+        if (!val) return;
+
+        const selectedScript = `${val}.js`;
         localStorage.setItem('wmsScriptSet', JSON.stringify([
             'css.css',
             'commonSettings.js',
@@ -39,6 +43,13 @@ function createScriptSelector(titleEl2, right = '300px') {
 
     container.appendChild(select);
     titleEl2.appendChild(container);
+
+    // 선택값 없을 경우 안내 팝업
+    if (!selectedValue) {
+        setTimeout(() => {
+            alert("👋 사용자 스크립트를 먼저 선택해주세요!\n(화면 상단 우측 드롭다운)");
+        }, 500);
+    }
 }
 
 // 전역으로 노출

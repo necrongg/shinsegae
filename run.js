@@ -17,7 +17,7 @@
     const baseUrl = 'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/';
 
     const savedScripts = localStorage.getItem('wmsScriptSet');
-    const defaultScripts = ['css.css', 'commonSettings.js', 'freeze.js'];
+    const defaultScripts = ['css.css', 'commonSettings.js'];
 
     const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
