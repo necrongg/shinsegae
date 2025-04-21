@@ -62,19 +62,14 @@ document.addEventListener("keydown", function (e) {
 });
 
 // ✅ 공통 드롭다운 삽입
-const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-        console.log("드롭다운");
-        
-        const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
-
-        if (typeof createScriptSelector === 'function') {
-            createScriptSelector(textEl);
-        } else {
-            console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
-        }
+const observer = new MutationObserver((mutations, obs) => {
+    const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+    if (textEl && typeof createScriptSelector === 'function') {
+        createScriptSelector(textEl);
+        obs.disconnect(); // ✅ 드롭다운 추가 후 observer 종료
     }
 });
+
 observer.observe(document.body, { childList: true, subtree: true });
 
 // // 자동조회 차단
