@@ -14,32 +14,32 @@
     'use strict';
 
     const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const baseUrl = 'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/';
 
-    const scriptsToLoad = [
-        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/css.css',
-        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/commonSettings.js',
-        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze.js'
-    ];
+    const savedScripts = localStorage.getItem('wmsScriptSet');
+    const defaultScripts = ['css.css', 'commonSettings.js', 'freeze.js'];
 
-    function loadScriptSequentially(index = 0) {
-        if (index >= scriptsToLoad.length) return;
+    const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
-        const scriptUrl = proxyUrl + encodeURIComponent(scriptsToLoad[index]);
+    function loadScriptSequentially(scripts, index = 0) {
+        if (index >= scripts.length) return;
+
+        const scriptUrl = proxyUrl + encodeURIComponent(baseUrl + scripts[index]);
 
         const script = document.createElement('script');
         script.src = scriptUrl;
         script.type = 'text/javascript';
-        script.async = false; // 순차 로드를 위해 false
-        script.onload = function () {
-            console.log(`✅ [${scriptsToLoad[index]}] 로드 완료`);
-            loadScriptSequentially(index + 1); // 다음 스크립트 로드
+        script.async = false;
+        script.onload = () => {
+            console.log(`✅ [${scripts[index]}] 로드 완료`);
+            loadScriptSequentially(scripts, index + 1);
         };
-        script.onerror = function (error) {
-            console.error(`❌ [${scriptsToLoad[index]}] 로드 실패:`, error);
+        script.onerror = (e) => {
+            console.error(`❌ [${scripts[index]}] 로드 실패:`, e);
         };
 
         document.head.appendChild(script);
     }
 
-    loadScriptSequentially(); // 시작
+    loadScriptSequentially(scriptsToLoad);
 })();

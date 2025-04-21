@@ -1,0 +1,7 @@
+//scripts.json
+
+[
+  "https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/css.css",
+  "https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/commonSettings.js",
+  "https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze.js"
+]

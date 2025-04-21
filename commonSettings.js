@@ -1,4 +1,47 @@
+//commonSetting.js
 console.log("기본세팅");
+
+function createScriptSelector(targetEl, left = '1537px') {
+    const container = document.createElement('div');
+    container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
+    container.style.left = left;
+
+    const select = document.createElement('select');
+    select.className = 'x-tool-tool-el custom-button-inner';
+    select.style.backgroundColor = 'lightgray';
+    select.style.color = 'black';
+    select.title = '사용자 스크립트 설정';
+
+    const options = ['freeze', 'bk', 'ck', 'rt'];
+    options.forEach(opt => {
+        const option = document.createElement('option');
+        option.value = opt;
+        option.textContent = opt.toUpperCase();
+        select.appendChild(option);
+    });
+
+    // 초기 선택값 반영
+    const current = localStorage.getItem('wmsScriptSet') || 'freeze.js';
+    select.value = current.replace('.js', '');
+
+    select.addEventListener('change', (e) => {
+        const selectedScript = `${e.target.value}.js`;
+        localStorage.setItem('wmsScriptSet', JSON.stringify([
+            'css.css',
+            'commonSettings.js',
+            selectedScript
+        ]));
+        alert(`✅ 사용자 설정이 [${selectedScript}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
+    });
+
+    container.appendChild(select);
+    targetEl.appendChild(container);
+}
+
+// 전역으로 노출
+window.createScriptSelector = createScriptSelector;
+
+
 
 // 새로고침 차단
 document.addEventListener("keydown", function (e) {
