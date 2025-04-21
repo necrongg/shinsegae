@@ -36,7 +36,7 @@ function createScriptSelector(titleEl, right = '300px') {
     });
 
     container.appendChild(select);
-    targetEl.appendChild(container);
+    titleEl.appendChild(container);
 }
 
 // 전역으로 노출
@@ -51,9 +51,12 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+
 // ✅ 공통 드롭다운 삽입
+const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
+
 if (typeof createScriptSelector === 'function') {
-    createScriptSelector(targetEl);
+    createScriptSelector(titleEl);
 } else {
     console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
 }
