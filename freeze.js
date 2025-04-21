@@ -10,6 +10,32 @@
 // OUTB_ECT_DATE : 출고일자
 // EMART_CENTER_RCV_DATE : 이마트 센터 입고일
 
+// CSS 분리
+const style = document.createElement('style');
+style.textContent = `
+  .custom-button {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .custom-button-inner {
+    opacity: 1;
+    border-radius: 10px;
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.1s;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .custom-button-inner:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+`;
+document.head.appendChild(style);
+
 // 냉동 축산
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {

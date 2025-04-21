@@ -1,22 +1,6 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// ✅ css.css 가 script 로 로드되었더라도 무시하고 link 로 불러오기
-(function loadExternalCSS() {
-    const proxyUrl = 'https://api.allorigins.win/raw?url=';
-    const cssUrl = proxyUrl + encodeURIComponent('https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/css.css');
-
-    const oldStyle = document.querySelector('style'); // 이전 style 제거
-    if (oldStyle) oldStyle.remove();
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = cssUrl;
-    link.type = 'text/css';
-    document.head.appendChild(link);
-    console.log('🎨 css.css 외부 link 로 로드됨');
-})();
-
 // ✅ 파트 선택 드롭다운
 function createScriptSelector(textEl, left = '100px') {
     const container = document.createElement('div');
