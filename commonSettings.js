@@ -1,7 +1,7 @@
 //commonSetting.js
 console.log("기본세팅");
 
-const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
+const titleEl2 = document.querySelector("#SEARCH_CONDITION_header-title-targetEl2");
 
 function createScriptSelector(titleEl, right = '300px') {
     const container = document.createElement('div');
@@ -58,7 +58,7 @@ document.addEventListener("keydown", function (e) {
 
 
 if (typeof createScriptSelector === 'function') {
-    createScriptSelector(titleEl);
+    createScriptSelector(titleEl2);
 } else {
     console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
 }
