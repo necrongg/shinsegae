@@ -1,8 +1,6 @@
 //commonSetting.js
 console.log("기본세팅");
 
-const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
-
 //파트 선택 드롭다운
 function createScriptSelector(textEl, right = '300px') {
     const container = document.createElement('div');
@@ -65,12 +63,23 @@ document.addEventListener("keydown", function (e) {
 });
 
 
+
 // ✅ 공통 드롭다운 삽입
-if (typeof createScriptSelector === 'function') {
-    createScriptSelector(textEl);
-} else {
-    console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
-}
+const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+        console.log("드롭다운");
+        
+        const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+
+        if (typeof createScriptSelector === 'function') {
+            createScriptSelector(textEl);
+        } else {
+            console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
+        }
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
 
 // // 자동조회 차단
 // if (!window._searchPatchInitialized) {
