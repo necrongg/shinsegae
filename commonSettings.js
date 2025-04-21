@@ -16,10 +16,17 @@ function createScriptSelector(textEl, left = '100px') {
     select.title = '사용자 스크립트 설정';
 
     const options = ['', 'freeze', 'bk', 'ck', 'rt'];
+    const labelMap = {
+        'freeze': '냉동',
+        'bk': '베이커리',
+        'ck': '세린+CK',
+        'rt': '상온'
+    };
+
     options.forEach(opt => {
         const option = document.createElement('option');
         option.value = opt;
-        option.textContent = opt ? opt.toUpperCase() : '-- 선택 --';
+        option.textContent = opt ? labelMap[opt] || opt.toUpperCase() : '-- 선택 --';
         select.appendChild(option);
     });
 
@@ -33,15 +40,7 @@ function createScriptSelector(textEl, left = '100px') {
         if (!val) return;
 
         const selectedScript = `${val}.js`;
-
-        // 표시용 이름 매핑
-        const nameMap = {
-            freeze: '냉동',
-            bk: 'BK',
-            ck: '세린',
-            rt: 'RT'
-        };
-        const displayName = nameMap[val] || val;
+        const label = labelMap[val] || val.toUpperCase();
 
         localStorage.setItem('wmsScriptSet', JSON.stringify([
             'css.css',
@@ -49,7 +48,8 @@ function createScriptSelector(textEl, left = '100px') {
             selectedScript
         ]));
 
-        alert(`✅ 파트 설정이 [${displayName}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
+        alert(`✅ 파트 설정이 [${label}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
+
     });
     container.appendChild(select);
     textEl.appendChild(container);
