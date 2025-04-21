@@ -10,8 +10,9 @@ function createScriptSelector(textEl, left = '100px') {
 
     const select = document.createElement('select');
     select.className = 'custom-button-inner';
-    select.style.backgroundColor = 'lightgray';
+    select.style.backgroundColor = 'yellow';
     select.style.color = 'black';
+    select.width = '100px';
     select.title = '사용자 스크립트 설정';
 
 
