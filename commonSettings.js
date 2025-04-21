@@ -1,9 +1,9 @@
 //commonSetting.js
 console.log("기본세팅");
 
-const titleEl2 = document.querySelector("#SEARCH_CONDITION_header-title-targetEl2");
+const titleEl2 = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
 
-function createScriptSelector(titleEl, right = '300px') {
+function createScriptSelector(titleEl2, right = '300px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
@@ -38,7 +38,7 @@ function createScriptSelector(titleEl, right = '300px') {
     });
 
     container.appendChild(select);
-    titleEl.appendChild(container);
+    titleEl2.appendChild(container);
 }
 
 // 전역으로 노출
