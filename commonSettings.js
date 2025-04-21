@@ -1,9 +1,9 @@
 //commonSetting.js
 console.log("기본세팅");
 
-const titleEl2 = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
+const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-function createScriptSelector(titleEl2, right = '300px') {
+function createScriptSelector(textEl, right = '300px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
@@ -42,7 +42,7 @@ function createScriptSelector(titleEl2, right = '300px') {
     });
 
     container.appendChild(select);
-    titleEl2.appendChild(container);
+    textEl.appendChild(container);
 
     // 선택값 없을 경우 안내 팝업
     if (!selectedValue) {
@@ -66,10 +66,8 @@ document.addEventListener("keydown", function (e) {
 
 
 // ✅ 공통 드롭다운 삽입
-
-
 if (typeof createScriptSelector === 'function') {
-    createScriptSelector(titleEl2);
+    createScriptSelector(textEl);
 } else {
     console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
 }
