@@ -44,24 +44,27 @@ const observer = new MutationObserver((mutations) => {
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
-        if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
+        if (titleEl && titleEl.textContent.trim().includes("임박재고현황")) {
             const button = document.getElementById("commonGrid-1033Button0");
-            if (button) {
-                setElementsValues({
-                    STRR_ID: '',
-                    ITEM_GCD: 'A018,A021,A022,A037,A050',
-                    CUST_CD: '',
-                    SHIPTO_ID: '',
-                    SHIPTO_TCD: '',
-                    OUTB_TCD: '',
-                    OUTB_WH: ''
-                });
+            setElementsValues({
+                STRR_ID: '',
+                ITEM_GCD: 'A018,A021,A022,A037,A050',
+                CUST_CD: '',
+                SHIPTO_ID: '',
+                SHIPTO_TCD: '',
+                OUTB_TCD: '',
+                OUTB_WH: ''
+            });
 
+            if (button) {
                 setTimeout(() => {
                     button.click();
                     console.log("강제조회");
-                }, 2000);
+                }, 1000);
             }
+        }else {
+            console.log(titleEl);
+            console.log(titleEl.textContent.trim());
         }
 
         if (targetEl) {

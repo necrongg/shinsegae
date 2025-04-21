@@ -44,24 +44,27 @@ const observer = new MutationObserver((mutations) => {
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
-        if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
+        if (titleEl && titleEl.textContent.trim().includes("임박재고현황")) {
             const button = document.getElementById("commonGrid-1033Button0");
-            if (button) {
-                setElementsValues({
-                    STRR_ID: '',
-                    ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
-                    CUST_CD: '',
-                    SHIPTO_ID: '',
-                    SHIPTO_TCD: '',
-                    OUTB_TCD: '',
-                    OUTB_WH: ''
-                });
+            setElementsValues({
+                STRR_ID: '',
+                ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                CUST_CD: '',
+                SHIPTO_ID: '',
+                SHIPTO_TCD: '',
+                OUTB_TCD: '',
+                OUTB_WH: ''
+            });
 
+            if (button) {
                 setTimeout(() => {
                     button.click();
                     console.log("강제조회");
-                }, 2000);
+                }, 1000);
             }
+        }else {
+            console.log(titleEl);
+            console.log(titleEl.textContent.trim());
         }
 
         // 제목이 '사전 재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정
