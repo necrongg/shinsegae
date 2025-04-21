@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         신세계wms 추가 기능
 // @namespace    https://slp-new.shinsegaefood.com/*
-// @version      2025-03-05
+// @version      2025-04-21
 // @description  신세계wms 간편 버튼 생성기
 // @author       You
 // @match        https://slp-new.shinsegaefood.com/*
