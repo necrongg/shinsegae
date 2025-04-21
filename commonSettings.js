@@ -15,7 +15,6 @@ function createScriptSelector(textEl, left = '100px') {
     select.style.width = '100px';
     select.title = '사용자 스크립트 설정';
 
-
     const options = ['', 'freeze', 'bk', 'ck', 'rt'];
     options.forEach(opt => {
         const option = document.createElement('option');
@@ -52,8 +51,6 @@ function createScriptSelector(textEl, left = '100px') {
 
         alert(`✅ 파트 설정이 [${displayName}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
     });
-
-
     container.appendChild(select);
     textEl.appendChild(container);
 
@@ -84,6 +81,46 @@ const commonObserver = new MutationObserver((mutations, obs) => {
     }
 });
 commonObserver.observe(document.body, { childList: true, subtree: true });
+
+// ✅ 공통 버튼생성
+function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
+    const div = document.createElement('div');
+    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
+    div.style.left = left;
+
+    const childDiv = document.createElement('div');
+    childDiv.className = 'x-tool-tool-el custom-button-inner';
+    childDiv.style.backgroundColor = bgColor;
+    childDiv.style.color = color;
+    childDiv.textContent = textContent;
+    childDiv.title = title;
+
+    div.addEventListener('click', callback);
+
+    targetEl.appendChild(div);
+    div.appendChild(childDiv);
+}
+window.createButton = createButton;
+
+// ✅ 공통 버튼생성 로직
+function setElementValue(selector, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.value = value;
+    } else {
+        console.error(`Input element with selector "${selector}" not found.`);
+    }
+}
+window.setElementValue = setElementValue;
+
+// ✅ 공통 버튼생성 로직2
+function setElementsValues(values) {
+    Object.entries(values).forEach(([key, value]) => {
+        setElementValue(`[name*="${key}"]`, value);
+    });
+}
+window.setElementsValues = setElementsValues;
+
 
 // // 자동조회 차단
 // if (!window._searchPatchInitialized) {

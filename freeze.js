@@ -39,8 +39,6 @@ document.head.appendChild(style);
 // 냉동 축산
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-        console.log("DOM변경_수정본");
-
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
@@ -63,6 +61,8 @@ const observer = new MutationObserver((mutations) => {
                             console.log("강제조회");
                         }, 500);
                     }
+                }else {
+                    console.log("왜안됌?");
                 }
 
         if (targetEl) {
@@ -172,39 +172,6 @@ const observer = new MutationObserver((mutations) => {
         }
     }
 });
-
 observer.observe(document.body, { childList: true, subtree: true });
 
-function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
-    const div = document.createElement('div');
-    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    div.style.left = left;
-
-    const childDiv = document.createElement('div');
-    childDiv.className = 'x-tool-tool-el custom-button-inner';
-    childDiv.style.backgroundColor = bgColor;
-    childDiv.style.color = color;
-    childDiv.textContent = textContent;
-    childDiv.title = title;
-
-    div.addEventListener('click', callback);
-
-    targetEl.appendChild(div);
-    div.appendChild(childDiv);
-}
-
-function setElementValue(selector, value) {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.value = value;
-    } else {
-        console.error(`Input element with selector "${selector}" not found.`);
-    }
-}
-
-function setElementsValues(values) {
-    Object.entries(values).forEach(([key, value]) => {
-        setElementValue(`[name*="${key}"]`, value);
-    });
-}
 
