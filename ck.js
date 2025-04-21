@@ -60,7 +60,7 @@ const observer = new MutationObserver((mutations) => {
                 setTimeout(() => {
                     button.click();
                     console.log("강제조회");
-                }, 5000);
+                }, 4000);
             }
         }
 
