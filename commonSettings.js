@@ -1,7 +1,7 @@
 //commonSetting.js
 console.log("기본세팅");
 
-function createScriptSelector(targetEl, left = '1537px') {
+function createScriptSelector(targetEl, left = '900px') {
     const container = document.createElement('div');
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
     container.style.left = left;
