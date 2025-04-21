@@ -52,6 +52,13 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+// ✅ 공통 드롭다운 삽입
+if (typeof createScriptSelector === 'function') {
+    createScriptSelector(targetEl);
+} else {
+    console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
+}
+
 // // 자동조회 차단
 // if (!window._searchPatchInitialized) {
 //     console.log("초기화");

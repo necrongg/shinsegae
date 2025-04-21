@@ -44,13 +44,6 @@ const observer = new MutationObserver((mutations) => {
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        // ✅ 공통 드롭다운 삽입
-        if (typeof createScriptSelector === 'function') {
-            createScriptSelector(targetEl);
-        } else {
-            console.error("❌ createScriptSelector 함수가 정의되지 않았습니다.");
-        }
-
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
                 if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
                     const button = document.getElementById("commonGrid-1033Button0");
