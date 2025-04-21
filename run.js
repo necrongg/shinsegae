@@ -16,8 +16,9 @@
     const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
     const scriptsToLoad = [
-        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/commonSettings',
-        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze'
+        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/css.css',
+        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/commonSettings.js',
+        'https://raw.githubusercontent.com/necrongg/shinsegae/refs/heads/main/freeze.js'
     ];
 
     function loadScriptSequentially(index = 0) {
