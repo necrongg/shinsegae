@@ -1,6 +1,8 @@
 //commonSetting.js
 console.log("기본세팅");
 
+const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
+
 function createScriptSelector(titleEl, right = '300px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
@@ -53,7 +55,7 @@ document.addEventListener("keydown", function (e) {
 
 
 // ✅ 공통 드롭다운 삽입
-const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-targetEl");
+
 
 if (typeof createScriptSelector === 'function') {
     createScriptSelector(titleEl);
