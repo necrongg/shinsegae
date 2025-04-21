@@ -3,6 +3,7 @@ console.log("기본세팅");
 
 const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
+//파트 선택 드롭다운
 function createScriptSelector(textEl, right = '300px') {
     const container = document.createElement('div');
     container.id = 'drop-custom';
@@ -15,7 +16,7 @@ function createScriptSelector(textEl, right = '300px') {
     select.style.color = 'black';
     select.title = '사용자 스크립트 설정';
 
-    const options = ['', 'freeze', 'bk', 'ck', 'rt']; // 공백 포함
+    const options = ['', 'freeze', 'bk', 'ck', 'rt'];
     options.forEach(opt => {
         const option = document.createElement('option');
         option.value = opt;
@@ -38,7 +39,7 @@ function createScriptSelector(textEl, right = '300px') {
             'commonSettings.js',
             selectedScript
         ]));
-        alert(`✅ 사용자 설정이 [${selectedScript}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
+        alert(`✅ 파트 설정이 [${selectedScript}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
     });
 
     container.appendChild(select);
@@ -52,7 +53,6 @@ function createScriptSelector(textEl, right = '300px') {
     }
 }
 
-// 전역으로 노출
 window.createScriptSelector = createScriptSelector;
 
 // 새로고침 차단
