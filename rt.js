@@ -40,6 +40,28 @@ const observer = new MutationObserver((mutations) => {
         console.log("DOM변경_수정본");
 
         const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+
+        // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
+        if (titleEl && titleEl.textContent.trim() === "임박재고현황") {
+            const button = document.getElementById("commonGrid-1033Button0");
+            if (button) {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A008,A048,A006,A002,A43,A024,A023,A054,A034',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+
+                setTimeout(() => {
+                    button.click();
+                    console.log("강제조회");
+                }, 2000);
+            }
+        }
 
         if (targetEl) {
             // 품목그룹 추가(상온)
