@@ -1,3 +1,5 @@
+//bk.js
+
 // STRR_ID : 화주
 // ITEM_CD : 품목코드
 // ITEM_GCD : 품목그룹
