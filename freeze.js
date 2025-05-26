@@ -103,7 +103,7 @@ const observer = new MutationObserver((mutations) => {
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A043,A028,A046',
                     CUST_CD : '',
                     SHIPTO_ID: '',
-                    SHIPTO_TCD: '',
+                    SHIPTO_TCD: '30',
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
