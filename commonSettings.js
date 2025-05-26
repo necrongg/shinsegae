@@ -57,7 +57,7 @@ function createScriptSelector(textEl, left = '100px') {
     // 선택값 없을 경우 안내 팝업
     if (!selectedValue) {
         setTimeout(() => {
-            alert("👋 사용자 스크립트를 먼저 선택해주세요!\n(화면 상단 좌측 드롭다운)");
+            alert("👋 사용자 파트를 먼저 선택해주세요!\n(화면 좌측 상단 드롭다운)");
         }, 500);
     }
 }
