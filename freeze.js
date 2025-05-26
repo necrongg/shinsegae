@@ -13,8 +13,16 @@
 // CSS 분리
 const style = document.createElement('style');
 style.textContent = `
-  .custom-button {
+  .custom-button-container {
+    display: flex;
+    flex-direction: row-reverse;
     position: absolute;
+    right: 10px;
+    gap: 5px;
+  }
+
+  .custom-button {
+    position: relative; // absolute 대신 relative 사용
     cursor: pointer;
     z-index: 1000;
   }
@@ -34,6 +42,7 @@ style.textContent = `
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 `;
+
 document.head.appendChild(style);
 
 // 냉동 축산
@@ -87,31 +96,45 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
-            // 동원홈푸드 세팅
-            createButton(targetEl, '1349px', '동원홈푸드', '동원','white', 'blue', () => {
+            // 군납
+            createButton(targetEl, '1302px', '군납', '군납','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                    CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                    SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A043,A028,A046',
+                    CUST_CD : '',
+                    SHIPTO_ID: '',
                     SHIPTO_TCD: '',
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
             });
 
-            // 푸디스트 세팅
-            createButton(targetEl, '1302px', '푸디스트', '푸디','white', 'orange', () => {
-                setElementsValues({
-                    STRR_ID: '',
-                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                    CUST_CD : '6984101,8077601,8218701,8218001',
-                    SHIPTO_ID: '6984101,8077601,8218701,8218001',
-                    SHIPTO_TCD: '',
-                    OUTB_TCD: '',
-                    OUTB_WH: ''
-                });
-            });
+            // CK 세린에서 같이 하기로했음(2025.05.26)
+            // // 동원홈푸드 세팅
+            // createButton(targetEl, '1349px', '동원홈푸드', '동원','white', 'blue', () => {
+            //     setElementsValues({
+            //         STRR_ID: '',
+            //         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+            //         CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+            //         SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+            //         SHIPTO_TCD: '',
+            //         OUTB_TCD: '',
+            //         OUTB_WH: ''
+            //     });
+            // });
+            //
+            // // 푸디스트 세팅
+            // createButton(targetEl, '1302px', '푸디스트', '푸디','white', 'orange', () => {
+            //     setElementsValues({
+            //         STRR_ID: '',
+            //         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+            //         CUST_CD : '6984101,8077601,8218701,8218001',
+            //         SHIPTO_ID: '6984101,8077601,8218701,8218001',
+            //         SHIPTO_TCD: '',
+            //         OUTB_TCD: '',
+            //         OUTB_WH: ''
+            //     });
+            // });
 
             // MBK 세팅
             createButton(targetEl, '1255px', 'MBK 마켓빌더즈코리아', 'MBK','white', 'black', () => {
