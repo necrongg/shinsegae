@@ -1,13 +1,16 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// ✅ 파트 선택 드롭다운
-function createScriptSelector(textEl, left = '100px') {
+// ✅ 파트 선택 드롭다운 + x표시 on/off
+function createScriptSelector(panel) {
     const container = document.createElement('div');
-    container.id = 'drop-custom';
+    container.id = 'custom-div';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    container.style.left = left;
+    container.style.left = '235px';
+    container.style.top = '8px';
 
+
+    // ✅ 파트 선택 드롭다운
     const select = document.createElement('select');
     select.className = 'custom-button-inner';
     select.style.backgroundColor = 'yellow';
@@ -52,7 +55,7 @@ function createScriptSelector(textEl, left = '100px') {
 
     });
     container.appendChild(select);
-    textEl.appendChild(container);
+    panel.appendChild(container);
 
     // 선택값 없을 경우 안내 팝업
     if (!selectedValue) {
@@ -60,6 +63,30 @@ function createScriptSelector(textEl, left = '100px') {
             alert("👋 사용자 파트를 먼저 선택해주세요!\n(화면 좌측 상단 드롭다운)");
         }, 500);
     }
+
+    // ✅ x닫기 버튼 on/off 체크박스
+    const checkClose = document.createElement('input');
+    checkClose.type = 'checkbox';
+    checkClose.id = 'toggleCloseEl';
+    checkClose.title = 'X표시 ON/OFF';
+    checkClose.style.marginLeft = '8px';
+
+    // 라벨도 추가하면 사용자가 체크박스 용도를 더 잘 이해할 수 있음
+    const label = document.createElement('label');
+    label.htmlFor = 'toggleCloseEl';
+    label.textContent = 'X표시 ON/OFF';
+    label.style.marginLeft = '4px';
+
+    // 체크박스 상태에 따라 모든 #tab-1074-closeEl 요소의 display 토글
+    checkClose.addEventListener('change', () => {
+        const closeEls = document.querySelectorAll('#tab-1074-closeEl');
+        closeEls.forEach(el => {
+            el.style.display = checkClose.checked ? 'none' : 'block';
+        });
+    });
+
+    container.appendChild(checkClose);
+
 }
 window.createScriptSelector = createScriptSelector;
 
@@ -74,9 +101,9 @@ document.addEventListener("keydown", function (e) {
 
 // ✅ 공통 드롭다운 삽입
 const commonObserver = new MutationObserver((mutations, obs) => {
-    const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
-    if (textEl && typeof createScriptSelector === 'function') {
-        createScriptSelector(textEl);
+    const panel = document.querySelector("#panel-1009-innerCt");
+    if (panel && typeof createScriptSelector === 'function') {
+        createScriptSelector(panel);
         obs.disconnect();
     }
 });
