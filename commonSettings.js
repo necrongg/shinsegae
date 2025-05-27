@@ -1,7 +1,7 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// ✅ 파트 선택 드롭다운 + x표시 on/off
+// ✅ 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off
 function createScriptSelector(panel) {
     const container = document.createElement('div');
     container.id = 'custom-div';
@@ -10,6 +10,17 @@ function createScriptSelector(panel) {
     container.style.top = '8px';
 
     // ✅ 파트 선택 드롭다운
+    createPartDropdown(container, panel);
+
+    // ✅ x닫기 버튼 on/off 체크박스
+    createCloseToggle(container);
+
+    panel.appendChild(container);
+}
+window.createScriptSelector = createScriptSelector;
+
+// ✅ 파트 선택 드롭다운
+function createPartDropdown(container, panel) {
     const select = document.createElement('select');
     select.className = 'custom-button-inner';
     select.style.backgroundColor = 'yellow';
@@ -54,16 +65,17 @@ function createScriptSelector(panel) {
     });
 
     container.appendChild(select);
-    panel.appendChild(container);
 
-    // 선택값 없을 경우 안내 팝업
+    // 선택값 없을 경우 안내
     if (!selectedValue) {
         setTimeout(() => {
             alert("👋 사용자 파트를 먼저 선택해주세요!\n(화면 좌측 상단 드롭다운)");
         }, 500);
     }
+}
 
-    // ✅ x닫기 버튼 on/off 체크박스
+// ✅ x닫기 버튼 on/off 체크박스
+function createCloseToggle(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
     checkWrapper.style.alignItems = 'center';
@@ -95,7 +107,7 @@ function createScriptSelector(panel) {
     });
 
     // MutationObserver로 새로 추가된 closeEl 감지
-    const observer = new MutationObserver((mutationsList) => {
+    const observer = new MutationObserver(() => {
         if (checkClose.checked) {
             toggleCloseElDisplay(true);
         }
@@ -110,9 +122,6 @@ function createScriptSelector(panel) {
     checkWrapper.appendChild(label);
     checkWrapper.appendChild(checkClose);
 }
-
-window.createScriptSelector = createScriptSelector;
-
 
 // ✅ 새로고침 차단
 document.addEventListener("keydown", function (e) {
@@ -171,33 +180,3 @@ function setElementsValues(values) {
     });
 }
 window.setElementsValues = setElementsValues;
-
-
-// // 자동조회 차단
-// if (!window._searchPatchInitialized) {
-//     console.log("초기화");
-//
-//     window._searchPatchInitialized = true;
-//
-//     // 1. 원래 search 함수 백업
-//     const realSearch = window.search || function () {};
-//     console.log("🔧 원래 search 함수 백업됨:", realSearch);
-//
-//     // 2. 임시로 search 함수 무효화
-//     window.search = function () {
-//         console.log("🛑 search 차단됨");
-//     };
-//
-//     function restoreSearch() {
-//         window.search = realSearch;
-//         console.log("✅ search 복원됨 (버튼 클릭 감지)");
-//     }
-//
-//     // ✅ 모든 버튼 클릭 시 search 복원
-//     document.addEventListener("click", function (e) {
-//         const button = e.target.closest("button");
-//         if (button) {
-//             restoreSearch();
-//         }
-//     });
-// }
