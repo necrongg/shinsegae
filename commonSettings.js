@@ -78,7 +78,11 @@ function createPartDropdown(container, panel) {
 function createCloseToggle(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
+    checkWrapper.className = 'custom-button-inner';
+    checkWrapper.style.width = '120px';
+    checkWrapper.style.backgroundColor = 'white';
     checkWrapper.style.alignItems = 'center';
+    checkWrapper.style.justifyContent = 'center';
     checkWrapper.style.marginLeft = '8px';
 
     const checkClose = document.createElement('input');
