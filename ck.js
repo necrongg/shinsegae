@@ -123,6 +123,20 @@ const observer = new MutationObserver((mutations) => {
 
                     });
                 });
+
+            // 축산 세린 ck 세팅
+            createButton(targetEl, '1208px', '축산+세린+CK', '축C세','black', 'pink', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+
+                });
+            });
             observer.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
