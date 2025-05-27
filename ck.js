@@ -11,32 +11,6 @@
 // EMART_CENTER_RCV_DATE : 이마트 센터 입고일
 // 시작위치 : 1490px 다음 -47px
 
-// CSS 분리
-const style = document.createElement('style');
-style.textContent = `
-  .custom-button {
-    position: absolute;
-    cursor: pointer;
-    z-index: 1000;
-  }
-
-  .custom-button-inner {
-    opacity: 1;
-    border-radius: 10px;
-    width: 32px;
-    text-align: center;
-    font-weight: bold;
-    transition: all 0.1s;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
-
-  .custom-button-inner:hover {
-    transform: scale(1.1);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-`;
-document.head.appendChild(style);
-
 // 음성ck
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
