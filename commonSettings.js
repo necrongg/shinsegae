@@ -1,6 +1,3 @@
-//commonSetting.js
-console.log("기본세팅");
-
 // ✅ 파트 선택 드롭다운 + x표시 on/off
 function createScriptSelector(panel) {
     const container = document.createElement('div');
@@ -8,7 +5,6 @@ function createScriptSelector(panel) {
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
     container.style.left = '235px';
     container.style.top = '8px';
-
 
     // ✅ 파트 선택 드롭다운
     const select = document.createElement('select');
@@ -52,8 +48,8 @@ function createScriptSelector(panel) {
         ]));
 
         alert(`✅ 파트 설정이 [${label}]로 저장되었습니다. 새로고침 후 적용됩니다.`);
-
     });
+
     container.appendChild(select);
     panel.appendChild(container);
 
@@ -65,115 +61,51 @@ function createScriptSelector(panel) {
     }
 
     // ✅ x닫기 버튼 on/off 체크박스
+    const checkWrapper = document.createElement('div');
+    checkWrapper.style.display = 'inline-flex';
+    checkWrapper.style.alignItems = 'center';
+    checkWrapper.style.marginLeft = '8px';
+
     const checkClose = document.createElement('input');
     checkClose.type = 'checkbox';
     checkClose.id = 'toggleCloseEl';
     checkClose.title = 'X표시 ON/OFF';
     checkClose.style.marginLeft = '8px';
 
-    // 라벨도 추가하면 사용자가 체크박스 용도를 더 잘 이해할 수 있음
     const label = document.createElement('label');
     label.htmlFor = 'toggleCloseEl';
     label.textContent = 'X표시 ON/OFF';
     label.style.marginLeft = '4px';
 
-    // 체크박스 상태에 따라 모든 #tab-1074-closeEl 요소의 display 토글
-    checkClose.addEventListener('change', () => {
-        const closeEls = document.querySelectorAll('#tab-1074-closeEl');
+    // closeEl 토글 함수
+    function toggleCloseElDisplay(hide) {
+        const closeEls = document.querySelectorAll('[data-ref="closeEl"]');
         closeEls.forEach(el => {
-            el.style.display = checkClose.checked ? 'none' : 'block';
+            el.style.display = hide ? 'none' : 'block';
         });
+    }
+
+    // 체크박스 이벤트
+    checkClose.addEventListener('change', () => {
+        const shouldHide = checkClose.checked;
+        toggleCloseElDisplay(shouldHide);
     });
 
-    container.appendChild(checkClose);
+    // MutationObserver로 새로 추가된 closeEl 감지
+    const observer = new MutationObserver((mutationsList) => {
+        if (checkClose.checked) {
+            toggleCloseElDisplay(true);
+        }
+    });
 
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    container.appendChild(checkWrapper);
+    checkWrapper.appendChild(label);
+    checkWrapper.appendChild(checkClose);
 }
+
 window.createScriptSelector = createScriptSelector;
-
-// ✅ 새로고침 차단
-document.addEventListener("keydown", function (e) {
-    // Ctrl + R 또는 F5 방지
-    if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
-        e.preventDefault();
-        alert("🔒 새로고침 차단됨");
-    }
-});
-
-// ✅ 공통 드롭다운 삽입
-const commonObserver = new MutationObserver((mutations, obs) => {
-    const panel = document.querySelector("#panel-1009-innerCt");
-    if (panel && typeof createScriptSelector === 'function') {
-        createScriptSelector(panel);
-        obs.disconnect();
-    }
-});
-commonObserver.observe(document.body, { childList: true, subtree: true });
-
-// ✅ 공통 버튼생성
-function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
-    const div = document.createElement('div');
-    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    div.style.left = left;
-
-    const childDiv = document.createElement('div');
-    childDiv.className = 'x-tool-tool-el custom-button-inner';
-    childDiv.style.backgroundColor = bgColor;
-    childDiv.style.color = color;
-    childDiv.textContent = textContent;
-    childDiv.title = title;
-
-    div.addEventListener('click', callback);
-
-    targetEl.appendChild(div);
-    div.appendChild(childDiv);
-}
-window.createButton = createButton;
-
-// ✅ 공통 버튼생성 로직
-function setElementValue(selector, value) {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.value = value;
-    } else {
-        console.error(`Input element with selector "${selector}" not found.`);
-    }
-}
-window.setElementValue = setElementValue;
-
-// ✅ 공통 버튼생성 로직2
-function setElementsValues(values) {
-    Object.entries(values).forEach(([key, value]) => {
-        setElementValue(`[name*="${key}"]`, value);
-    });
-}
-window.setElementsValues = setElementsValues;
-
-
-// // 자동조회 차단
-// if (!window._searchPatchInitialized) {
-//     console.log("초기화");
-//
-//     window._searchPatchInitialized = true;
-//
-//     // 1. 원래 search 함수 백업
-//     const realSearch = window.search || function () {};
-//     console.log("🔧 원래 search 함수 백업됨:", realSearch);
-//
-//     // 2. 임시로 search 함수 무효화
-//     window.search = function () {
-//         console.log("🛑 search 차단됨");
-//     };
-//
-//     function restoreSearch() {
-//         window.search = realSearch;
-//         console.log("✅ search 복원됨 (버튼 클릭 감지)");
-//     }
-//
-//     // ✅ 모든 버튼 클릭 시 search 복원
-//     document.addEventListener("click", function (e) {
-//         const button = e.target.closest("button");
-//         if (button) {
-//             restoreSearch();
-//         }
-//     });
-// }
