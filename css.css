@@ -1,3 +1,16 @@
+body::before {
+    content: "✅ CSS 적용됨";
+    display: block;
+    background: lime;
+    color: black;
+    font-weight: bold;
+    padding: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
 .custom-button-container {
     display: flex;
     flex-direction: row-reverse;
@@ -7,8 +20,8 @@
 }
 
 .custom-button {
-    position: relative; // absolute 대신 relative 사용
-cursor: pointer;
+    position: relative; /* absolute 대신 relative 사용 */
+    cursor: pointer;
     z-index: 1000;
 }
 
@@ -27,20 +40,21 @@ cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.drop-down{
+.drop-down {
     background-color: yellow;
     color: black;
     width: 100px;
 }
 
-.check-wrapper{
+.check-wrapper {
     width: 120px;
     background-color: white;
-    alliign-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     margin-left: 8px;
 }
 
-#toggleCloseEl{
+#toggleCloseEl {
     margin-left: 8px;
 }
