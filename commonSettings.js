@@ -22,10 +22,7 @@ window.createScriptSelector = createScriptSelector;
 // ✅ 파트 선택 드롭다운
 function createPartDropdown(container, panel) {
     const select = document.createElement('select');
-    select.className = 'custom-button-inner';
-    select.style.backgroundColor = 'yellow';
-    select.style.color = 'black';
-    select.style.width = '100px';
+    select.className = 'custom-button-inner drop-down';
     select.title = '사용자 스크립트 설정';
 
     const options = ['', 'freeze', 'bk', 'ck', 'rt'];
@@ -78,18 +75,12 @@ function createPartDropdown(container, panel) {
 function createCloseToggle(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
-    checkWrapper.className = 'custom-button-inner';
-    checkWrapper.style.width = '120px';
-    checkWrapper.style.backgroundColor = 'white';
-    checkWrapper.style.alignItems = 'center';
-    checkWrapper.style.justifyContent = 'center';
-    checkWrapper.style.marginLeft = '8px';
+    checkWrapper.className = 'custom-button-inner check-wrapper';
 
     const checkClose = document.createElement('input');
     checkClose.type = 'checkbox';
     checkClose.id = 'toggleCloseEl';
     checkClose.title = 'X표시 ON/OFF';
-    checkClose.style.marginLeft = '8px';
 
     const label = document.createElement('label');
     label.htmlFor = 'toggleCloseEl';

@@ -1,8 +1,14 @@
-/* css.css */
+.custom-button-container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    right: 10px;
+    gap: 5px;
+}
 
 .custom-button {
-    position: absolute;
-    cursor: pointer;
+    position: relative; // absolute 대신 relative 사용
+cursor: pointer;
     z-index: 1000;
 }
 
@@ -19,4 +25,22 @@
 .custom-button-inner:hover {
     transform: scale(1.1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.drop-down{
+    background-color: yellow;
+    color: black;
+    width: 100px;
+}
+
+.check-wrapper{
+    width: 120px;
+    background-color: white;
+    alliign-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+#toggleCloseEl{
+    margin-left: 8px;
 }
