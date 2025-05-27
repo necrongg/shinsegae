@@ -20,13 +20,14 @@
     const defaultScripts = ['css.css', 'commonSettings.js'];
     const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
-    function loadNext(index = 0) {
+    async function loadNext(index = 0) {
         if (index >= scriptsToLoad.length) return;
 
         const file = scriptsToLoad[index];
         const fullUrl = proxyUrl + encodeURIComponent(baseUrl + file);
 
         if (file.endsWith('.js')) {
+            // JS 파일은 기존 방식 유지
             const script = document.createElement('script');
             script.src = fullUrl;
             script.type = 'text/javascript';
@@ -40,17 +41,27 @@
             };
             document.head.appendChild(script);
         } else if (file.endsWith('.css')) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = fullUrl;
-            link.onload = () => {
-                console.log(`✅ [${file}] 스타일 로드 완료`);
+            // CSS 파일은 Data URL로 강제 변환
+            try {
+                const response = await fetch(fullUrl);
+                const cssText = await response.text();
+                const dataUrl = `data:text/css;charset=utf-8,${encodeURIComponent(cssText)}`;
+
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = dataUrl;
+                link.onload = () => {
+                    console.log(`✅ [${file}] 스타일 로드 완료`);
+                    loadNext(index + 1);
+                };
+                link.onerror = (e) => {
+                    console.error(`❌ [${file}] 스타일 로드 실패:`, e);
+                };
+                document.head.appendChild(link);
+            } catch (e) {
+                console.error(`❌ [${file}] fetch 실패:`, e);
                 loadNext(index + 1);
-            };
-            link.onerror = (e) => {
-                console.error(`❌ [${file}] 스타일 로드 실패:`, e);
-            };
-            document.head.appendChild(link);
+            }
         } else {
             console.warn(`⚠️ 알 수 없는 확장자: ${file}`);
             loadNext(index + 1);
