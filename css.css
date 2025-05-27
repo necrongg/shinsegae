@@ -20,7 +20,7 @@ body::before {
 }
 
 .custom-button {
-    position: relative; /* absolute 대신 relative 사용 */
+    position: relative;
     cursor: pointer;
     z-index: 1000;
 }
