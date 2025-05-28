@@ -7,7 +7,7 @@ function createScriptSelector(panel) {
     container.id = 'custom-div';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
     container.style.left = '235px';
-    container.style.top = '8px';
+    container.style.top = '-8px';
 
     // ✅ 파트 선택 드롭다운
     createPartDropdown(container, panel);
