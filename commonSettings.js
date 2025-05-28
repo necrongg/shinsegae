@@ -6,8 +6,6 @@ function createScriptSelector(panel) {
     const container = document.createElement('div');
     container.id = 'custom-div';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    container.style.left = '235px';
-    container.style.top = '-8px';
 
     // ✅ 파트 선택 드롭다운
     createPartDropdown(container, panel);
@@ -141,8 +139,6 @@ commonObserver.observe(document.body, { childList: true, subtree: true });
 function createButtonContainer(headerTitle) {
     const div = document.createElement('div');
     div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button-container';
-    div.style.left = "150px";
-
     headerTitle.appendChild(div);
 }
 window.createButtonContainer = createButtonContainer;

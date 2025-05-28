@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row-reverse;
     position: absolute;
+    left: 150px;
     right: 10px;
     gap: 5px;
 }
@@ -44,4 +45,9 @@
 
 #toggleCloseEl {
     margin-left: 8px;
+}
+
+#custom-div{
+    left: 235px;
+    top: -21px;
 }
