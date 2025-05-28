@@ -7,7 +7,7 @@
 }
 
 .custom-button {
-    position: relative;
+    position: relative !important;
     cursor: pointer;
     z-index: 1000;
 }

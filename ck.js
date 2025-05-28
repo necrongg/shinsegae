@@ -16,7 +16,7 @@ const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경_수정본");
 
-        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
@@ -43,9 +43,12 @@ const observer = new MutationObserver((mutations) => {
         // 제목이 '사전 재고보충'인지 확인하고, 해당 조건에 맞는 SHIPTO_TCD 값을 설정
         const shipToTcdValue = (titleEl && titleEl.textContent.includes("사전 재고보충")) ? '30' : '20';
 
-        if (targetEl) {
+        if (headerTitle) {
+            createButtonContainer(headerTitle);
+            const container = document.querySelector(".custom-button-container");
+
             // 세린+CK 세팅
-            createButton(targetEl, '1490px', '세린+CK', '세+C',' white', 'red', () => {
+            createButton(container, '세린+CK', '세+C',' white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
@@ -58,7 +61,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK 세팅
-            createButton(targetEl, '1443px', 'CK', 'CK','white', 'green', () => {
+            createButton(container,  'CK', 'CK','white', 'green', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066',
@@ -71,7 +74,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 세린 세팅
-            createButton(targetEl, '1396px', '세린', '세린','black', 'yellow', () => {
+            createButton(container, '세린', '세린','black', 'yellow', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A043,A028,A046,A055',
@@ -84,7 +87,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK냉장 세팅
-            createButton(targetEl, '1349px', 'CK냉장', 'CK냉장','white', 'blue', () => {
+            createButton(container,  'CK냉장', 'CK냉장','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A055,A057,A058',
@@ -97,7 +100,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 현대삼성 세팅
-            createButton(targetEl, '1302px', '현대삼성', '현대','black', 'orange', () => {
+            createButton(container,  '현대삼성', '현대','black', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008',
@@ -111,7 +114,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
              // 이마트중계 세팅
-                createButton(targetEl, '1255px', '이마트 중계', '중계','white', 'black', () => {
+                createButton(container,  '이마트 중계', '중계','white', 'black', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A028,A043,A046,A042',
@@ -125,7 +128,7 @@ const observer = new MutationObserver((mutations) => {
                 });
 
             // 축산 세린 ck 세팅
-            createButton(targetEl, '1208px', '축산+세린+CK', '축C세','black', 'pink', () => {
+            createButton(container, '축산+세린+CK', '축C세','black', 'pink', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',

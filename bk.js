@@ -16,7 +16,7 @@ const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {  // forEach 대신 for...of 사용
         console.log("DOM변경_수정본");
 
-        const targetEl = document.querySelector("#SEARCH_CONDITION_header-targetEl");
+        const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
         const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
@@ -40,9 +40,12 @@ const observer = new MutationObserver((mutations) => {
             }
         }
 
-        if (targetEl) {
+        if (headerTitle) {
+            createButtonContainer(headerTitle);
+            const container = document.querySelector(".custom-button-container");
+
             // 소터1
-            createButton(targetEl, '1490px', '소터1', '소1','white', 'blue', () => {
+            createButton(container,  '소터1', '소1','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '255132,335484',
@@ -56,7 +59,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 소터2
-            createButton(targetEl, '1443px', '소터2', '소2','white', 'red', () => {
+            createButton(container, '소터2', '소2','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -70,7 +73,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 식재 세팅
-            createButton(targetEl, '1396px', '식재', '식재','white', 'indigo', () => {
+            createButton(container,  '식재', '식재','white', 'indigo', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -84,7 +87,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 복합 세팅
-            createButton(targetEl, '1349px', '복합', '복합','white', 'indigo', () => {
+            createButton(container,  '복합', '복합','white', 'indigo', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -98,7 +101,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 천안직납 세팅
-            createButton(targetEl, '1302px', '천안 직납', '직납','black', 'yellow', () => {
+            createButton(container,  '천안 직납', '직납','black', 'yellow', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -112,7 +115,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 오산공장 세팅
-            createButton(targetEl, '1255px', '오산공장', '오산','white', 'chocolate', () => {
+            createButton(container,  '오산공장', '오산','white', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -126,7 +129,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 천안공장 세팅
-            createButton(targetEl, '1208px', '천안공장', '천안','white', 'chocolate', () => {
+            createButton(container,  '천안공장', '천안','white', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -140,7 +143,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 삼성웰스토리 세팅
-            createButton(targetEl, '1161px', '삼성웰스토리', '삼성','white', 'red', () => {
+            createButton(container,  '삼성웰스토리', '삼성','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -154,7 +157,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 특판 세팅
-            createButton(targetEl, '1114px', '특판', '특판','white', 'orange', () => {
+            createButton(container,  '특판', '특판','white', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -168,7 +171,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 외부판매 세팅
-            createButton(targetEl, '1067px', '외부판매', '외부','white', 'black', () => {
+            createButton(container, '외부판매', '외부','white', 'black', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
@@ -182,7 +185,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 이마트 중계 세팅
-            createButton(targetEl, '1020px', '이마트 중계', '중계','black', 'gold', () => {
+            createButton(container,  '이마트 중계', '중계','black', 'gold', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',

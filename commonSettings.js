@@ -137,11 +137,20 @@ const commonObserver = new MutationObserver((mutations, obs) => {
 });
 commonObserver.observe(document.body, { childList: true, subtree: true });
 
+// ✅ 공통 버튼생성 컨테이너
+function createButtonContainer(headerTitle) {
+    const div = document.createElement('div');
+    div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button-container';
+    div.style.left = "150px";
+
+    headerTitle.appendChild(div);
+}
+window.createButtonContainer = createButtonContainer;
+
 // ✅ 공통 버튼생성
-function createButton(targetEl, left, title, textContent, color, bgColor, callback) {
+function createButton(headerTitle, title, textContent, color, bgColor, callback) {
     const div = document.createElement('div');
     div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
-    div.style.left = left;
 
     const childDiv = document.createElement('div');
     childDiv.className = 'x-tool-tool-el custom-button-inner';
@@ -152,7 +161,7 @@ function createButton(targetEl, left, title, textContent, color, bgColor, callba
 
     div.addEventListener('click', callback);
 
-    targetEl.appendChild(div);
+    headerTitle.appendChild(div);
     div.appendChild(childDiv);
 }
 window.createButton = createButton;
