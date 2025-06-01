@@ -14,10 +14,10 @@
 const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
-        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
+        const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
         // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
-                if (titleEl && titleEl.textContent.trim().includes("임박재고현황")) {
+                if (textEl && textEl.textContent.trim().includes("임박재고현황")) {
                     const button = document.getElementById("commonGrid-1033Button0");
                     setElementsValues({
                         STRR_ID: '',
@@ -39,7 +39,7 @@ const observer = new MutationObserver((mutations) => {
 
         // 제목이 '오더라인할당'인지 확인하고, 해당 조건에 맞는 값을 설정
         const itemGdcValue = (
-            titleEl && titleEl.textContent.includes('오더라인할당')
+            textEl && textEl.textContent.includes('오더라인할당')
         ) ?
             `A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046`
             : `A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047`;
