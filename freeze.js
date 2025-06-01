@@ -39,7 +39,7 @@ const observer = new MutationObserver((mutations) => {
 
         // 제목이 '오더라인할당'인지 확인하고, 해당 조건에 맞는 값을 설정
         const itemGdcValue = (
-            titleEl && titleEl.textContent.includes('오더라인합당')
+            titleEl && titleEl.textContent.includes('오더라인할당')
         ) ?
             `A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046`
             : `A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047`;
