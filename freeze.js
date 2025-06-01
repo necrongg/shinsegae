@@ -39,8 +39,7 @@ const observer = new MutationObserver((mutations) => {
 
         // 제목이 일치하는지 확인하고, 해당 조건에 맞는 값을 설정
         const itemGdcValue = (
-            textEl && textEl.textContent.includes('오더라인피킹')
-        ) ?
+            textEl && textEl.textContent.includes('오더라인피킹')) ?
             `A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046`
             : `A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047`;
 
