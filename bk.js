@@ -45,7 +45,7 @@ const observer = new MutationObserver((mutations) => {
             const container = document.querySelector(".custom-button-container");
 
             // 소터1
-            createButton(container,  '소터1', '소1','white', 'blue', () => {
+            createButton(container,  '소터1', '소터1','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '255132,335484',
@@ -59,7 +59,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 소터2
-            createButton(container, '소터2', '소2','white', 'red', () => {
+            createButton(container, '소터2', '소터2','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_CD: '',
