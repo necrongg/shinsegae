@@ -21,7 +21,7 @@ const observer = new MutationObserver((mutations) => {
                     const button = document.getElementById("commonGrid-1033Button0");
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                        ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '',
@@ -41,7 +41,7 @@ const observer = new MutationObserver((mutations) => {
         const itemGdcValue = (
             textEl && textEl.textContent.includes('오더라인피킹')) ?
             `A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046`
-            : `A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047`;
+            : `A004,A013,A039,A42,A045,A007,A047`;
 
         if (headerTitle) {
             createButtonContainer(headerTitle);
@@ -49,19 +49,19 @@ const observer = new MutationObserver((mutations) => {
 
             // 품목그룹 추가(축산)
             createButton(container, '품목그룹(축산)', '축산','black', 'gold', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047');
+                setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
             });
             
             // 품목그룹 추가(축산+세린)
             createButton(container, '품목그룹(축산+세린)', '축/세','black', 'Goldenrod', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046');
+                setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
             });
 
             // 미스터피자 세팅
             createButton(container, '미스터피자,스무디킹', '🥤🍕','white', 'white', () => {
                 setElementsValues({
                     STRR_ID: '0100037,0037396',
-                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '',
@@ -74,7 +74,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '군납', '군납','white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A043,A028,A046',
+                    ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A012,A059,A061,A043,A028,A046',
                     CUST_CD : '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '30',
@@ -114,7 +114,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, 'MBK 마켓빌더즈코리아', 'MBK','white', 'black', () => {
                 setElementsValues({
                     STRR_ID: '0039656',
-                    ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                    ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '',
@@ -153,7 +153,7 @@ const observer = new MutationObserver((mutations) => {
                         createButton(container,  '이관', '이관','black', 'plum', () => {
                             setElementsValues({
                                 STRR_ID: '',
-                                ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
+                                ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                                 CUST_CD: '1012201,0111301',
                                 SHIPTO_ID: '1012201,0111301',
                                 SHIPTO_TCD: '',
