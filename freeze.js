@@ -11,12 +11,10 @@
 // EMART_CENTER_RCV_DATE : 이마트 센터 입고일
 
 // 냉동 축산
-let freezeObserver; // 외부에서 접근 가능하도록 전역 변수로 선언
-
 function startFreezeObserver() {
     //if (freezeObserver) freezeObserver.disconnect(); // 중복 방지
 
-    freezeObserver = new MutationObserver((mutations) => {
+    const freezeObserver = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
         const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
@@ -45,7 +43,7 @@ function startFreezeObserver() {
         // 제목이 일치하는지 확인하고, 해당 조건에 맞는 값을 설정
         const itemGdcValue = (
             textEl && textEl.textContent.includes('오더라인피킹')) ?
-            `A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046`
+            `A42,A039,A041,A004,A013,A007,A047,A012,A059,A061,A066,A043,A028,A046`
             : `A004,A013,A039,A42,A045,A007,A047`;
 
         if (headerTitle) {
@@ -59,7 +57,7 @@ function startFreezeObserver() {
             
             // 품목그룹 추가(축산+세린)
             createButton(container, '품목그룹(축산+세린)', '축/세','black', 'Goldenrod', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046');
+                setElementValue('[name*="ITEM_GCD"]', 'A42,A039,A041,A004,A013,A007,A047,A012,A059,A061,A066,A043,A028,A046');
             });
 
             // 미스터피자 세팅
@@ -174,6 +172,7 @@ function startFreezeObserver() {
 });
     freezeObserver.observe(document.body, { childList: true, subtree: true });
 }
+window.startFreezeObserver = startFreezeObserver;
 
 // 최초 실행
 startFreezeObserver();
