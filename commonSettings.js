@@ -7,15 +7,16 @@ function createScriptSelector(panel) {
     container.id = 'custom-div';
     container.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button';
 
+    panel.appendChild(container);
+
     // ✅ 파트 선택 드롭다운
     createPartDropdown(container, panel);
 
     // ✅ x닫기 버튼 on/off 체크박스
     createCloseToggle(container);
+
     // ✅ 커스텀 버튼 새로고침
     createrefreshBtn(container);
-
-    panel.appendChild(container);
 }
 window.createScriptSelector = createScriptSelector;
 
