@@ -59,7 +59,7 @@ function startFreezeObserver() {
             
             // 품목그룹 추가(축산+세린)
             createButton(container, '품목그룹(축산+세린)', '축/세','black', 'Goldenrod', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
+                setElementValue('[name*="ITEM_GCD"]', 'A066,A41,A42,A039,A041,A003,A004,A044,A045,A013,A051,A007,A047,A012,A059,A061,A043,A028,A046');
             });
 
             // 미스터피자 세팅
