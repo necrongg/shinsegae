@@ -47,6 +47,11 @@
     position: relative;
     width: 66px;
     right: -76%;
+
+    JUSTIFY-CONTENT: CENTER;
+    align-items: center;
+    color: white;
+    background-color: rgb(0, 123, 123);
 }
 
 #toggleCloseEl {
@@ -57,4 +62,9 @@
     left: 235px;
     top: -21px;
     width: 84%;
+}
+
+#refresh-button{
+    all: unset;
+    cursor: pointer;
 }

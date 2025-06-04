@@ -69,4 +69,6 @@
     }
 
     loadNext();
+
+    unsafeWindow.reloadWmsScripts = loadNext;
 })();
