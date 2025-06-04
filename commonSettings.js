@@ -128,7 +128,6 @@ function createrefreshBtn(container) {
     const refreshButton = document.createElement('button'); // ✅ 실제 클릭 가능한 버튼 사용
     refreshButton.id = 'refresh-button';
     refreshButton.textContent = '새로고침';
-    refreshButton.title = '버튼을 클릭하면 startFreezeObserver 실행';
 
     refreshButton.addEventListener('click', () => {
         console.log("새로고침 버튼 클릭됨 - startFreezeObserver 실행");

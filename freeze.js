@@ -14,7 +14,7 @@
 let freezeObserver; // 외부에서 접근 가능하도록 전역 변수로 선언
 
 function startFreezeObserver() {
-    if (freezeObserver) freezeObserver.disconnect(); // 중복 방지
+    //if (freezeObserver) freezeObserver.disconnect(); // 중복 방지
 
     freezeObserver = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
