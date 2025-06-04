@@ -11,7 +11,12 @@
 // EMART_CENTER_RCV_DATE : 이마트 센터 입고일
 
 // 냉동 축산
-const observer = new MutationObserver((mutations) => {
+let freezeObserver; // 외부에서 접근 가능하도록 전역 변수로 선언
+
+function startFreezeObserver() {
+    if (freezeObserver) freezeObserver.disconnect(); // 중복 방지
+
+    freezeObserver = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
         const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
@@ -162,9 +167,13 @@ const observer = new MutationObserver((mutations) => {
                             });
             });
 
-            observer.disconnect();  // observer 즉시 종료
+            freezeObserver.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
     }
 });
-observer.observe(document.body, { childList: true, subtree: true });
+    freezeObserver.observe(document.body, { childList: true, subtree: true });
+}
+
+// 최초 실행
+startFreezeObserver();

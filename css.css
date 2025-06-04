@@ -43,6 +43,12 @@
     margin-left: 8px;
 }
 
+.refresh-wrapper{
+    position: relative;
+    width: 66px;
+    right: -76%;
+}
+
 #toggleCloseEl {
     margin-left: 8px;
 }
@@ -50,4 +56,5 @@
 #custom-div{
     left: 235px;
     top: -21px;
+    width: 84%;
 }
