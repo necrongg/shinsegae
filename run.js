@@ -70,5 +70,5 @@
 
     loadNext();
 
-    unsafeWindow.reloadWmsScripts = loadNext;
+    window.loadNext = loadNext;
 })();
