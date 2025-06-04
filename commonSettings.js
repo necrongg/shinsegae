@@ -131,7 +131,8 @@ function createrefreshBtn(container) {
 
     refreshButton.addEventListener('click', () => {
         console.log("새로고침 버튼 클릭됨 - startFreezeObserver 실행");
-        startFreezeObserver();
+        //startFreezeObserver();
+        loadNext();
     });
 
     refreshWrapper.appendChild(refreshButton);
