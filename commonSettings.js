@@ -130,7 +130,7 @@ function createrefreshBtn(container) {
     refreshButton.textContent = '새로고침';
 
     refreshButton.addEventListener('click', () => {
-        console.log("새로고침 버튼 클릭됨 - loadNext 실행");
+        console.log("새로고침 버튼 클릭됨 - reloadWmsScripts 실행");
         //startFreezeObserver();
         unsafeWindow.reloadWmsScripts();
         //loadNext();
