@@ -12,8 +12,6 @@
 
 // 냉동 축산
 function startFreezeObserver() {
-    //if (freezeObserver) freezeObserver.disconnect(); // 중복 방지
-
     const freezeObserver = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
