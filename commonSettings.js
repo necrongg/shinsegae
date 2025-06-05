@@ -133,6 +133,7 @@ function createrefreshBtn(container) {
         console.log("새로고침 버튼 클릭됨 - loadNext 실행");
         //startFreezeObserver();
         loadNext();
+        unsafeWindow.loadNext();
     });
 
     refreshWrapper.appendChild(refreshButton);

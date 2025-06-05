@@ -71,4 +71,6 @@
     loadNext();
 
     window.loadNext = loadNext;
+    unsafeWindow.loadNext = loadNext;
+
 })();
