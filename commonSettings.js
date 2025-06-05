@@ -15,8 +15,6 @@ function createScriptSelector(panel) {
     // ✅ x닫기 버튼 on/off 체크박스
     createCloseToggle(container);
 
-    // ✅ 커스텀 버튼 새로고침
-    createrefreshBtn(container);
 }
 window.createScriptSelector = createScriptSelector;
 
@@ -117,27 +115,6 @@ function createCloseToggle(container) {
     container.appendChild(checkWrapper);
     checkWrapper.appendChild(label);
     checkWrapper.appendChild(checkClose);
-}
-
-// ✅ 커스텀 버튼 새로고침
-function createrefreshBtn(container) {
-    const refreshWrapper = document.createElement('div');
-    refreshWrapper.style.display = 'inline-flex';
-    refreshWrapper.className = 'custom-button-inner refresh-wrapper';
-
-    const refreshButton = document.createElement('button'); // ✅ 실제 클릭 가능한 버튼 사용
-    refreshButton.id = 'refresh-button';
-    refreshButton.textContent = '새로고침';
-
-    refreshButton.addEventListener('click', () => {
-        console.log("새로고침 버튼 클릭됨 - loadNext 실행");
-        //startFreezeObserver();
-        loadNext();
-        unsafeWindow.loadNext();
-    });
-
-    refreshWrapper.appendChild(refreshButton);
-    container.appendChild(refreshWrapper);
 }
 
 // ✅ 새로고침 차단
