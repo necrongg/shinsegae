@@ -23,7 +23,7 @@ const observer = new MutationObserver((mutations) => {
             const button = document.getElementById("commonGrid-1033Button0");
             setElementsValues({
                 STRR_ID: '',
-                ITEM_GCD: 'A008,A048,A006,A002,A43,A024,A023,A054,A034',
+                ITEM_GCD: 'A008,A048,A006,A002,A024,A023,A054,A034,A017,A016',
                 CUST_CD: '',
                 SHIPTO_ID: '',
                 SHIPTO_TCD: '',
