@@ -59,9 +59,9 @@ function startFreezeObserver() {
             });
 
             // 미스터피자 세팅
-            createButton(container, '미스터피자,스무디킹', '피자🍕','black', 'white', () => {
+            createButton(container, '미스터피자,스무디킹', '🥤🍕','black', 'white', () => {
                 setElementsValues({
-                    STRR_ID: '0100037',
+                    STRR_ID: '0100037,0037396',
                     ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                     CUST_CD: '',
                     SHIPTO_ID: '',
