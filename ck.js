@@ -103,7 +103,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container,  '현대삼성', '현대','black', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008',
+                    ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A057',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: shipToTcdValue,
