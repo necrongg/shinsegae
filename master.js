@@ -22,7 +22,7 @@ function startMasterObserver() {
                     const button = document.getElementById("commonGrid-1033Button0");
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A018,A021,A022,A037,A050,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055,A008,A048,A006,A002,A024,A023,A054,A034,A017,A016',
+                        ITEM_GCD: 'A008,A048,A006,A002,A024,A023,A054,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055,A42,A004,A013,A007,A047,A039,A041,A033\n',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '',
@@ -42,25 +42,27 @@ function startMasterObserver() {
             createButtonContainer(headerTitle);
             const container = document.querySelector(".custom-button-container");
 
-            // 품목그룹 (축산)
-            createButton(container, '품목그룹(축산)', '축산','white', 'blue', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
+            //품목그룹 (상온냉장)
+            createButton(container, '품목그룹(상온+냉장)', '상온','white', 'orange', () => {
+                setElementValue('[name*="ITEM_GCD"]', 'A008,A048,A006,A002,A024,A023,A054');
             });
-            
+
             // 품목그룹 (세린+CK)
             createButton(container, '품목그룹(세린+CK)', '세CK','black', 'white', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055');
+                setElementValue('[name*="ITEM_GCD"]', 'A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
             });
+
+            // 품목그룹 (축산)
+            createButton(container, '품목그룹(냉동/축산)', '냉동','white', 'blue', () => {
+                setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041');
+            });
+
 
             // 품목그룹 (베이커리)
-            createButton(container, '품목그룹(베이커리)', 'B K','black', 'Goldenrod', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A018,A021,A022,A037,A050');
+            createButton(container, '현대/삼성', '현대삼성','black', 'Goldenrod', () => {
+                setElementValue('[name*="ITEM_GCD"]', 'A012,A005,A028,A046,A059,A007,A033,A008,A006');
             });
 
-            //품목그룹 (베이커리)
-            createButton(container, '품목그룹(상온냉장)', '상+냉','white', 'orange', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A008,A048,A006,A002,A024,A023,A054,A034,A017,A016');
-            });
 
             masterObserver.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
