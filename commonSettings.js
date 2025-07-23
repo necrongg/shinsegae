@@ -1,7 +1,16 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// ✅ F1 도움말 정지 / 조회 단축키
+// 🔰 새로고침 차단
+document.addEventListener("keydown", function (e) {
+    // Ctrl + R 또는 F5 방지
+    if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
+        e.preventDefault();
+        alert("🔒 새로고침 차단됨");
+    }
+});
+
+// 🔰 F1 도움말 정지 / 조회 단축키
 document.addEventListener('keydown', function(event) {
     if (event.key === 'F1' || event.keyCode === 112) {
         event.preventDefault();
@@ -26,7 +35,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// ✅ F2 오더라인할당 피킹차수 단축키
+// 🔰 F2 오더라인할당 피킹차수 단축키
 document.addEventListener('keydown', function(event) {
     if (event.key === 'F2' || event.keyCode === 113) {
         event.preventDefault();
@@ -41,7 +50,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// ✅ 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off + 도움말
+// 🆗 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off + 도움말
 function createScriptSelector(panel) {
     const container = document.createElement('div');
     container.id = 'custom-div';
@@ -61,7 +70,7 @@ function createScriptSelector(panel) {
 }
 window.createScriptSelector = createScriptSelector;
 
-// ✅ 파트 선택 드롭다운
+// 🆗 파트 선택 드롭다운
 function createPartDropdown(container, panel) {
     const select = document.createElement('select');
     select.className = 'custom-button-inner drop-down';
@@ -114,7 +123,7 @@ function createPartDropdown(container, panel) {
     }
 }
 
-// ✅ x닫기 버튼 on/off 체크박스
+// 🆗 x닫기 버튼 on/off 체크박스
 function createCloseToggle(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
@@ -161,7 +170,7 @@ function createCloseToggle(container) {
     checkWrapper.appendChild(checkClose);
 }
 
-// ✅ 도움말
+// 🆗 도움말
 function createSupport(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
@@ -204,15 +213,6 @@ function createSupport(container) {
     checkWrapper.appendChild(label);
     container.appendChild(checkWrapper);
 }
-
-// ✅ 새로고침 차단
-document.addEventListener("keydown", function (e) {
-    // Ctrl + R 또는 F5 방지
-    if ((e.ctrlKey && e.key.toLowerCase() === "r") || e.key === "F5") {
-        e.preventDefault();
-        alert("🔒 새로고침 차단됨");
-    }
-});
 
 // ✅ 공통 드롭다운 삽입
 const commonObserver = new MutationObserver((mutations, obs) => {
