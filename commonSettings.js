@@ -188,7 +188,7 @@ function createSupport(container) {
 
     // 오버레이 생성 (모달 바깥 클릭 감지용)
     const overlay = document.createElement('div');
-    modal.className = 'support-overlay';
+    overlay.className = 'support-overlay';
 
     // 클릭 시 모달 토글
     label.addEventListener('click', () => {
