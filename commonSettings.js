@@ -1,7 +1,50 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// ✅ 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off
+// ✅ F1 도움말 정지 / 조회 단축키
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'F1' || event.keyCode === 112) {
+        event.preventDefault();
+
+        // x-toolbar 클래스 내부에서만 검색
+        const toolbar = document.querySelector('.x-toolbar');
+        if (!toolbar) {
+            console.warn('x-toolbar 요소를 찾을 수 없습니다.');
+            return;
+        }
+
+        // toolbar 내부의 모든 <a> 태그 검색
+        const anchors = toolbar.querySelectorAll('a');
+
+        for (const anchor of anchors) {
+            if (anchor.textContent.includes('조회')) {
+                anchor.click();
+                //console.log('"조회" 버튼 클릭됨');
+                break;
+            }
+        }
+    }
+});
+
+// ✅ F2 오더라인할당 피킹차수 단축키
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'F2' || event.keyCode === 113) {
+        event.preventDefault();
+
+        // 버튼 요소 가져오기
+        const button = document.getElementById('lalocOrderHeaderButton1');
+        if (button) {
+            button.click(); // 클릭 이벤트 발생
+        } else {
+            console.warn('버튼을 찾을 수 없습니다.');
+        }
+    }
+});
+
+
+
+
+// ✅ 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off + 도움말
 function createScriptSelector(panel) {
     const container = document.createElement('div');
     container.id = 'custom-div';
@@ -14,6 +57,9 @@ function createScriptSelector(panel) {
 
     // ✅ x닫기 버튼 on/off 체크박스
     createCloseToggle(container);
+
+    // ✅ 도움말
+    createSupport(container);
 
 }
 window.createScriptSelector = createScriptSelector;
@@ -118,6 +164,52 @@ function createCloseToggle(container) {
     checkWrapper.appendChild(checkClose);
 }
 
+// ✅ 도움말
+function createSupport(container) {
+    const checkWrapper = document.createElement('div');
+    checkWrapper.style.display = 'inline-flex';
+    checkWrapper.className = 'custom-button-inner check-support';
+
+    const label = document.createElement('label');
+    label.textContent = '?';
+    label.style.cursor = 'pointer';
+    label.style.userSelect = 'none';
+
+    // 모달 요소 생성
+    const modal = document.createElement('div');
+    modal.className = 'support-modal';
+    modal.innerHTML = `
+        <strong>단축키 안내</strong><br><br>
+        <ul style="margin: 0; padding-left: 20px;">
+            <li><b>F1</b>: 조회</li>
+            <li><b>F2</b>: 오더라인할당 피킹차수 단축키</li>
+        </ul>
+    `;
+
+    // 오버레이 생성 (모달 바깥 클릭 감지용)
+    const overlay = document.createElement('div');
+    modal.className = 'support-overlay';
+
+    // 클릭 시 모달 토글
+    label.addEventListener('click', () => {
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+    });
+
+    // 바깥 클릭 시 모달 닫기
+    overlay.addEventListener('click', () => {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+    });
+
+    // DOM 삽입
+    document.body.appendChild(overlay);
+    document.body.appendChild(modal);
+    checkWrapper.appendChild(label);
+    container.appendChild(checkWrapper);
+}
+
+
 // ✅ 새로고침 차단
 document.addEventListener("keydown", function (e) {
     // Ctrl + R 또는 F5 방지
@@ -182,3 +274,4 @@ function setElementsValues(values) {
     });
 }
 window.setElementsValues = setElementsValues;
+
