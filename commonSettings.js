@@ -169,7 +169,6 @@ function createSupport(container) {
 
     const label = document.createElement('label');
     label.textContent = '?';
-    label.style.cursor = 'pointer';
     label.style.userSelect = 'none';
 
     // 모달 요소 생성
