@@ -188,7 +188,7 @@ function createSupport(container) {
     overlay.className = 'support-overlay';
 
     // 클릭 시 모달 토글
-    label.addEventListener('click', () => {
+    checkWrapper.addEventListener('click', () => {
         modal.style.display = 'block';
         overlay.style.display = 'block';
     });
