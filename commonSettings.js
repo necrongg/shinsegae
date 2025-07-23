@@ -41,9 +41,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-
-
-
 // ✅ 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off + 도움말
 function createScriptSelector(panel) {
     const container = document.createElement('div');
@@ -181,8 +178,8 @@ function createSupport(container) {
     modal.innerHTML = `
         <strong>단축키 안내</strong><br><br>
         <ul style="margin: 0; padding-left: 20px;">
-            <li><b>F1</b>: 조회</li>
-            <li><b>F2</b>: 오더라인할당 피킹차수 단축키</li>
+            <li><b>F1</b> : 조회</li>
+            <li><b>F2</b> : 오더라인할당-피킹차수 단축키</li>
         </ul>
     `;
 
@@ -208,7 +205,6 @@ function createSupport(container) {
     checkWrapper.appendChild(label);
     container.appendChild(checkWrapper);
 }
-
 
 // ✅ 새로고침 차단
 document.addEventListener("keydown", function (e) {
