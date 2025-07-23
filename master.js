@@ -59,7 +59,7 @@ function startMasterObserver() {
 
 
             // 품목그룹 (베이커리)
-            createButton(container, '현대/삼성', '현대삼성','black', 'Goldenrod', () => {
+            createButton(container, '현대/삼성', '현/삼','black', 'Goldenrod', () => {
                 setElementValue('[name*="ITEM_GCD"]', 'A012,A005,A028,A046,A059,A007,A033,A008,A006');
             });
 
