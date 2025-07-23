@@ -231,6 +231,7 @@ function createSupport(container) {
         <ul style="margin: 0; padding-left: 20px;">
             <li><b>F1</b> : 조회</li>
             <li><b>F2</b> : 오더라인할당-피킹차수 단축키</li>
+            <li><b>대문자 고정</b></li>
         </ul>
     `;
 
