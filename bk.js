@@ -17,28 +17,6 @@ const observer = new MutationObserver((mutations) => {
         console.log("DOM변경_수정본");
 
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
-        const titleEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
-
-        // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
-        if (titleEl && titleEl.textContent.trim().includes("임박재고현황")) {
-            const button = document.getElementById("commonGrid-1033Button0");
-            setElementsValues({
-                STRR_ID: '',
-                ITEM_GCD: 'A018,A021,A022,A037,A050',
-                CUST_CD: '',
-                SHIPTO_ID: '',
-                SHIPTO_TCD: '',
-                OUTB_TCD: '',
-                OUTB_WH: ''
-            });
-
-            if (button) {
-                setTimeout(() => {
-                    button.click();
-                    console.log("강제조회");
-                }, 3000);
-            }
-        }
 
         if (headerTitle) {
             createButtonContainer(headerTitle);

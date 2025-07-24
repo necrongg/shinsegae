@@ -17,27 +17,6 @@ function startFreezeObserver() {
         const headerTitle = document.querySelector("#SEARCH_CONDITION_header-title");
         const textEl = document.querySelector("#SEARCH_CONDITION_header-title-textEl");
 
-        // '임박재고현황' 화면이 열릴 때 자동으로 값 세팅 및 클릭
-                if (textEl && textEl.textContent.trim().includes("임박재고현황")) {
-                    const button = document.getElementById("commonGrid-1033Button0");
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
-                        CUST_CD: '',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
-                    });
-
-                    if (button) {
-                        setTimeout(() => {
-                            button.click();
-                            console.log("강제조회");
-                        }, 3000);
-                    }
-                }
-
         // 제목이 일치하는지 확인하고, 해당 조건에 맞는 값을 설정
         const itemGdcValue = (
             textEl && textEl.textContent.includes('오더라인피킹')) ?
