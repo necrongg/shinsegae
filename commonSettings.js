@@ -2,47 +2,47 @@
 console.log("기본세팅");
 
 // 🔰 대문자 고정
-{
-    function enableAutoUppercase() {
-        const applyUppercaseToInputs = () => {
-            const inputs = document.querySelectorAll('input[type="text"]');
-
-            inputs.forEach(input => {
-                if (input.dataset.uppercaseApplied) return;
-                input.dataset.uppercaseApplied = "true";
-
-                input.addEventListener('input', function () {
-                    const start = this.selectionStart;
-                    const end = this.selectionEnd;
-
-                    this.value = this.value.replace(/[a-z]/g, char => char.toUpperCase());
-                    this.setSelectionRange(start, end);
-                });
-            });
-        };
-
-        applyUppercaseToInputs();
-
-        const observer = new MutationObserver(() => {
-            applyUppercaseToInputs();
-        });
-
-        const config = { childList: true, subtree: true };
-        observer.observe(document.body, config);
-
-        // 컨트롤 인터페이스 반환
-        return {
-            stop() {
-                observer.disconnect();
-            },
-            start() {
-                observer.observe(document.body, config);
-                applyUppercaseToInputs(); // 혹시 모를 새로 생긴 input에도 적용
-            }
-        };
-    }
-    const uppercaseControl = enableAutoUppercase();
-}
+// {
+//     function enableAutoUppercase() {
+//         const applyUppercaseToInputs = () => {
+//             const inputs = document.querySelectorAll('input[type="text"]');
+//
+//             inputs.forEach(input => {
+//                 if (input.dataset.uppercaseApplied) return;
+//                 input.dataset.uppercaseApplied = "true";
+//
+//                 input.addEventListener('input', function () {
+//                     const start = this.selectionStart;
+//                     const end = this.selectionEnd;
+//
+//                     this.value = this.value.replace(/[a-z]/g, char => char.toUpperCase());
+//                     this.setSelectionRange(start, end);
+//                 });
+//             });
+//         };
+//
+//         applyUppercaseToInputs();
+//
+//         const observer = new MutationObserver(() => {
+//             applyUppercaseToInputs();
+//         });
+//
+//         const config = { childList: true, subtree: true };
+//         observer.observe(document.body, config);
+//
+//         // 컨트롤 인터페이스 반환
+//         return {
+//             stop() {
+//                 observer.disconnect();
+//             },
+//             start() {
+//                 observer.observe(document.body, config);
+//                 applyUppercaseToInputs(); // 혹시 모를 새로 생긴 input에도 적용
+//             }
+//         };
+//     }
+//     const uppercaseControl = enableAutoUppercase();
+// }
 
 // 🔰 새로고침 차단
 document.addEventListener("keydown", function (e) {
@@ -231,7 +231,6 @@ function createSupport(container) {
         <ul style="margin: 0; padding-left: 20px;">
             <li><b>F1</b> : 조회</li>
             <li><b>F2</b> : 오더라인할당-피킹차수 단축키</li>
-            <li><b>대문자 고정</b></li>
         </ul>
     `;
 
