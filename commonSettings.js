@@ -1,7 +1,7 @@
 //commonSetting.js
 console.log("기본세팅");
 
-// 🔰 대문자 고정
+// 🔰 대문자 고정(보류됨)
 // {
 //     function enableAutoUppercase() {
 //         const applyUppercaseToInputs = () => {
@@ -53,7 +53,13 @@ console.log("기본세팅");
 
             // 자식 div 생성
             const childDiv = document.createElement('div');
-            ozViewer.appendChild(childDiv);
+
+            // 첫 번째 자식 요소가 있으면 그 앞에, 없으면 그냥 append
+            if (ozViewer.firstChild) {
+                ozViewer.insertBefore(childDiv, ozViewer.firstChild);
+            } else {
+                ozViewer.appendChild(childDiv);
+            }
 
             // 테스트 div 생성
             const div = document.createElement('div');
@@ -67,17 +73,15 @@ console.log("기본세팅");
                     console.log('✅ 클립보드에 복사됨');
                     div.textContent = '✅ 복사 완료!';
                     setTimeout(() => {
-                        div.textContent = '📋 작업자/검수자 클립보드 복사';
+                        div.textContent = '📋 작업자/검수자';
                     }, 2000);
                 }).catch(err => {
                     console.error('❌ 복사 실패:', err);
                 });
             });
-
             childDiv.appendChild(div);
         }
     });
-
     // OZViewer 등장 감시
     ozObserver.observe(document.body, {
         childList: true,
