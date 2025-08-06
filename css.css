@@ -108,6 +108,8 @@
 .ozClipboardWrapper{
     width: 95%;
     position: absolute;
+    z-index: -1;
+
 }
 
 .ozClipboard {
