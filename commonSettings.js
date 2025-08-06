@@ -53,6 +53,8 @@ console.log("기본세팅");
 
             // 자식 div 생성
             const childDiv = document.createElement('div');
+            childDiv.className = 'ozClipboardWrapper';
+
 
             // 첫 번째 자식 요소가 있으면 그 앞에, 없으면 그냥 append
             if (ozViewer.firstChild) {

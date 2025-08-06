@@ -105,14 +105,19 @@
     background-color: rgba(0, 0, 0, 0.2);
     display: none;
 }
+.ozClipboardWrapper{
+    width: 95%;
+    position: absolute;
+}
 
 .ozClipboard {
+    float: right;
     width: 120px;
     height: 24px;
+    background-color: white;
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
-    margin-top: -2px;
     padding: 3px;
     display: inline-block;
     cursor: pointer;
