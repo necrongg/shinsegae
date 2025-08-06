@@ -64,7 +64,7 @@ console.log("기본세팅");
             // 테스트 div 생성
             const div = document.createElement('div');
             div.className = 'ozClipboard';
-            div.textContent = '📋 작업자/검수자 클립보드 복사';
+            div.textContent = '📋 작업자/검수자';
 
             // 클릭 시 클립보드 복사
             div.addEventListener('click', () => {
