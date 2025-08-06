@@ -45,44 +45,45 @@ console.log("기본세팅");
 // }
 
 // 🖨️ OZ 작업자검수자 복붙버튼생성
-const observer = new MutationObserver((mutations, obs) => {
-    const ozViewer = document.getElementById('OZViewer');
-    if (ozViewer) {
-        obs.disconnect(); // 감지 중지
+{
+    const ozObserver = new MutationObserver((mutations, obs) => {
+        const ozViewer = document.getElementById('OZViewer');
+        if (ozViewer) {
+            obs.disconnect(); // 감지 중지
 
-        // 자식 div 생성
-        const childDiv = document.createElement('div');
-        ozViewer.appendChild(childDiv);
+            // 자식 div 생성
+            const childDiv = document.createElement('div');
+            ozViewer.appendChild(childDiv);
 
-        // 테스트 div 생성
-        const div = document.createElement('div');
-        div.className = 'ozClipboard';
-        div.textContent = '📋 작업자/검수자 클립보드 복사';
+            // 테스트 div 생성
+            const div = document.createElement('div');
+            div.className = 'ozClipboard';
+            div.textContent = '📋 작업자/검수자 클립보드 복사';
 
-        // 클릭 시 클립보드 복사
-        div.addEventListener('click', () => {
-            const text = `작 업 자  : _________________(인)\n검 수 자  : _________________(인)`;
-            navigator.clipboard.writeText(text).then(() => {
-                console.log('✅ 클립보드에 복사됨');
-                div.textContent = '✅ 복사 완료!';
-                setTimeout(() => {
-                    div.textContent = '📋 작업자/검수자 클립보드 복사';
-                }, 2000);
-            }).catch(err => {
-                console.error('❌ 복사 실패:', err);
+            // 클릭 시 클립보드 복사
+            div.addEventListener('click', () => {
+                const text = `작 업 자  : _________________(인)\n검 수 자  : _________________(인)`;
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('✅ 클립보드에 복사됨');
+                    div.textContent = '✅ 복사 완료!';
+                    setTimeout(() => {
+                        div.textContent = '📋 작업자/검수자 클립보드 복사';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('❌ 복사 실패:', err);
+                });
             });
-        });
 
-        childDiv.appendChild(div);
-    }
-});
+            childDiv.appendChild(div);
+        }
+    });
 
-// OZViewer 등장 감시
-observer.observe(document.body, {
-    childList: true,
-    subtree: true
-});
-
+    // OZViewer 등장 감시
+    ozObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
 
 // 🔰 새로고침 차단
 document.addEventListener("keydown", function (e) {
