@@ -44,8 +44,8 @@ console.log("기본세팅");
 //     const uppercaseControl = enableAutoUppercase();
 // }
 
-// 🖨️ OZ 작업자검수자 복붙버튼생성
-{
+// 🖨️ OZ 작업자검수자 복붙버튼생성 (특정 URL에서만 실행)
+if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/')) {
     const ozObserver = new MutationObserver((mutations, obs) => {
         const ozViewer = document.getElementById('OZViewer');
         if (ozViewer) {
@@ -55,7 +55,6 @@ console.log("기본세팅");
             const childDiv = document.createElement('div');
             childDiv.className = 'ozClipboardWrapper';
 
-
             // 첫 번째 자식 요소가 있으면 그 앞에, 없으면 그냥 append
             if (ozViewer.firstChild) {
                 ozViewer.insertBefore(childDiv, ozViewer.firstChild);
@@ -63,7 +62,7 @@ console.log("기본세팅");
                 ozViewer.appendChild(childDiv);
             }
 
-            // 테스트 div 생성
+            // 버튼 생성
             const div = document.createElement('div');
             div.className = 'ozClipboard';
             div.textContent = '📋 작업자/검수자';
@@ -81,9 +80,11 @@ console.log("기본세팅");
                     console.error('❌ 복사 실패:', err);
                 });
             });
+
             childDiv.appendChild(div);
         }
     });
+
     // OZViewer 등장 감시
     ozObserver.observe(document.body, {
         childList: true,
