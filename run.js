@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         신세계wms 추가 기능 (직통+캐시+버전체크+TTL만)
+// @name         신세계wms 추가 기능
 // @namespace    https://slp-new.shinsegaefood.com/*
 // @version      2025-08-08
-// @description  GitHub Raw 직통 + 캐시 + 버전체크 + ETag 제거, TTL 기준 캐시 관리
+// @description  GitHub Raw 직통 + 캐시 + TTL 기준 캐시 관리
 // @author       You
 // @match        https://slp-new.shinsegaefood.com/*
 // @grant        unsafeWindow
