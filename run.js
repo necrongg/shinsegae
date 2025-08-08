@@ -18,7 +18,7 @@
     const defaultScripts = ['css.css', 'commonSettings.js'];
     const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
-    // TTL: 캐시 재요청 간격 (1시간*5)
+    // TTL: 캐시 재요청 간격 (1시간 * 5)
     const CACHE_TTL = 1000 * 60 * 60 * 5;
 
     // 안전한 ID 문자열 생성
@@ -122,8 +122,19 @@
             }, 3000);
         });
 
-        document.body.appendChild(btn);
+        // MutationObserver 생성
+        const observer = new MutationObserver((mutations, obs) => {
+            const target = document.querySelector('#ext-element-2');
+            if (target) {
+                document.body.appendChild(btn);
+                obs.disconnect(); // 감지 중지 (버튼 추가 완료)
+            }
+        });
+
+        // body 하위 DOM 변경 감지 시작
+        observer.observe(document.body, { childList: true, subtree: true });
     }
+
 
     // 초기 실행 함수
     (async function init() {
@@ -136,5 +147,4 @@
         }
         createUpdateButton();
     })();
-
 })();

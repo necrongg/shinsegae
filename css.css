@@ -138,11 +138,11 @@
 
 .updateBtn{
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    top: 30px;
+    right: 50px;
     z-index: 9999;
     padding: 8px 12px;
-    background: #007bff;
+    background: #368736;
     color: white;
     border: none;
     border-radius: 4px;
