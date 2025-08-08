@@ -50,6 +50,19 @@ function startFreezeObserver() {
                 });
             });
 
+            // 이마트
+            createButton(container, '이마트', '이마트','white', 'green', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A42,A039,A041,A004,A013,A007,A047,A012,A059,A061,A066',
+                    CUST_CD : '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
             // 군납
             createButton(container, '군납', '군납','white', 'blue', () => {
                 setElementsValues({
