@@ -54,7 +54,7 @@ function startFreezeObserver() {
             createButton(container, '이마트', '이마트','white', 'green', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A42,A039,A041,A004,A013,A007,A047,A012,A059,A061,A066',
+                    ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A012',
                     CUST_CD : '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
