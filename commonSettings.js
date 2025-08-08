@@ -158,6 +158,8 @@ function createScriptSelector(panel) {
     // ✅ 도움말
     createSupport(container);
 
+    createUpdateButton();
+
 }
 window.createScriptSelector = createScriptSelector;
 
