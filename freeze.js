@@ -63,6 +63,19 @@ function startFreezeObserver() {
                 });
             });
 
+            // 테스트
+            createButton(container, '테스트', '테스트','white', 'green', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: '테스트',
+                    CUST_CD : '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
             // 군납
             createButton(container, '군납', '군납','white', 'blue', () => {
                 setElementsValues({
