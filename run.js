@@ -5,6 +5,7 @@
 // @description  GitHub Raw 직통 + 캐시 + TTL 기준 캐시 관리
 // @author       You
 // @match        https://slp-new.shinsegaefood.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=shinsegaefood.com
 // @grant        unsafeWindow
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // ==/UserScript==
