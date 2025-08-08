@@ -18,8 +18,8 @@
     const defaultScripts = ['css.css', 'commonSettings.js'];
     const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
-    // TTL: 캐시 재요청 간격 (10분)
-    const CACHE_TTL = 1000 * 60 * 60;
+    // TTL: 캐시 재요청 간격 (1시간*5)
+    const CACHE_TTL = 1000 * 60 * 60 * 5;
 
     // 안전한 ID 문자열 생성
     function idSafe(name) {
@@ -94,20 +94,20 @@
         }
     }
 
-    // 강제업데이트 버튼
+    // 즉시 업데이트 (TTL 무시하고 서버에서 재다운로드 후 적용)
+    async function forceUpdate(file) {
+        console.log(`⚡ [${file}] 즉시 업데이트 시작 (TTL 무시)`);
+        const fetched = await fetchAndCache(file);
+        if (fetched) {
+            applyFile(file, fetched.text);
+        }
+    }
+
+    // 강제업데이트 버튼 생성
     function createUpdateButton() {
         const btn = document.createElement('button');
+        btn.className = "updateBtn";
         btn.textContent = '즉시 업데이트';
-        btn.style.position = 'fixed';
-        btn.style.bottom = '10px';
-        btn.style.right = '10px';
-        btn.style.zIndex = 9999;
-        btn.style.padding = '8px 12px';
-        btn.style.background = '#007bff';
-        btn.style.color = 'white';
-        btn.style.border = 'none';
-        btn.style.borderRadius = '4px';
-        btn.style.cursor = 'pointer';
 
         btn.addEventListener('click', async () => {
             btn.disabled = true;
@@ -125,8 +125,7 @@
         document.body.appendChild(btn);
     }
 
-
-    // 실행
+    // 초기 실행 함수
     (async function init() {
         for (let file of scriptsToLoad) {
             try {
@@ -135,15 +134,7 @@
                 console.error(`[${file}] 처리 중 예외`, e);
             }
         }
+        createUpdateButton();
     })();
-
-    // 즉시 업데이트 (TTL 무시하고 서버에서 재다운로드 후 적용)
-    async function forceUpdate(file) {
-        console.log(`⚡ [${file}] 즉시 업데이트 시작 (TTL 무시)`);
-        const fetched = await fetchAndCache(file);
-        if (fetched) {
-            applyFile(file, fetched.text);
-        }
-    }
 
 })();
