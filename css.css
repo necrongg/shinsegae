@@ -138,8 +138,8 @@
 
 .updateBtn{
     position: fixed;
-    top: 30px;
-    right: 50px;
+    top: 4px;
+    right: 450px;
     z-index: 9999;
     padding: 8px 12px;
     background: #368736;
