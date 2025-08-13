@@ -48,65 +48,39 @@ console.log("기본세팅");
 if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/')) {
     const ozObserver = new MutationObserver((mutations, obs) => {
         const ozViewer = document.getElementById('OZViewer');
-        if (ozViewer) {
-            obs.disconnect(); // 감지 중지
+        if (!ozViewer) return;
 
-            // 자식 div 생성
-            const childDiv = document.createElement('div');
-            childDiv.className = 'ozClipboardWrapper';
+        obs.disconnect(); // 감지 중지
 
-            // 첫 번째 자식 요소가 있으면 그 앞에, 없으면 그냥 append
-            if (ozViewer.firstChild) {
-                ozViewer.insertBefore(childDiv, ozViewer.firstChild);
-            } else {
-                ozViewer.appendChild(childDiv);
-            }
+        // 버튼 컨테이너
+        const childDiv = document.createElement('div');
+        childDiv.className = 'ozClipboardWrapper';
+        ozViewer.firstChild
+            ? ozViewer.insertBefore(childDiv, ozViewer.firstChild)
+            : ozViewer.appendChild(childDiv);
 
-            // 작업자/검수자 버튼 생성
-            const inspectorDiv = document.createElement('div');
-            inspectorDiv.className = 'ozClipboard inspector';
-            inspectorDiv.textContent = '📋 작업자/검수자';
-
-            inspectorDiv.addEventListener('click', () => {
-                const text = `작 업 자  : _________________(인)\n검 수 자  : _________________(인)`;
-                navigator.clipboard.writeText(text).then(() => {
-                    console.log('✅ 클립보드에 복사됨');
-                    inspectorDiv.textContent = '✅ 복사 완료!';
-                    setTimeout(() => {
-                        inspectorDiv.textContent = '📋 작업자/검수자';
-                    }, 2000);
-                }).catch(err => {
-                    console.error('❌ 복사 실패:', err);
-                });
+        // 버튼 생성 함수
+        const createClipboardButton = (className, defaultText, copyText) => {
+            const btn = document.createElement('div');
+            btn.className = `ozClipboard ${className}`;
+            btn.textContent = defaultText;
+            btn.addEventListener('click', () => {
+                navigator.clipboard.writeText(copyText).then(() => {
+                    console.log(`✅ 클립보드에 복사됨: ${copyText}`);
+                    btn.textContent = '✅ 복사 완료!';
+                    setTimeout(() => (btn.textContent = defaultText), 2000);
+                }).catch(err => console.error('❌ 복사 실패:', err));
             });
-            childDiv.appendChild(inspectorDiv);
+            childDiv.appendChild(btn);
+        };
 
-            // 평택->온라인 이관 버튼 생성
-            const transferDiv = document.createElement('div');
-            transferDiv.className = 'ozClipboard transfer';
-            transferDiv.textContent = '📋 평택->온라인 이관';
-
-            transferDiv.addEventListener('click', () => {
-                const text = `평택->온라인`;
-                navigator.clipboard.writeText(text).then(() => {
-                    console.log('✅ 클립보드에 복사됨');
-                    transferDiv.textContent = '✅ 복사 완료!';
-                    setTimeout(() => {
-                        transferDiv.textContent = '📋 작업자/검수자';
-                    }, 2000);
-                }).catch(err => {
-                    console.error('❌ 복사 실패:', err);
-                });
-            });
-            childDiv.appendChild(transferDiv);
-
-        }
-    });
-    ozObserver.observe(document.body, {
-        childList: true,
-        subtree: true
+        // 버튼 추가
+        createClipboardButton('inspector', '📋 작업자/검수자',
+            '작 업 자  : _________________(인)\n검 수 자  : _________________(인)');
+        createClipboardButton('transfer', '📋 평택->온라인 이관', '평택->온라인');
     });
 
+    ozObserver.observe(document.body, { childList: true, subtree: true });
 }
 
 // 🔰 새로고침 차단
