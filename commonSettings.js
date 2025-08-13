@@ -64,7 +64,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
 
             // 작업자/검수자 버튼 생성
             const inspectorDiv = document.createElement('div');
-            inspectorDiv.className = 'inspector';
+            inspectorDiv.className = 'ozClipboard inspector';
             inspectorDiv.textContent = '📋 작업자/검수자';
 
             inspectorDiv.addEventListener('click', () => {
@@ -83,7 +83,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
 
             // 평택->온라인 이관 버튼 생성
             const transferDiv = document.createElement('div');
-            transferDiv.className = 'transfer';
+            transferDiv.className = 'ozClipboard transfer';
             transferDiv.textContent = '📋 평택->온라인 이관';
 
             transferDiv.addEventListener('click', () => {
