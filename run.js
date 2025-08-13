@@ -135,7 +135,6 @@
         observer.observe(document.body, { childList: true, subtree: true });
     }
 
-
     // 초기 실행 함수
     (async function init() {
         for (let file of scriptsToLoad) {

@@ -62,12 +62,11 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
                 ozViewer.appendChild(childDiv);
             }
 
-            // 버튼 생성
-            const div = document.createElement('div');
-            div.className = 'ozClipboard';
-            div.textContent = '📋 작업자/검수자';
+            // 작업자/검수자 버튼 생성
+            const inspectorDiv = document.createElement('div');
+            inspectorDiv.className = 'inspector';
+            inspectorDiv.textContent = '📋 작업자/검수자';
 
-            // 클릭 시 클립보드 복사
             div.addEventListener('click', () => {
                 const text = `작 업 자  : _________________(인)\n검 수 자  : _________________(인)`;
                 navigator.clipboard.writeText(text).then(() => {
@@ -80,12 +79,30 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
                     console.error('❌ 복사 실패:', err);
                 });
             });
+            childDiv.appendChild(inspectorDiv);
 
-            childDiv.appendChild(div);
+            // 평택->온라인 이관 버튼 생성
+            const transferDiv = document.createElement('div');
+            transferDiv.className = 'transfer';
+            transferDiv.textContent = '📋 평택->온라인 이관';
+
+            div.addEventListener('click', () => {
+                const text = `평택->온라인 이관`;
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('✅ 클립보드에 복사됨');
+                    div.textContent = '✅ 복사 완료!';
+                    setTimeout(() => {
+                        div.textContent = '📋 작업자/검수자';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('❌ 복사 실패:', err);
+                });
+            });
+            childDiv.appendChild(transferDiv);
+
         }
     });
 
-    // OZViewer 등장 감시
     ozObserver.observe(document.body, {
         childList: true,
         subtree: true
