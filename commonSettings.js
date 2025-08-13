@@ -1,5 +1,5 @@
 //commonSetting.js
-console.log("기본세팅");
+console.log("8.13/13:23");
 
 // 🔰 대문자 고정(보류됨)
 // {
