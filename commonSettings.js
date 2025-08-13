@@ -87,7 +87,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
             transferDiv.textContent = '📋 평택->온라인 이관';
 
             transferDiv.addEventListener('click', () => {
-                const text = `평택->온라인 이관`;
+                const text = `평택->온라인`;
                 navigator.clipboard.writeText(text).then(() => {
                     console.log('✅ 클립보드에 복사됨');
                     transferDiv.textContent = '✅ 복사 완료!';
