@@ -67,13 +67,13 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
             inspectorDiv.className = 'inspector';
             inspectorDiv.textContent = '📋 작업자/검수자';
 
-            div.addEventListener('click', () => {
+            inspectorDiv.addEventListener('click', () => {
                 const text = `작 업 자  : _________________(인)\n검 수 자  : _________________(인)`;
                 navigator.clipboard.writeText(text).then(() => {
                     console.log('✅ 클립보드에 복사됨');
-                    div.textContent = '✅ 복사 완료!';
+                    inspectorDiv.textContent = '✅ 복사 완료!';
                     setTimeout(() => {
-                        div.textContent = '📋 작업자/검수자';
+                        inspectorDiv.textContent = '📋 작업자/검수자';
                     }, 2000);
                 }).catch(err => {
                     console.error('❌ 복사 실패:', err);
@@ -86,13 +86,13 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
             transferDiv.className = 'transfer';
             transferDiv.textContent = '📋 평택->온라인 이관';
 
-            div.addEventListener('click', () => {
+            transferDiv.addEventListener('click', () => {
                 const text = `평택->온라인 이관`;
                 navigator.clipboard.writeText(text).then(() => {
                     console.log('✅ 클립보드에 복사됨');
-                    div.textContent = '✅ 복사 완료!';
+                    transferDiv.textContent = '✅ 복사 완료!';
                     setTimeout(() => {
-                        div.textContent = '📋 작업자/검수자';
+                        transferDiv.textContent = '📋 작업자/검수자';
                     }, 2000);
                 }).catch(err => {
                     console.error('❌ 복사 실패:', err);
@@ -102,11 +102,11 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
 
         }
     });
-
     ozObserver.observe(document.body, {
         childList: true,
         subtree: true
     });
+
 }
 
 // 🔰 새로고침 차단
