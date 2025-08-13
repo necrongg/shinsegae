@@ -77,7 +77,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
         // 버튼 추가
         createClipboardButton('inspector', '📋 작업자/검수자',
             '작 업 자  : _________________(인)\n검 수 자  : _________________(인)');
-        createClipboardButton('transfer', '📋 평택->온라인 이관', '평택->온라인');
+        createClipboardButton('transfer', '📋 평택->온라인', '평택->온라인 이관');
     });
 
     ozObserver.observe(document.body, { childList: true, subtree: true });
