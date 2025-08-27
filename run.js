@@ -18,8 +18,8 @@
     const defaultScripts = ['css.css', 'commonSettings.js'];
     const scriptsToLoad = savedScripts ? JSON.parse(savedScripts) : defaultScripts;
 
-    // TTL: 캐시 재요청 간격 (1시간 * 5)
-    const CACHE_TTL = 1000 * 60 * 60 * 5;
+    // TTL: 캐시 재요청 간격 (1시간 * 9)
+    const CACHE_TTL = 1000 * 60 * 60 * 9;
 
     // 안전한 ID 문자열 생성
     function idSafe(name) {
