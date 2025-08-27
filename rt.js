@@ -131,7 +131,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 주스 세팅
-            createButton(container, '주스', '주스','white', 'orange', () => {
+            createButton(container, '주스', '주스','white', 'deeppink', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: '',
@@ -145,7 +145,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // MRO 세팅
-            createButton(container, 'MRO', 'MRO','white', 'orange', () => {
+            createButton(container, 'MRO', 'MRO','white', 'maroon', () => {
                 setElementsValues({
                     STRR_ID: '0003893',
                     ITEM_GCD: '',
@@ -159,7 +159,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 양곡 세팅
-            createButton(container, '양곡', '양곡','white', 'orange', () => {
+            createButton(container, '양곡', '양곡','white', 'darkolivegreen', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A023',
