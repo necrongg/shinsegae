@@ -107,7 +107,7 @@ const observer = new MutationObserver((mutations) => {
             // 경인 세팅
             createButton(container, '경인', '경인','white', 'red', () => {
                 setElementsValues({
-                    STRR_ID: '0003893',
+                    STRR_ID: '',
                     ITEM_GCD: 'A008,A048,A006,A002,A024',
                     CUST_CD: '',
                     SHIPTO_ID: '',
@@ -120,13 +120,69 @@ const observer = new MutationObserver((mutations) => {
             // 지방 세팅
             createButton(container, '지방', '지방','white', 'orange', () => {
                 setElementsValues({
-                    STRR_ID: '0003893',
+                    STRR_ID: '',
                     ITEM_GCD: 'A008,A048,A006,A002,A024,A023',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
                     OUTB_TCD: '',
                     OUTB_WH: '01114,01115,04736'
+                });
+            });
+
+            // 주스 세팅
+            createButton(container, '주스', '주스','white', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: '',
+                    ITEM_CD:'',
+                    CUST_CD: '',
+                    SHIPTO_ID: '229914,241364,241365,318734,318735,318713,333149',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // MRO 세팅
+            createButton(container, 'MRO', 'MRO','white', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '0003893',
+                    ITEM_GCD: '',
+                    ITEM_CD:'',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 양곡 세팅
+            createButton(container, '양곡', '양곡','white', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A023',
+                    ITEM_CD:'',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: 'IOOBDCNMXXXX',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 이마트 세팅
+            createButton(container, '이마트', '이마트','white', 'orange', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A008,A048,A006,A002,A024,A023,A054,A034,A017,A016',
+                    ITEM_CD:'',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
                 });
             });
 
