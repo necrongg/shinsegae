@@ -144,17 +144,19 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
-            // MRO 세팅
-            createButton(container, 'MRO', 'MRO','white', 'maroon', () => {
+            // 동국 세팅
+            createButton(container, '동국', '동국','white', 'maroon', () => {
                 setElementsValues({
-                    STRR_ID: '0003893',
-                    ITEM_GCD: '',
-                    ITEM_CD:'',
                     CUST_CD: '',
+                    ITEM_CD: '254953,262748,317055,322980,323025,323026,332127,332663,341717,341715,341716,342724,342725,342726',
+                    ITEM_GCD: '',
+                    DCTC_SCD:'',
+                    ORDER_CNFM_YN: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '',
-                    OUTB_TCD: '',
-                    OUTB_WH: ''
+                    STRR_ID: ''
                 });
             });
 
