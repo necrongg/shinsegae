@@ -175,6 +175,20 @@ const observer = new MutationObserver((mutations) => {
                     OUTB_WH: ''
                 });
             });
+
+            // 미식관 세팅
+            createButton(container,  '미식관', '미식관','white', 'black', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_CD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
+                    CUST_CD: '',
+                    SHIPTO_ID: '8866501,8866601,8866701',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
             observer.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
