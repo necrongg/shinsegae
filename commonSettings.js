@@ -277,9 +277,9 @@ function customSearch(container) {
 
     // closeEl 토글 함수
     function toggleCloseElDisplay(checked) {
-        const titleEl = (titleEl && titleEl.textContent.includes("오더라인할당")) ? true : false ;
+        const titleElToggle = (titleEl && titleEl.textContent.includes("오더라인할당")) ? true : false ;
 
-        if (titleEl){
+        if (titleElToggle){
             unsafeWindow.search = function(popWin) {
                 //조회조건 폼 밸리데이션 후 조회조건 데이터셋 DS_SEARCHCONDITION 셋팅.
                 if( ! setSearchConditionDataSet() ) return;
