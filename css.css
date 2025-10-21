@@ -112,6 +112,7 @@
 }
 
 .ozClipboard {
+    font-size: 15px;
     float: right;
     width: 120px;
     height: 24px;
