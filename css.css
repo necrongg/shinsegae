@@ -114,14 +114,13 @@
 .ozClipboard {
     font-size: 15px;
     float: right;
-    width: 120px;
     height: 24px;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
-    padding: 3px;
+    padding: 3px 10px 3px 3px;
     display: inline-block;
     cursor: pointer;
     user-select: none; /* 선택 방지 */
