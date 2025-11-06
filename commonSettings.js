@@ -309,6 +309,7 @@ function createSupport(container) {
     container.appendChild(checkWrapper);
 }
 
+// 🆗 갤러리
 function createGallery(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
@@ -323,6 +324,7 @@ function createGallery(container) {
     });
 
     container.appendChild(checkWrapper);
+    checkWrapper.appendChild(label);
 }
 
 // ✅ 공통 드롭다운 삽입
