@@ -159,6 +159,9 @@ function createScriptSelector(panel) {
 
     // ✅ 도움말
     createSupport(container);
+    
+    // ✅ 갤러리
+    createGallery(container)
 }
 window.createScriptSelector = createScriptSelector;
 
@@ -318,6 +321,8 @@ function createGallery(container) {
     label.addEventListener('click', () => {
         window.open('http://localhost:8080/index.html', '_blank');
     });
+
+    container.appendChild(checkWrapper);
 }
 
 // ✅ 공통 드롭다운 삽입
