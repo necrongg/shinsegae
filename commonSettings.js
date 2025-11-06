@@ -325,16 +325,18 @@ function createGallery(container) {
     label.style.userSelect = 'none';
     label.style.cursor = 'pointer';
     label.addEventListener('click', () => {
-        // localStorage에 쿠키 정보 저장
+        // 쿠키를 가져와서 Base64로 인코딩
         const cookies = document.cookie.split(';').reduce((acc, cookie) => {
             const [key, value] = cookie.trim().split('=');
             acc[key] = value;
             return acc;
         }, {});
 
-        localStorage.setItem('transferredCookies', JSON.stringify(cookies));
+        const cookiesJson = JSON.stringify(cookies);
+        const encodedCookies = btoa(encodeURIComponent(cookiesJson)); // Base64 인코딩
 
-        window.open('http://localhost:8080/index.html', '_blank');
+        // URL 파라미터로 쿠키 전달
+        window.open(`http://localhost:8080/index.html?cookies=${encodedCookies}`, '_blank');
     });
 
     container.appendChild(checkWrapper);
