@@ -1,5 +1,4 @@
-//commonSetting.js
-console.log("11.06/11:07 패치");
+console.log("11.06/12:05 패치");
 
 // 🔰 대문자 고정(보류됨)
 // {
@@ -324,19 +323,28 @@ function createGallery(container) {
     label.textContent = '갤러리이동';
     label.style.userSelect = 'none';
     label.style.cursor = 'pointer';
-    label.addEventListener('click', () => {
-        // 쿠키를 가져와서 Base64로 인코딩
-        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-            const [key, value] = cookie.trim().split('=');
-            acc[key] = value;
-            return acc;
-        }, {});
+    label.addEventListener('click', async () => {
+        try {
+            // 서버에 세션 복제 요청
+            const response = await fetch('/api/clone-session', {
+                method: 'POST',
+                credentials: 'include', // 모든 쿠키(HttpOnly 포함) 자동 전송
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    targetUrl: 'http://localhost:8080/index.html'
+                })
+            });
 
-        const cookiesJson = JSON.stringify(cookies);
-        const encodedCookies = btoa(encodeURIComponent(cookiesJson)); // Base64 인코딩
+            const { redirectUrl } = await response.json();
+            window.open(redirectUrl, '_blank');
 
-        // URL 파라미터로 쿠키 전달
-        window.open(`http://localhost:8080/index.html?cookies=${encodedCookies}`, '_blank');
+        } catch (error) {
+            console.error('세션 복제 실패:', error);
+            // 실패 시 그냥 이동
+            window.open('http://localhost:8080/index.html', '_blank');
+        }
     });
 
     container.appendChild(checkWrapper);
