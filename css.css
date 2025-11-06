@@ -54,6 +54,17 @@
     cursor: pointer;
 }
 
+.check-gallery{
+    width: 76px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
 .refresh-wrapper{
     position: relative;
     width: 66px;

@@ -310,15 +310,15 @@ function createSupport(container) {
     // DOM 삽입
     document.body.appendChild(overlay);
     document.body.appendChild(modal);
-    checkWrapper.appendChild(label);
     container.appendChild(checkWrapper);
+    checkWrapper.appendChild(label);
 }
 
 // 🆗 갤러리
 function createGallery(container) {
     const checkWrapper = document.createElement('div');
     checkWrapper.style.display = 'inline-flex';
-    checkWrapper.className = 'custom-button-inner check-support';
+    checkWrapper.className = 'custom-button-inner check-gallery';
 
     const label = document.createElement('label');
     label.textContent = '갤러리이동';
