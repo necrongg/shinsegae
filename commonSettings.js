@@ -336,6 +336,7 @@ function createGallery(container) {
             // URL에 쿠키 데이터 포함
             const targetUrl = `http://localhost:8080/index.html?sessionData=${encodedCookies}`;
 
+            console.log("✅ 쿠키정보 : ", encodedCookies);
             console.log('✅ 갤러리로 이동 (쿠키 포함)');
             window.open(targetUrl, '_blank');
 
