@@ -325,7 +325,21 @@ function createGallery(container) {
     label.style.userSelect = 'none';
     label.style.cursor = 'pointer';
     label.addEventListener('click', () => {
-        window.open('http://localhost:8080/index.html', '_blank');
+        // 쿠키에서 필요한 값들 추출
+        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+            const [key, value] = cookie.trim().split('=');
+            acc[key] = value;
+            return acc;
+        }, {});
+
+        // URL 파라미터로 전달
+        const params = new URLSearchParams({
+            sessionId: cookies.JSESSIONID || '',
+            authCheck: cookies.slp_atAUTHCHK || '',
+            idSave: cookies.idSaveVal || ''
+        });
+
+        window.open(`http://localhost:8080/index.html?${params.toString()}`, '_blank');
     });
 
     container.appendChild(checkWrapper);
