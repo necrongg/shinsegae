@@ -170,6 +170,7 @@ function createPartDropdown(container, panel) {
     const select = document.createElement('select');
     select.className = 'custom-button-inner drop-down';
     select.title = '사용자 스크립트 설정';
+    select.style.cursor = 'pointer';
 
     const options = ['', 'freeze', 'bk', 'ck', 'rt','master'];
     const labelMap = {
@@ -233,6 +234,8 @@ function createCloseToggle(container) {
     label.htmlFor = 'toggleCloseEl';
     label.textContent = 'X표시 ON/OFF';
     label.style.marginLeft = '4px';
+    label.style.cursor = 'pointer';
+
 
     // closeEl 토글 함수
     function toggleCloseElDisplay(hide) {
@@ -274,6 +277,8 @@ function createSupport(container) {
     const label = document.createElement('label');
     label.textContent = '?';
     label.style.userSelect = 'none';
+    label.style.cursor = 'pointer';
+
 
     // 모달 요소 생성
     const modal = document.createElement('div');
