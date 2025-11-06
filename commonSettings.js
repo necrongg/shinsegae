@@ -306,6 +306,20 @@ function createSupport(container) {
     container.appendChild(checkWrapper);
 }
 
+function createGallery(container) {
+    const checkWrapper = document.createElement('div');
+    checkWrapper.style.display = 'inline-flex';
+    checkWrapper.className = 'custom-button-inner check-support';
+
+    const label = document.createElement('label');
+    label.textContent = '갤러리이동';
+    label.style.userSelect = 'none';
+    label.style.cursor = 'pointer';
+    label.addEventListener('click', () => {
+        window.open('http://localhost:8080/index.html', '_blank');
+    });
+}
+
 // ✅ 공통 드롭다운 삽입
 const commonObserver = new MutationObserver((mutations, obs) => {
     const panel = document.querySelector("#panel-1009-innerCt");
