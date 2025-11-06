@@ -323,26 +323,25 @@ function createGallery(container) {
     label.textContent = '갤러리이동';
     label.style.userSelect = 'none';
     label.style.cursor = 'pointer';
-    label.addEventListener('click', async () => {
+    label.addEventListener('click', () => {
         try {
-            // 서버에 세션 복제 요청
-            const response = await fetch('/api/clone-session', {
-                method: 'POST',
-                credentials: 'include', // 모든 쿠키(HttpOnly 포함) 자동 전송
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    targetUrl: 'http://localhost:8080/index.html'
-                })
-            });
+            // 현재 페이지의 모든 쿠키를 가져옴
+            const cookieString = document.cookie;
 
-            const { redirectUrl } = await response.json();
-            window.open(redirectUrl, '_blank');
+            console.log('🍪 쿠키 수집:', cookieString.substring(0, 100) + '...');
+
+            // Base64 인코딩 (URL에 안전하게 포함하기 위해)
+            const encodedCookies = btoa(encodeURIComponent(cookieString));
+
+            // URL에 쿠키 데이터 포함
+            const targetUrl = `http://localhost:8080/index.html?sessionData=${encodedCookies}`;
+
+            console.log('✅ 갤러리로 이동 (쿠키 포함)');
+            window.open(targetUrl, '_blank');
 
         } catch (error) {
-            console.error('세션 복제 실패:', error);
-            // 실패 시 그냥 이동
+            console.error('❌ 세션 전달 실패:', error);
+            // 실패 시 쿠키 없이 이동
             window.open('http://localhost:8080/index.html', '_blank');
         }
     });
