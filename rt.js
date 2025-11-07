@@ -39,31 +39,31 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
-            // 스무디-경인 세팅
-            createButton(container,  '스무디킹-경인', '🥤경인','white', 'indigo', () => {
-                setElementsValues({
-                    STRR_ID: '0037396',
-                    ITEM_GCD: 'A006',
-                    CUST_CD: '',
-                    SHIPTO_ID: '',
-                    SHIPTO_TCD: '',
-                    OUTB_TCD: 'IOOBDCNMXXXX',
-                    OUTB_WH: ''
-                });
-            });
-
-            // 스무디-지방 세팅
-            createButton(container, '스무디킹-지방', '🥤지방','white', 'indigo', () => {
-                setElementsValues({
-                    STRR_ID: '0037396',
-                    ITEM_GCD: 'A006',
-                    CUST_CD: '',
-                    SHIPTO_ID: '',
-                    SHIPTO_TCD: '',
-                    OUTB_TCD: '',
-                    OUTB_WH: '01114,01115,04736'
-                });
-            });
+            // // 스무디-경인 세팅
+            // createButton(container,  '스무디킹-경인', '🥤경인','white', 'indigo', () => {
+            //     setElementsValues({
+            //         STRR_ID: '0037396',
+            //         ITEM_GCD: 'A006',
+            //         CUST_CD: '',
+            //         SHIPTO_ID: '',
+            //         SHIPTO_TCD: '',
+            //         OUTB_TCD: 'IOOBDCNMXXXX',
+            //         OUTB_WH: ''
+            //     });
+            // });
+            //
+            // // 스무디-지방 세팅
+            // createButton(container, '스무디킹-지방', '🥤지방','white', 'indigo', () => {
+            //     setElementsValues({
+            //         STRR_ID: '0037396',
+            //         ITEM_GCD: 'A006',
+            //         CUST_CD: '',
+            //         SHIPTO_ID: '',
+            //         SHIPTO_TCD: '',
+            //         OUTB_TCD: '',
+            //         OUTB_WH: '01114,01115,04736'
+            //     });
+            // });
 
             // 미스터피자-경인 세팅
             createButton(container, '미스터피자-경인', '🍕경인','white', 'chocolate', () => {
