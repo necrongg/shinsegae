@@ -160,7 +160,7 @@ function createScriptSelector(panel) {
     createSupport(container);
     
     // ✅ 갤러리
-    createGallery(container);
+    // createGallery(container);
 }
 window.createScriptSelector = createScriptSelector;
 
