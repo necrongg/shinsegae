@@ -165,7 +165,7 @@ function createScriptSelector(panel) {
 window.createScriptSelector = createScriptSelector;
 
 // 🆗 파트 선택 드롭다운
-function createPartDropdown(container, panel) {
+function createPartDropdown(container, ) {
     const select = document.createElement('select');
     select.className = 'custom-button-inner drop-down';
     select.title = '사용자 스크립트 설정';
