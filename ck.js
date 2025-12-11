@@ -119,6 +119,32 @@ const observer = new MutationObserver((mutations) => {
 
                 });
             });
+
+            // 아워홈 경인
+            createButton(container, '아워홈 경인', '아.경인', 'black', 'white', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: '',
+                    CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
+                    SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
+
+            // 아워홈 지방
+            createButton(container, '아워홈 지방', '아.지방', 'black', 'white', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: '',
+                    CUST_CD: '8859101,8859201,8859301',
+                    SHIPTO_ID: '8859101,8859201,8859301',
+                    SHIPTO_TCD: '',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
+                });
+            });
             observer.disconnect();  // observer 즉시 종료
             break;  // 루프 탈출
         }
