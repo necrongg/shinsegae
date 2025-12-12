@@ -193,7 +193,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '아워홈 경인', '아.경인', 'black', 'white', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
                     CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                     SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
                     SHIPTO_TCD: '',
@@ -206,7 +206,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '아워홈 지방', '아.지방', 'black', 'white', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: '',
+                    ITEM_GCD: 'A018,A021,A022,A037,A050',
                     CUST_CD: '8859101,8859201,8859301',
                     SHIPTO_ID: '8859101,8859201,8859301',
                     SHIPTO_TCD: '',
