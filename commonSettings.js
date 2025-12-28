@@ -1,48 +1,5 @@
 console.log("11.06/12:05 패치");
 
-// 🔰 대문자 고정(보류됨)
-// {
-//     function enableAutoUppercase() {
-//         const applyUppercaseToInputs = () => {
-//             const inputs = document.querySelectorAll('input[type="text"]');
-//
-//             inputs.forEach(input => {
-//                 if (input.dataset.uppercaseApplied) return;
-//                 input.dataset.uppercaseApplied = "true";
-//
-//                 input.addEventListener('input', function () {
-//                     const start = this.selectionStart;
-//                     const end = this.selectionEnd;
-//
-//                     this.value = this.value.replace(/[a-z]/g, char => char.toUpperCase());
-//                     this.setSelectionRange(start, end);
-//                 });
-//             });
-//         };
-//
-//         applyUppercaseToInputs();
-//
-//         const observer = new MutationObserver(() => {
-//             applyUppercaseToInputs();
-//         });
-//
-//         const config = { childList: true, subtree: true };
-//         observer.observe(document.body, config);
-//
-//         // 컨트롤 인터페이스 반환
-//         return {
-//             stop() {
-//                 observer.disconnect();
-//             },
-//             start() {
-//                 observer.observe(document.body, config);
-//                 applyUppercaseToInputs(); // 혹시 모를 새로 생긴 input에도 적용
-//             }
-//         };
-//     }
-//     const uppercaseControl = enableAutoUppercase();
-// }
-
 // 🖨️ OZ 작업자검수자 복붙버튼생성 (특정 URL에서만 실행)
 if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/')) {
     const ozObserver = new MutationObserver((mutations, obs) => {
@@ -78,7 +35,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
             '작 업 자  : _________________(인)\n검 수 자  : _________________(인)');
 
         createClipboardButton('transfer', '📋 평택->온라인',
-            '평택->온라인 이관');
+            '평택->용인온라인 이관');
 
         createClipboardButton('exp', '📋 임박재고출고',
             '-임박재고출고-\n★소비기한 빨간라벨★ 꼭 부착!!!');
@@ -90,7 +47,7 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
             '※내일 15시 까지\n가-10번 으로 이동 부탁 드립니다');
     });
 
-    ozObserver.observe(document.body, { childList: true, subtree: true });
+    ozObserver.observe(document.body, {childList: true, subtree: true});
 }
 
 // 🔰 새로고침 차단
@@ -103,7 +60,7 @@ document.addEventListener("keydown", function (e) {
 });
 
 // 🔰 F1 도움말 정지 / 조회 단축키
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.key === 'F1' || event.keyCode === 112) {
         event.preventDefault();
 
@@ -128,7 +85,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 // 🔰 F2 오더라인할당 피킹차수 단축키
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.key === 'F2' || event.keyCode === 113) {
         event.preventDefault();
 
@@ -158,20 +115,21 @@ function createScriptSelector(panel) {
 
     // ✅ 도움말
     createSupport(container);
-    
+
     // ✅ 갤러리
     // createGallery(container);
 }
+
 window.createScriptSelector = createScriptSelector;
 
 // 🆗 파트 선택 드롭다운
-function createPartDropdown(container, ) {
+function createPartDropdown(container,) {
     const select = document.createElement('select');
     select.className = 'custom-button-inner drop-down';
     select.title = '사용자 스크립트 설정';
     select.style.cursor = 'pointer';
 
-    const options = ['', 'freeze', 'bk', 'ck', 'rt','master'];
+    const options = ['', 'freeze', 'bk', 'ck', 'rt', 'master'];
     const labelMap = {
         'freeze': '냉동',
         'bk': '베이커리',
@@ -355,7 +313,7 @@ const commonObserver = new MutationObserver((mutations, obs) => {
         obs.disconnect();
     }
 });
-commonObserver.observe(document.body, { childList: true, subtree: true });
+commonObserver.observe(document.body, {childList: true, subtree: true});
 
 // ✅ 공통 버튼생성 컨테이너
 function createButtonContainer(headerTitle) {
@@ -363,6 +321,7 @@ function createButtonContainer(headerTitle) {
     div.className = 'x-tool x-box-item x-tool-default x-tool-after-title custom-button-container';
     headerTitle.appendChild(div);
 }
+
 window.createButtonContainer = createButtonContainer;
 
 // ✅ 공통 버튼생성
@@ -382,6 +341,7 @@ function createButton(headerTitle, title, textContent, color, bgColor, callback)
     headerTitle.appendChild(div);
     div.appendChild(childDiv);
 }
+
 window.createButton = createButton;
 
 // ✅ 공통 버튼생성 로직
@@ -393,6 +353,7 @@ function setElementValue(selector, value) {
         console.error(`Input element with selector "${selector}" not found.`);
     }
 }
+
 window.setElementValue = setElementValue;
 
 // ✅ 공통 버튼생성 로직2
@@ -401,5 +362,6 @@ function setElementsValues(values) {
         setElementValue(`[name*="${key}"]`, value);
     });
 }
+
 window.setElementsValues = setElementsValues;
 
