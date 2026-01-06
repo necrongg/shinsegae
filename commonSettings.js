@@ -335,6 +335,7 @@ function createButton(headerTitle, title, textContent, color, bgColor, callback)
     childDiv.style.color = color;
     childDiv.textContent = textContent;
     childDiv.title = title;
+    childDiv.id = title;
 
     div.addEventListener('click', callback);
 
