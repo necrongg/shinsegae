@@ -27,11 +27,15 @@ function startFreezeObserver() {
                 createButtonContainer(headerTitle);
                 const container = document.querySelector(".custom-button-container");
 
-                // 냉동통합 : 축산+CK
+                // 축산
                 createButton(container, '축산', '축산', 'black', 'Goldenrod', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
                 });
-                // 냉동통합 : 축산+CK
+                // 냉장
+                createButton(container, '냉장', '냉장', 'black', 'Goldenrod', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A005,A057,A058');
+                });
+                // 냉동통합 : 축산+CK+세린
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
                 });
@@ -167,11 +171,11 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-                // 아워홈 경인
-                createButton(container, '아워홈 경인', '아.경인', 'black', 'white', () => {
+                // 냉동 아워홈 경인
+                createButton(container, '냉동 아워홈 경인', '아.경인', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
                         CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_TCD: '20',
@@ -179,11 +183,35 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-                // 아워홈 지방
-                createButton(container, '아워홈 지방', '아.지방', 'black', 'white', () => {
+                // 냉동 아워홈 지방
+                createButton(container, '냉동 아워홈 지방', '아.지방', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
+                        CUST_CD: '8859101,8859201,8859301',
+                        SHIPTO_ID: '8859101,8859201,8859301',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+                // 냉장 아워홈 경인
+                createButton(container, '냉장 아워홈 경인', '아.경인', 'blue', 'white', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A005,A057,A058',
+                        CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
+                        SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+                // 냉장 아워홈 지방
+                createButton(container, '냉장 아워홈 지방', '아.지방', 'blue', 'white', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A005,A057,A058',
                         CUST_CD: '8859101,8859201,8859301',
                         SHIPTO_ID: '8859101,8859201,8859301',
                         SHIPTO_TCD: '20',
