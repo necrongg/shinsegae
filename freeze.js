@@ -32,18 +32,44 @@ function startFreezeObserver() {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
                 });
 
-                // // 냉동통합 세팅
-                // createButton(container, '냉동통합 : 축산+CK', '통합', 'black', 'pink', () => {
-                //     setElementsValues({
-                //         STRR_ID: '',
-                //         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
-                //         CUST_CD: '',
-                //         SHIPTO_ID: '',
-                //         SHIPTO_TCD: '20',
-                //         OUTB_TCD: '',
-                //         OUTB_WH: ''
-                //     });
-                // });
+                // 동원홈푸드 세팅
+                createButton(container,  '동원홈푸드', '동원','white', 'blue', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                        SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
+                        SHIPTO_TCD: '',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+
+                // 푸디스트 세팅
+                createButton(container,  '푸디스트', '푸디','white', 'orange', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        CUST_CD : '6984101,8077601,8218701,8218001',
+                        SHIPTO_ID: '6984101,8077601,8218701,8218001',
+                        SHIPTO_TCD: '',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+
+                // 현대삼성 세팅
+                createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A057',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
 
                 // 미스터피자 세팅
                 createButton(container, '미스터피자', '피자🍕', 'black', 'white', () => {
@@ -169,19 +195,8 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-                // 현대삼성 세팅
-                createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A057',
-                        CUST_CD: '',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
 
-                    });
-                });
+
 
                 freezeObserver.disconnect();  // observer 즉시 종료
                 break;  // 루프 탈출
