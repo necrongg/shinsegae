@@ -27,7 +27,11 @@ function startFreezeObserver() {
                 createButtonContainer(headerTitle);
                 const container = document.querySelector(".custom-button-container");
 
-                // 냉동통합 : 축산+CK TODO: 통합후 삭제 예정 / 축산+CK 냉통합으로 사용
+                // 냉동통합 : 축산+CK
+                createButton(container, '축산', '축산', 'black', 'Goldenrod', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
+                });
+                // 냉동통합 : 축산+CK
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
                 });
@@ -67,7 +71,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 미스터피자 세팅
                 createButton(container, '미스터피자', '피자🍕', 'black', 'white', () => {
                     setElementsValues({
