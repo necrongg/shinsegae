@@ -31,7 +31,6 @@ function startFreezeObserver() {
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
                 });
-
                 // 동원홈푸드 세팅
                 createButton(container,  '동원홈푸드', '동원','white', 'blue', () => {
                     setElementsValues({
@@ -44,7 +43,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 푸디스트 세팅
                 createButton(container,  '푸디스트', '푸디','white', 'orange', () => {
                     setElementsValues({
@@ -57,7 +55,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 현대삼성 세팅
                 createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
                     setElementsValues({
@@ -95,7 +92,6 @@ function startFreezeObserver() {
                         OUTB_WH: '01114,01115,04736'
                     });
                 });
-
                 // 이마트 TODO:세린?
                 createButton(container, '이마트', '이마트', 'white', 'green', () => {
                     setElementsValues({
@@ -108,7 +104,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 군납 냉동
                 createButton(container, '군납 냉동', '군-냉동', 'white', 'blue', () => {
                     setElementsValues({
@@ -133,7 +128,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 경인 세팅
                 createButton(container, '경인 : 축산+CK+세린', '경인', 'white', 'red', () => {
                     setElementsValues({
@@ -158,7 +152,6 @@ function startFreezeObserver() {
                         OUTB_WH: '01114,01115,04736'
                     });
                 });
-
                 // 온라인이관 세팅
                 createButton(container, '이관', '이관', 'black', 'plum', () => {
                     setElementsValues({
@@ -195,8 +188,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
-
 
                 freezeObserver.disconnect();  // observer 즉시 종료
                 break;  // 루프 탈출
