@@ -76,33 +76,6 @@ function startFreezeObserver() {
                     });
                 });
 
-                // CK 세린에서 같이 하기로했음(2025.05.26)
-                // // 동원홈푸드 세팅
-                // createButton(targetEl,  '동원홈푸드', '동원','white', 'blue', () => {
-                //     setElementsValues({
-                //         STRR_ID: '',
-                //         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                //         CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                //         SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
-                //         SHIPTO_TCD: '',
-                //         OUTB_TCD: '',
-                //         OUTB_WH: ''
-                //     });
-                // });
-                //
-                // // 푸디스트 세팅
-                // createButton(targetEl,  '푸디스트', '푸디','white', 'orange', () => {
-                //     setElementsValues({
-                //         STRR_ID: '',
-                //         ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047',
-                //         CUST_CD : '6984101,8077601,8218701,8218001',
-                //         SHIPTO_ID: '6984101,8077601,8218701,8218001',
-                //         SHIPTO_TCD: '',
-                //         OUTB_TCD: '',
-                //         OUTB_WH: ''
-                //     });
-                // });
-
                 // MBK 세팅
                 createButton(container, 'MBK 마켓빌더즈코리아', 'MBK', 'white', 'black', () => {
                     setElementsValues({
