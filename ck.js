@@ -27,7 +27,7 @@ const observer = new MutationObserver((mutations) => {
             const container = document.querySelector(".custom-button-container");
 
             // 세린+CK 세팅
-            createButton(container, '세린+CK', '세+C',' white', 'red', () => {
+            createButton(container, '세린+CK', '세+C', ' white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055',
@@ -40,7 +40,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK 세팅
-            createButton(container,  'CK', 'CK','white', 'green', () => {
+            createButton(container, 'CK', 'CK', 'white', 'green', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066',
@@ -53,7 +53,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 세린 세팅
-            createButton(container, '세린', '세린','black', 'yellow', () => {
+            createButton(container, '세린', '세린', 'black', 'yellow', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A043,A028,A046,A055',
@@ -66,7 +66,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // CK냉장 세팅
-            createButton(container,  'CK냉장', 'CK냉장','white', 'blue', () => {
+            createButton(container, 'CK냉장', 'CK냉장', 'white', 'blue', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A005,A055,A057,A058',
@@ -79,7 +79,7 @@ const observer = new MutationObserver((mutations) => {
             });
 
             // 현대삼성 세팅
-            createButton(container,  '현대삼성', '현대','black', 'orange', () => {
+            createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A057',
@@ -92,22 +92,22 @@ const observer = new MutationObserver((mutations) => {
                 });
             });
 
-             // 이마트중계 세팅
-                createButton(container,  '이마트 중계', '중계','white', 'black', () => {
-                    setElementsValues({
-                        STRR_ID: '',
-                        ITEM_GCD: 'A028,A043,A046,A042',
-                        CUST_CD: '',
-                        SHIPTO_ID: '',
-                        SHIPTO_TCD: '20',
-                        OUTB_TCD: '',
-                        OUTB_WH: ''
+            // 이마트중계 세팅
+            createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
+                setElementsValues({
+                    STRR_ID: '',
+                    ITEM_GCD: 'A028,A043,A046,A042',
+                    CUST_CD: '',
+                    SHIPTO_ID: '',
+                    SHIPTO_TCD: '20',
+                    OUTB_TCD: '',
+                    OUTB_WH: ''
 
-                    });
                 });
+            });
 
             // 축산 세린 ck 세팅
-            createButton(container, '축산+세린+CK', '축C세','black', 'pink', () => {
+            createButton(container, '축산+세린+CK', '축C세', 'black', 'pink', () => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
@@ -150,4 +150,4 @@ const observer = new MutationObserver((mutations) => {
         }
     }
 });
-observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(document.body, {childList: true, subtree: true});

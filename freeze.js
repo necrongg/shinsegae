@@ -181,6 +181,60 @@ function startFreezeObserver() {
                     });
                 });
 
+                // CK냉동 세팅
+                createButton(container,  'CK', 'CK냉동','white', 'green', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A005,A012,A058,A059,A057,A061,A066',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+
+                // CK냉장 세팅
+                createButton(container,  'CK냉장', 'CK냉장','white', 'blue', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A005,A055,A057,A058',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+
+                // 이마트중계 세팅
+                createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A028,A043,A046,A042',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+
+                    });
+                });
+
+                // 냉동통합 세팅
+                createButton(container, '냉동통합 : 축산+CK', '냉동통합', 'black', 'pink', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+
+                    });
+                });
+
                 freezeObserver.disconnect();  // observer 즉시 종료
                 break;  // 루프 탈출
             }
