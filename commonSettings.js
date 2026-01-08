@@ -129,9 +129,10 @@ function createPartDropdown(container,) {
     select.title = '사용자 스크립트 설정';
     select.style.cursor = 'pointer';
 
-    const options = ['', 'freeze', 'bk', 'ck', 'rt','youngin-f','youngin-b','master'];
+    const options = ['', 'freeze','m-freeze', 'bk', 'ck', 'rt','youngin-f','youngin-b','master'];
     const labelMap = {
-        'freeze': '냉동',
+        'freeze': '축산',
+        'm-freeze': '냉동통합',
         'bk': '베이커리',
         'ck': '세린+CK',
         'rt': '상온',
