@@ -112,7 +112,7 @@ function startFreezeObserver() {
                     });
                 });
                 // 군납 냉동
-                createButton(container, '군납 냉동', '군-냉동', 'white', 'blue', () => {
+                createButton(container, '군납 냉동', '군-냉동', 'black', 'skyblue', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A012,A059,A061,A043,A028,A046',
