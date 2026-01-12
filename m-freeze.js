@@ -32,8 +32,12 @@ function startFreezeObserver() {
                     setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
                 });
                 // 냉장
-                createButton(container, '냉장', '냉장', 'black', 'Goldenrod', () => {
+                createButton(container, '냉장', '냉장', 'white', 'blue', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A005,A057,A058');
+                });
+                // 냉동
+                createButton(container, '냉동', '냉동', 'black', 'skyblue', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046');
                 });
                 // 냉동통합 : 축산+CK+세린
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
