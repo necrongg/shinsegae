@@ -96,7 +96,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
                 setElementsValues({
                     STRR_ID: '',
-                    ITEM_GCD: 'A028,A043,A046,A042',
+                    ITEM_GCD: 'A028,A043,A046',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '20',
