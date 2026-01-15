@@ -28,7 +28,7 @@ function startFreezeObserver() {
                 const container = document.querySelector(".custom-button-container");
 
                 // 축산
-                createButton(container, '축산', '축산', 'black', 'Goldenrod', () => {
+                createButton(container, '축산', '축산', 'black', 'pink', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041');
                 });
                 // 세린CK
@@ -44,7 +44,7 @@ function startFreezeObserver() {
                     setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041,A012,A059,A061,A066,A043,A028,A046');
                 });
                 // 냉동, 냉장 통합
-                createButton(container, '냉동,냉장 통합', '통합', 'black', 'Goldenrod', () => {
+                createButton(container, '냉동,냉장 통합', '통합', 'black', 'teal', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041,A012,A059,A061,A066,A043,A028,A046,A005,A055,A057,A058');
                 });
                 // 동원홈푸드 세팅
