@@ -31,6 +31,10 @@ function startFreezeObserver() {
                 createButton(container, '축산', '축산', 'black', 'Goldenrod', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041');
                 });
+                // 세린CK
+                createButton(container, '세린CK', '세+CK', 'black', 'gold', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A066,A005,A012,A058,A059,A057,A061,A043,A028,A046,A055');
+                });
                 // 냉장
                 createButton(container, '냉장', '냉장', 'white', 'blue', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A005,A055,A057,A058');
@@ -39,9 +43,9 @@ function startFreezeObserver() {
                 createButton(container, '냉동', '냉동', 'black', 'skyblue', () => {
                     setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041,A012,A059,A061,A066,A043,A028,A046');
                 });
-                // 냉동통합 : 축산+CK+세린
-                createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
+                // 냉동, 냉장 통합
+                createButton(container, '냉동,냉장 통합', '통합', 'black', 'Goldenrod', () => {
+                    setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041,A012,A059,A061,A066,A043,A028,A046,A005,A055,A057,A058');
                 });
                 // 동원홈푸드 세팅
                 createButton(container,  '동원홈푸드', '동원','white', 'blue', () => {
