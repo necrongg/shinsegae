@@ -37,17 +37,17 @@ function startFreezeObserver() {
                 });
                 // 냉동
                 createButton(container, '냉동', '냉동', 'black', 'skyblue', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046');
+                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046');
                 });
                 // 냉동통합 : 축산+CK+세린
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
+                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055');
                 });
                 // 동원홈푸드 세팅
                 createButton(container,  '동원홈푸드', '동원','white', 'blue', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                         SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                         SHIPTO_TCD: '',
@@ -59,7 +59,7 @@ function startFreezeObserver() {
                 createButton(container,  '푸디스트', '푸디','white', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD : '6984101,8077601,8218701,8218001',
                         SHIPTO_ID: '6984101,8077601,8218701,8218001',
                         SHIPTO_TCD: '',
@@ -143,7 +143,7 @@ function startFreezeObserver() {
                 createButton(container, '경인 : 축산+CK+세린', '경인', 'white', 'red', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '20',
@@ -155,7 +155,7 @@ function startFreezeObserver() {
                 createButton(container, '지방 : 축산+CK+세린', '지방', 'white', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '20',
@@ -167,7 +167,7 @@ function startFreezeObserver() {
                 createButton(container, '이관', '이관', 'black', 'plum', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '1012201,0111301',
                         SHIPTO_ID: '1012201,0111301',
                         SHIPTO_TCD: '',
@@ -179,7 +179,7 @@ function startFreezeObserver() {
                 createButton(container, '냉동 아워홈 경인', '아.경인', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
                         CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_TCD: '20',
@@ -191,7 +191,7 @@ function startFreezeObserver() {
                 createButton(container, '냉동 아워홈 지방', '아.지방', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A003,A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
                         CUST_CD: '8859101,8859201,8859301',
                         SHIPTO_ID: '8859101,8859201,8859301',
                         SHIPTO_TCD: '20',
