@@ -29,7 +29,7 @@ function startFreezeObserver() {
 
                 // 축산
                 createButton(container, '축산', '축산', 'black', 'Goldenrod', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A42,A045,A007,A047');
+                    setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041');
                 });
                 // 냉장
                 createButton(container, '냉장', '냉장', 'white', 'blue', () => {
