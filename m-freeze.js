@@ -33,11 +33,11 @@ function startFreezeObserver() {
                 });
                 // 냉장
                 createButton(container, '냉장', '냉장', 'white', 'blue', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A005,A057,A058');
+                    setElementValue('[name*="ITEM_GCD"]', 'A005,A055,A057,A058');
                 });
                 // 냉동
                 createButton(container, '냉동', '냉동', 'black', 'skyblue', () => {
-                    setElementValue('[name*="ITEM_GCD"]', 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046');
+                    setElementValue('[name*="ITEM_GCD"]', 'A42,A004,A013,A007,A047,A039,A041,A012,A059,A061,A066,A043,A028,A046');
                 });
                 // 냉동통합 : 축산+CK+세린
                 createButton(container, '냉동통합 : 축산+CK+세린', '통합', 'black', 'Goldenrod', () => {
@@ -71,7 +71,7 @@ function startFreezeObserver() {
                 createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
-                        ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A057',
+                        ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A006,A057,A006',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '',
