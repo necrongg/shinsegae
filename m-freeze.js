@@ -107,7 +107,7 @@ function startFreezeObserver() {
                         OUTB_WH: '01114,01115,04736'
                     });
                 });
-                // 이마트 TODO:세린?
+                // 이마트
                 createButton(container, '이마트', '이마트', 'white', 'green', () => {
                     setElementsValues({
                         STRR_ID: '',
@@ -117,6 +117,20 @@ function startFreezeObserver() {
                         SHIPTO_TCD: '20',
                         OUTB_TCD: '',
                         OUTB_WH: ''
+                    });
+                });
+
+                // 세린중계 세팅
+                createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
+                    setElementsValues({
+                        STRR_ID: '',
+                        ITEM_GCD: 'A028,A043,A046',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '20',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+
                     });
                 });
                 // 군납 냉동
