@@ -131,7 +131,7 @@ function createPartDropdown(container,) {
 
     const options = ['','m-freeze', 'bk', 'rt','youngin-f','youngin-b','master'];
     const labelMap = {
-        'm-freeze': '냉동통합',
+        'm-freeze': '축산+CK통합',
         'bk': '베이커리',
         'rt': '상온',
         'youngin-f': '용인-지상',
