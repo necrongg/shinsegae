@@ -1,5 +1,3 @@
-//ck.js
-
 // STRR_ID : 화주
 // ITEM_GCD : 품목그룹
 // OUTB_TCD : 출고유형
