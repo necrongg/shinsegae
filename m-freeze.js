@@ -71,8 +71,8 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-                // 현대삼성 세팅
-                createButton(container, '현대삼성', '현대삼성', 'black', 'orange', () => {
+                // 현대 삼성 세팅
+                createButton(container, '현대 삼성', '현·삼', 'black', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A006,A057,A006',
