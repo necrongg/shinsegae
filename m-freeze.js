@@ -1,5 +1,3 @@
-//freeze.js
-
 // STRR_ID : 화주
 // ITEM_GCD : 품목그룹
 // OUTB_TCD : 출고유형
@@ -119,7 +117,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 세린중계 세팅
                 createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
                     setElementsValues({
