@@ -23,7 +23,7 @@ const observer = new MutationObserver((mutations) => {
 
             // 품목그룹 추가(상온)
             createButton(container,  '품목그룹(상온)', '품목','black', 'gold', () => {
-                setElementValue('[name*="ITEM_GCD"]', 'A008,A048,A006,A002,A024,A023,A054,A034,A017,A016');
+                setElementValue('[name*="ITEM_GCD"]', 'A003,A008,A048,A006,A002,A024,A023,A054,A034,A017,A016');
             });
 
             // 미스터피자-경인 세팅
