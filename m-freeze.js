@@ -256,8 +256,6 @@ function startFreezeObserver() {
                     });
                 });
 
-                <div className="wall">asd</div>
-
                 // 용인중계넘겨주기
                 createButton(container, '용인중계', '용.중계', 'white', 'black', () => {
                     setElementsValues({
