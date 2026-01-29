@@ -239,6 +239,20 @@ function startFreezeObserver() {
                     });
                 });
 
+                // 용인중계넘겨주기
+                createButton(container, '용인중계', '용.중계', 'white', 'black', () => {
+                    setElementsValues({
+                        STRR_ID: '0036761',
+                        ITEM_CD:'321364,340246,338430,311620,318706,338422,341944,321365,259652,339819,203707,343549,325531,321144,310867,310865,260155,324376,341018,347304',
+                        ITEM_GCD: '',
+                        CUST_CD: '',
+                        SHIPTO_ID: '',
+                        SHIPTO_TCD: '',
+                        OUTB_TCD: '',
+                        OUTB_WH: ''
+                    });
+                });
+
                 freezeObserver.disconnect();  // observer 즉시 종료
                 break;  // 루프 탈출
             }
