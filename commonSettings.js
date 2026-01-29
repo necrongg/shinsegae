@@ -367,5 +367,17 @@ function setElementsValues(values) {
     });
 }
 
+// ✅ 이마트날짜변환
+function changeDate() {
+    const OUTBOUND_DATE_SELECTOR = '[name="OUTB_ECT_DATE"]';
+    const EMART_RECEIVE_DATE_SELECTOR = '[name="EMART_CENTER_RCV_DATE"]';
+
+    const outboundDateInput = document.querySelector(OUTBOUND_DATE_SELECTOR);
+    const emartReceiveDateInput = document.querySelector(EMART_RECEIVE_DATE_SELECTOR);
+
+    emartReceiveDateInput.value = outboundDateInput.value;
+    outboundDateInput.value = '';
+}
+
 window.setElementsValues = setElementsValues;
 

@@ -116,6 +116,7 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
+                    changeDate();
                 });
                 // 세린중계 세팅
                 createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
@@ -127,8 +128,8 @@ function startFreezeObserver() {
                         SHIPTO_TCD: '20',
                         OUTB_TCD: '',
                         OUTB_WH: ''
-
                     });
+                    changeDate();
                 });
                 // 군납 냉동
                 createButton(container, '군납 냉동', '군-냉동', 'black', 'skyblue', () => {
@@ -251,15 +252,7 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
-
-                    const OUTBOUND_DATE_SELECTOR = '[name="OUTB_ECT_DATE"]';
-                    const EMART_RECEIVE_DATE_SELECTOR = '[name="EMART_CENTER_RCV_DATE"]';
-
-                    const outboundDateInput = document.querySelector(OUTBOUND_DATE_SELECTOR);
-                    const emartReceiveDateInput = document.querySelector(EMART_RECEIVE_DATE_SELECTOR);
-
-                    emartReceiveDateInput.value = outboundDateInput.value;
-                    outboundDateInput.value = '';
+                    changeDate();
 
                 });
 
