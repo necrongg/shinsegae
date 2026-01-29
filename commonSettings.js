@@ -309,14 +309,17 @@ function createGallery(container) {
 }
 
 // ✅ 공통 드롭다운 삽입
-const commonObserver = new MutationObserver((mutations, obs) => {
-    const panel = document.querySelector("#panel-1009-innerCt");
-    if (panel && typeof createScriptSelector === 'function') {
-        createScriptSelector(panel);
-        obs.disconnect();
-    }
-});
-commonObserver.observe(document.body, {childList: true, subtree: true});
+if (!window.__wms_common_observer__) {
+    window.__wms_common_observer__ = true;
+    const commonObserver = new MutationObserver((_, obs) => {
+        const panel = document.querySelector('#panel-1009-innerCt');
+        if (panel && typeof createScriptSelector === 'function') {
+            createScriptSelector(panel);
+            obs.disconnect();
+        }
+    });
+    commonObserver.observe(document.body, { childList: true, subtree: true });
+}
 
 // ✅ 공통 버튼생성 컨테이너
 function createButtonContainer(headerTitle) {
