@@ -251,6 +251,16 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
+
+                    const OUTBOUND_DATE_SELECTOR = '[name="OUTB_ECT_DATE"]';
+                    const EMART_RECEIVE_DATE_SELECTOR = '[name="EMART_CENTER_RCV_DATE"]';
+
+                    const outboundDateInput = document.querySelector(OUTBOUND_DATE_SELECTOR);
+                    const emartReceiveDateInput = document.querySelector(EMART_RECEIVE_DATE_SELECTOR);
+
+                    emartReceiveDateInput.value = outboundDateInput.value;
+                    outboundDateInput.value = '';
+
                 });
 
                 freezeObserver.disconnect();  // observer 즉시 종료
