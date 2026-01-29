@@ -375,8 +375,10 @@ function changeDate() {
     const outboundDateInput = document.querySelector(OUTBOUND_DATE_SELECTOR);
     const emartReceiveDateInput = document.querySelector(EMART_RECEIVE_DATE_SELECTOR);
 
-    emartReceiveDateInput.value = outboundDateInput.value;
-    outboundDateInput.value = '';
+    if (outboundDateInput.value !== '') {
+        emartReceiveDateInput.value = outboundDateInput.value;
+        outboundDateInput.value = '';
+    }
 }
 
 window.setElementsValues = setElementsValues;
