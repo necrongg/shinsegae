@@ -21,7 +21,7 @@ function startFreezeObserver() {
             //     `A42,A039,A041,A004,A013,A007,A047,A012,A059,A061,A066,A043,A028,A046`
             //     : `A004,A013,A039,A42,A045,A007,A047`;
 
-            if (headerTitle) {
+            if (!headerTitle) return;
                 createButtonContainer(headerTitle);
                 const container = document.querySelector(".custom-button-container");
 
@@ -255,7 +255,6 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
-
                 // 용인중계넘겨주기
                 createButton(container, '용인중계', '용.중계', 'white', 'black', () => {
                     setElementsValues({
@@ -269,13 +268,11 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                     changeDate();
-
                 });
 
                 freezeObserver.disconnect();  // observer 즉시 종료
                 break;  // 루프 탈출
             }
-        }
     });
     freezeObserver.observe(document.body, {childList: true, subtree: true});
 }
