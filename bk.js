@@ -174,6 +174,7 @@ const observer = new MutationObserver((mutations) => {
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
+                changeDate();
             });
 
             // 미식관 세팅

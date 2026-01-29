@@ -30,6 +30,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '미스터피자-경인', '🍕경인','white', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '0100037',
+                    ITEM_CD:'',
                     ITEM_GCD: 'A006,A008',
                     CUST_CD: '',
                     SHIPTO_ID: '',
@@ -43,6 +44,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container,  '미스터피자-지방', '🍕지방','white', 'chocolate', () => {
                 setElementsValues({
                     STRR_ID: '0100037',
+                    ITEM_CD:'',
                     ITEM_GCD: 'A006,A008',
                     CUST_CD: '',
                     SHIPTO_ID: '',
@@ -56,6 +58,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '경인', '경인','white', 'red', () => {
                 setElementsValues({
                     STRR_ID: '',
+                    ITEM_CD:'',
                     ITEM_GCD: 'A008,A048,A006,A002,A43,A30,A024,A014,A030,A003',
                     CUST_CD: '',
                     SHIPTO_ID: '',
@@ -69,6 +72,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '지방', '지방','white', 'orange', () => {
                 setElementsValues({
                     STRR_ID: '',
+                    ITEM_CD:'',
                     ITEM_GCD: 'A023,A008,A048,A006,A002,A43,A30,A024,A014,A030,A003',
                     CUST_CD: '',
                     SHIPTO_ID: '',
@@ -118,12 +122,14 @@ const observer = new MutationObserver((mutations) => {
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
+                changeDate();
             });
 
             // 아워홈 경인
             createButton(container, '아워홈 경인', '아.경인', 'black', 'white', () => {
                 setElementsValues({
                     STRR_ID: '',
+                    ITEM_CD:'',
                     ITEM_GCD: '',
                     CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                     SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
@@ -137,6 +143,7 @@ const observer = new MutationObserver((mutations) => {
             createButton(container, '아워홈 지방', '아.지방', 'black', 'white', () => {
                 setElementsValues({
                     STRR_ID: '',
+                    ITEM_CD:'',
                     ITEM_GCD: '',
                     CUST_CD: '8859101,8859201,8859301',
                     SHIPTO_ID: '8859101,8859201,8859301',

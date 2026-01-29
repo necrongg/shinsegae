@@ -100,8 +100,8 @@ const observer = new MutationObserver((mutations) => {
                     SHIPTO_TCD: '20',
                     OUTB_TCD: '',
                     OUTB_WH: ''
-
                 });
+                changeDate();
             });
 
             // 축산 세린 ck 세팅

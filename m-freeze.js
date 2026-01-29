@@ -49,6 +49,7 @@ function startFreezeObserver() {
                 createButton(container,  '동원홈푸드', '동원','white', 'blue', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD : '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
                         SHIPTO_ID: '5166701,5594501,5288301,5594701,8469301,5710101,6102901,6102401,7106801,7106101,8469501,8469502,8469401,8469402',
@@ -61,6 +62,7 @@ function startFreezeObserver() {
                 createButton(container,  '푸디스트', '푸디','white', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD : '6984101,8077601,8218701,8218001',
                         SHIPTO_ID: '6984101,8077601,8218701,8218001',
@@ -73,6 +75,7 @@ function startFreezeObserver() {
                 createButton(container, '현대 삼성', '현·삼', 'black', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A012,A005,A028,A046,A059,A007,A033,A008,A006,A057,A006',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -85,6 +88,7 @@ function startFreezeObserver() {
                 createButton(container, '미스터피자', '피자🍕', 'black', 'white', () => {
                     setElementsValues({
                         STRR_ID: '0100037',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -97,6 +101,7 @@ function startFreezeObserver() {
                 createButton(container, 'MBK 마켓빌더즈코리아', 'MBK', 'white', 'black', () => {
                     setElementsValues({
                         STRR_ID: '0039656',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -109,6 +114,7 @@ function startFreezeObserver() {
                 createButton(container, '이마트', '이마트', 'white', 'green', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A012,A042,A028,A043,A046',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -122,6 +128,7 @@ function startFreezeObserver() {
                 createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A028,A043,A046',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -135,6 +142,7 @@ function startFreezeObserver() {
                 createButton(container, '군납 냉동', '군-냉동', 'black', 'skyblue', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A42,A045,A007,A047,A012,A059,A061,A043,A028,A046',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -147,6 +155,7 @@ function startFreezeObserver() {
                 createButton(container, '군납 냉장', '군-냉장', 'white', 'blue', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A005,A055,A057,A058',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -159,6 +168,7 @@ function startFreezeObserver() {
                 createButton(container, '경인 : 축산+CK+세린', '경인', 'white', 'red', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -171,6 +181,7 @@ function startFreezeObserver() {
                 createButton(container, '지방 : 축산+CK+세린', '지방', 'white', 'orange', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -183,6 +194,7 @@ function startFreezeObserver() {
                 createButton(container, '이관', '이관', 'black', 'plum', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
                         CUST_CD: '',
                         SHIPTO_ID: '',
@@ -195,6 +207,7 @@ function startFreezeObserver() {
                 createButton(container, '냉동 아워홈 경인', '아.경인', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
                         CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
@@ -207,6 +220,7 @@ function startFreezeObserver() {
                 createButton(container, '냉동 아워홈 지방', '아.지방', 'skyblue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A012,A059,A061,A066,A043,A028,A046',
                         CUST_CD: '8859101,8859201,8859301',
                         SHIPTO_ID: '8859101,8859201,8859301',
@@ -219,6 +233,7 @@ function startFreezeObserver() {
                 createButton(container, '냉장 아워홈 경인', '아.경인', 'blue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A005,A057,A058',
                         CUST_CD: '8858501,8858601,8858701,8858801,8858901,8859001',
                         SHIPTO_ID: '8858501,8858601,8858701,8858801,8858901,8859001',
@@ -231,6 +246,7 @@ function startFreezeObserver() {
                 createButton(container, '냉장 아워홈 지방', '아.지방', 'blue', 'white', () => {
                     setElementsValues({
                         STRR_ID: '',
+                        ITEM_CD:'',
                         ITEM_GCD: 'A005,A057,A058',
                         CUST_CD: '8859101,8859201,8859301',
                         SHIPTO_ID: '8859101,8859201,8859301',
@@ -239,6 +255,8 @@ function startFreezeObserver() {
                         OUTB_WH: ''
                     });
                 });
+
+                <div className="wall">asd</div>
 
                 // 용인중계넘겨주기
                 createButton(container, '용인중계', '용.중계', 'white', 'black', () => {
