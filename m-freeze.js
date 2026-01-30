@@ -195,7 +195,7 @@ function startFreezeObserver() {
                     setElementsValues({
                         STRR_ID: '',
                         ITEM_CD:'',
-                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055',
+                        ITEM_GCD: 'A004,A013,A039,A41,A42,A044,A045,A051,A007,A047,A005,A012,A058,A059,A057,A061,A066,A043,A028,A046,A055,A042',
                         CUST_CD: '',
                         SHIPTO_ID: '',
                         SHIPTO_TCD: '',

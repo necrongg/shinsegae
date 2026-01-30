@@ -99,6 +99,43 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// 🔰 F4 테스트
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'F4' || event.keyCode === 115) {
+        event.preventDefault();
+
+        // 버튼 요소 가져오기
+        const button = document.getElementById('pickHisButton2');
+        if (button) {
+            button.click(); // 클릭 이벤트 발생
+
+            const targetText = '품목별 총량(LOT제외)'; // 찾을 LI의 표시 텍스트(정확 일치)
+
+            const findLiByText = (text) => {
+                // ExtJS 바운드리스트 항목들만 대상으로
+                const items = Array.from(document.querySelectorAll('li.x-boundlist-item'));
+                // 공백/개행 정규화 후 정확 일치
+                const norm = s => (s || '').replace(/\s+/g, ' ').trim();
+                const target = norm(text);
+                return items.find(li => norm(li.textContent) === target);
+            };
+
+            // 1) 텍스트로 li 찾고 '실제 클릭'으로 선택(Ext 내부 상태 갱신 유도)
+            const li = findLiByText(targetText);
+            if (!li) throw new Error(`리스트에서 "${targetText}" 항목을 찾지 못했습니다.`);
+            li.scrollIntoView({ block: 'center' });
+
+            // 클릭 시퀀스를 확실하게(일부 Ext 테마에서 클릭만으론 선택 안될 수 있음)
+            ['mousedown', 'mouseup', 'click'].forEach(type => {
+                li.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, view: window }));
+            });
+
+        } else {
+            console.warn('버튼을 찾을 수 없습니다.');
+        }
+    }
+});
+
 // 🆗 신세계 이미지 옆, 파트 선택 드롭다운 + x표시 on/off + 도움말
 function createScriptSelector(panel) {
     const container = document.createElement('div');
