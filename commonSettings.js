@@ -103,7 +103,6 @@ document.addEventListener('keydown', function (event) {
     const TARGET_TEXT = '품목별 총량(LOT제외)';
     const PICK_BUTTON_ID = 'pickHisButton2';
     const COMBO_INPUT_SEL = '#combo-0-inputEl';
-    const NEXT_BTN_CANDIDATES = ['a.x-btn[role="button"]'];
     const LIST_APPEAR_TIMEOUT = 3000;
     const AFTER_SELECT_DELAY  = 150;
 
@@ -133,13 +132,34 @@ document.addEventListener('keydown', function (event) {
         return items.find(li => norm(li.textContent) === target);
     };
 
-    const findNextButton = () => {
-        for (const sel of NEXT_BTN_CANDIDATES) {
-            const el = document.querySelector(sel);
-            if (el) return el;
-        }
-        return Array.from(document.querySelectorAll('a.x-btn[role="button"], button'))
-            .find(el => /다음|Next/i.test((el.textContent || '').trim()));
+// 컨테이너 내부(#__labelComboPopup__)에서만 "인쇄|Print" 버튼 탐색
+    const findPrintButton = () => {
+        const root = document.querySelector('#__labelComboPopup__');
+        if (!root) return null;
+
+        // role="button"이거나 x-btn/button류 후보
+        let candidates = Array.from(
+            root.querySelectorAll('a[role="button"], button[role="button"], a.x-btn, button')
+        );
+
+        // 텍스트/라벨/타이틀에 "인쇄|Print" 포함 필터
+        candidates = candidates.filter(el => {
+            const text  = (el.textContent || '').trim();
+            const title = el.getAttribute('title') || '';
+            const aria  = el.getAttribute('aria-label') || '';
+            return /인쇄|Print/i.test(text) || /인쇄|Print/i.test(title) || /인쇄|Print/i.test(aria);
+        });
+
+        // 가시성/활성 필터
+        const isVisible = (el) => {
+            const cs = getComputedStyle(el);
+            if (cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return false;
+            const r = el.getBoundingClientRect();
+            return r.width > 0 && r.height > 0;
+        };
+        const btn = candidates.find(el => isVisible(el) && el.getAttribute('aria-disabled') !== 'true' && !el.disabled);
+
+        return btn || null;
     };
 
     // 콤보 열기: ExtJS API가 있으면 expand, 없으면 input 클릭
@@ -184,10 +204,10 @@ document.addEventListener('keydown', function (event) {
                 await sleep(AFTER_SELECT_DELAY);
 
                 // 4) 다음 버튼 클릭
-                const nextBtn = findNextButton();
-                if (!nextBtn) throw new Error('“다음” 버튼을 찾지 못했습니다.');
-                nextBtn.scrollIntoView({ block: 'center' });
-                fireClick(nextBtn);
+                const printButton = findPrintButton();
+                if (!printButton) throw new Error('“다음” 버튼을 찾지 못했습니다.');
+                printButton.scrollIntoView({ block: 'center' });
+                fireClick(printButton);
 
             } catch (e) {
                 alert(e.message);
