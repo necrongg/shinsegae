@@ -119,10 +119,9 @@ document.addEventListener('keydown', function (event) {
 
                 // === 유틸 ===
                 const sleep = ms => new Promise(r => setTimeout(r, ms));
-                const norm = s => (s || '').replace(/\s+/g, ' ').trim();
                 const findLi = txt => {
                     const items = Array.from(document.querySelectorAll('li.x-boundlist-item'));
-                    return items.find(li => norm(li.textContent) === norm(txt));
+                    return items.find(li => txt);
                 };
 
                 try {
