@@ -109,26 +109,61 @@ document.addEventListener('keydown', function (event) {
         if (button) {
             button.click(); // 클릭 이벤트 발생
 
-            const targetText = '품목별 총량(LOT제외)'; // 찾을 LI의 표시 텍스트(정확 일치)
+            (async () => {
+                // === 설정값 ===
+                const targetText = '품목별 총량(LOT제외)'; // 찾을 LI의 텍스트
+                const nextBtnSelectorCandidates = [
+                    '#button-1287',                     // 고정된 id가 있을 경우
+                    'a.x-btn[role="button"]'            // 동적 id 대응
+                ];
 
-            const findLiByText = (text) => {
-                // ExtJS 바운드리스트 항목들만 대상으로
-                const items = Array.from(document.querySelectorAll('li.x-boundlist-item'));
-                // 공백/개행 정규화 후 정확 일치
+                // === 유틸 ===
+                const sleep = ms => new Promise(r => setTimeout(r, ms));
                 const norm = s => (s || '').replace(/\s+/g, ' ').trim();
-                const target = norm(text);
-                return items.find(li => norm(li.textContent) === target);
-            };
+                const findLi = txt => {
+                    const items = Array.from(document.querySelectorAll('li.x-boundlist-item'));
+                    return items.find(li => norm(li.textContent) === norm(txt));
+                };
 
-            // 1) 텍스트로 li 찾고 '실제 클릭'으로 선택(Ext 내부 상태 갱신 유도)
-            const li = findLiByText(targetText);
-            if (!li) throw new Error(`리스트에서 "${targetText}" 항목을 찾지 못했습니다.`);
-            li.scrollIntoView({ block: 'center' });
+                try {
 
-            // 클릭 시퀀스를 확실하게(일부 Ext 테마에서 클릭만으론 선택 안될 수 있음)
-            ['mousedown', 'mouseup', 'click'].forEach(type => {
-                li.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, view: window }));
-            });
+                    await sleep(5000);
+
+                    // 1) 텍스트로 li 찾기
+                    const li = findLi(targetText);
+                    if (!li) throw new Error(`리스트에서 "${targetText}" 항목을 찾지 못했습니다.`);
+
+                    li.scrollIntoView({ block: 'center' });
+
+                    // ExtJS 선택 안정성을 위해 클릭 시퀀스 발생
+                    ['mousedown', 'mouseup', 'click'].forEach(type => {
+                        li.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, view: window }));
+                    });
+
+                    await sleep(150);
+
+                    // 2) 다음 버튼 찾기
+                    let nextBtn = null;
+
+                    for (const sel of nextBtnSelectorCandidates) {
+                        const el = document.querySelector(sel);
+                        if (el) { nextBtn = el; break; }
+                    }
+
+                    // 백업: 텍스트 기반 탐색
+                    if (!nextBtn) {
+                        nextBtn = Array.from(document.querySelectorAll('a.x-btn[role="button"], button'))
+                            .find(el => /다음|Next/i.test((el.textContent || '').trim()));
+                    }
+
+                    if (!nextBtn) throw new Error('“다음” 버튼을 찾지 못했습니다.');
+
+                    nextBtn.scrollIntoView({ block: 'center' });
+                    nextBtn.click();
+                } catch (e) {
+                    alert(e.message);
+                }
+            })();
 
         } else {
             console.warn('버튼을 찾을 수 없습니다.');
