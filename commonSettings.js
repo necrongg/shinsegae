@@ -103,7 +103,7 @@ document.addEventListener('keydown', function (event) {
     const TARGET_TEXT = '품목별 총량(LOT제외)';
     const PICK_BUTTON_ID = 'pickHisButton2';
     const COMBO_INPUT_SEL = '#combo-0-inputEl';
-    const NEXT_BTN_CANDIDATES = ['#button-1287', 'a.x-btn[role="button"]'];
+    const NEXT_BTN_CANDIDATES = ['a.x-btn[role="button"]'];
     const LIST_APPEAR_TIMEOUT = 3000;
     const AFTER_SELECT_DELAY  = 150;
 
@@ -170,14 +170,10 @@ document.addEventListener('keydown', function (event) {
                 const btn = document.getElementById(PICK_BUTTON_ID);
                 if (!btn) throw new Error(`버튼(${PICK_BUTTON_ID}) 없음`);
                 fireClick(btn);
-
-                await sleep(1000);
+                await sleep(500);
 
                 // 2) 콤보 열기
                 await openCombo();
-
-                await sleep(1000);
-
 
                 // 3) 항목 클릭
                 const items = await waitForListItems(LIST_APPEAR_TIMEOUT);
