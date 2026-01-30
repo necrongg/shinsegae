@@ -153,7 +153,7 @@ document.addEventListener('keydown', function (event) {
         }
         const input = document.querySelector(COMBO_INPUT_SEL);
         if (!input) throw new Error('콤보 input을 찾지 못했습니다.');
-        fireClick(input); // ← 클릭만
+        fireClick(input);
         await waitForListItems(LIST_APPEAR_TIMEOUT);
     };
 
@@ -171,8 +171,13 @@ document.addEventListener('keydown', function (event) {
                 if (!btn) throw new Error(`버튼(${PICK_BUTTON_ID}) 없음`);
                 fireClick(btn);
 
+                await sleep(1000);
+
                 // 2) 콤보 열기
                 await openCombo();
+
+                await sleep(1000);
+
 
                 // 3) 항목 클릭
                 const items = await waitForListItems(LIST_APPEAR_TIMEOUT);
