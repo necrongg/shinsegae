@@ -99,106 +99,99 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// 🔰 F4 테스트
 (function () {
-    const TARGET_TEXT = '품목별 총량(LOT제외)'; // 찾을 li 텍스트
-    const NEXT_BTN_CANDIDATES = ['#button-1287', 'a.x-btn[role="button"]']; // 버튼 후보
-    const LIST_APPEAR_TIMEOUT = 3000; // 리스트 등장 폴링 최대 대기(3초)
-    const AFTER_SELECT_DELAY = 150;   // 선택 후 약간의 렌더링 대기
-    const PRINT_AFTER_NEXT = false;   // 다음 클릭 후 인쇄를 원하면 true 로 변경
-    const PRINT_DELAY = 3000;         // 다음 클릭 후 인쇄까지 대기(ms)
+    const TARGET_TEXT = '품목별 총량(LOT제외)';
+    const PICK_BUTTON_ID = 'pickHisButton2';
+    const COMBO_INPUT_SEL = '#combo-0-inputEl';
+    const NEXT_BTN_CANDIDATES = ['#button-1287', 'a.x-btn[role="button"]'];
+    const LIST_APPEAR_TIMEOUT = 3000;
+    const AFTER_SELECT_DELAY  = 150;
 
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-    const norm = (s) => (s || '').replace(/\s+/g, ' ').trim();
+    const norm  = (s) => (s || '').replace(/\s+/g, ' ').trim();
 
-    // li.x-boundlist-item 이 DOM에 나타날 때까지 폴링
+    // 🔹 클릭만
+    const fireClick = (el) => {
+        if (!el) return;
+        el.click?.();
+        // 필요 시 아래 한 줄만 유지하고 el.click()은 제거해도 됩니다.
+        // el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+    };
+
     const waitForListItems = async (timeoutMs = LIST_APPEAR_TIMEOUT) => {
         const t0 = performance.now();
         while (true) {
             const items = document.querySelectorAll('li.x-boundlist-item');
             if (items.length > 0) return Array.from(items);
-            if (performance.now() - t0 > timeoutMs) throw new Error('바운드리스트 항목이 나타나지 않았습니다.');
-            await sleep(50); // 짧은 폴링 주기
+            if (performance.now() - t0 > timeoutMs) throw new Error('바운드리스트가 나타나지 않았습니다.');
+            await sleep(50);
         }
     };
 
-    // 텍스트 정확 일치로 li 찾기
     const findLiByText = (items, text) => {
         const target = norm(text);
         return items.find(li => norm(li.textContent) === target);
     };
 
-    // “다음” 버튼 탐색
     const findNextButton = () => {
         for (const sel of NEXT_BTN_CANDIDATES) {
             const el = document.querySelector(sel);
             if (el) return el;
         }
-        // 백업: 텍스트 기반
         return Array.from(document.querySelectorAll('a.x-btn[role="button"], button'))
             .find(el => /다음|Next/i.test((el.textContent || '').trim()));
     };
 
-    // 중복 호출 방지 플래그(키를 꾹 누를 때 반복 방지)
+    // 콤보 열기: ExtJS API가 있으면 expand, 없으면 input 클릭
+    const openCombo = async () => {
+        if (window.Ext && typeof Ext.getCmp === 'function') {
+            const cmp = Ext.getCmp('combo-0'); // 컴포넌트 id가 다르면 수정
+            if (cmp && typeof cmp.expand === 'function') {
+                cmp.expand();
+                try { await waitForListItems(LIST_APPEAR_TIMEOUT); return; } catch {}
+            }
+        }
+        const input = document.querySelector(COMBO_INPUT_SEL);
+        if (!input) throw new Error('콤보 input을 찾지 못했습니다.');
+        fireClick(input); // ← 클릭만
+        await waitForListItems(LIST_APPEAR_TIMEOUT);
+    };
+
     let busy = false;
 
-    document.addEventListener('keydown', async function (event) {
+    document.addEventListener('keydown', async (event) => {
         if (busy) return;
         if (event.key === 'F4' || event.keyCode === 115) {
             busy = true;
             event.preventDefault();
 
             try {
-                // 0) 먼저 지정된 버튼 클릭하여 리스트를 띄움
-                const button = document.getElementById('pickHisButton2');
-                if (!button) {
-                    console.warn('버튼(pickHisButton2)을 찾을 수 없습니다.');
-                    busy = false;
-                    return;
-                }
-                button.click();
+                // 1) 진입 버튼 클릭
+                const btn = document.getElementById(PICK_BUTTON_ID);
+                if (!btn) throw new Error(`버튼(${PICK_BUTTON_ID}) 없음`);
+                fireClick(btn);
 
-                const button2 = document.getElementById('combo-0-inputEl');
-                if (!button) {
-                    console.warn('버튼(combo-0-inputEl)을 찾을 수 없습니다.');
-                    busy = false;
-                    return;
-                }
-                button2.click();
+                // 2) 콤보 열기
+                await openCombo();
 
-                // 1) 리스트가 DOM에 실제로 생길 때까지(최대 3초) 대기
+                // 3) 항목 클릭
                 const items = await waitForListItems(LIST_APPEAR_TIMEOUT);
-
-                // 2) 목표 텍스트를 가진 li 찾기
                 const li = findLiByText(items, TARGET_TEXT);
-                if (!li) throw new Error(`리스트에서 "${TARGET_TEXT}" 항목을 찾지 못했습니다.`);
-
-                // 3) 실제 선택(ExtJS 내부 상태 갱신을 위해 이벤트 시퀀스 사용)
-                li.scrollIntoView({block: 'center'});
-                ['mousedown', 'mouseup', 'click'].forEach(type => {
-                    li.dispatchEvent(new MouseEvent(type, {bubbles: true, cancelable: true, view: window}));
-                });
-
+                if (!li) throw new Error(`"${TARGET_TEXT}" 항목을 찾지 못했습니다.`);
+                li.scrollIntoView({ block: 'center' });
+                fireClick(li);
                 await sleep(AFTER_SELECT_DELAY);
 
-                // 4) “다음” 버튼 찾기 및 클릭
+                // 4) 다음 버튼 클릭
                 const nextBtn = findNextButton();
                 if (!nextBtn) throw new Error('“다음” 버튼을 찾지 못했습니다.');
-                nextBtn.scrollIntoView({block: 'center'});
-                nextBtn.click();
+                nextBtn.scrollIntoView({ block: 'center' });
+                fireClick(nextBtn);
 
-                // 5) (선택) 인쇄
-                if (PRINT_AFTER_NEXT) {
-                    await sleep(PRINT_DELAY);
-                    window.print();
-                }
             } catch (e) {
                 alert(e.message);
             } finally {
-                // 키업 이후 재실행 가능하도록 약간의 지연 후 플래그 해제
-                setTimeout(() => {
-                    busy = false;
-                }, 300);
+                setTimeout(() => { busy = false; }, 300);
             }
         }
     });
