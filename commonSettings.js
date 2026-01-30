@@ -119,15 +119,15 @@ document.addEventListener('keydown', function (event) {
 
                 // === 유틸 ===
                 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+                await sleep(5000);
+
                 const findLi = txt => {
                     const items = Array.from(document.querySelectorAll('li.x-boundlist-item'));
                     return items.find(li => txt);
                 };
 
                 try {
-
-                    await sleep(5000);
-
                     // 1) 텍스트로 li 찾기
                     const li = findLi(targetText);
                     if (!li) throw new Error(`리스트에서 "${targetText}" 항목을 찾지 못했습니다.`);
