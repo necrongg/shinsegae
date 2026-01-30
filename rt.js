@@ -122,7 +122,6 @@ const observer = new MutationObserver((mutations) => {
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
-                changeDate();
             });
 
             // 아워홈 경인

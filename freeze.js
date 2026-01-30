@@ -61,7 +61,6 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
-                    changeDate();
                 });
 
                 // 군납

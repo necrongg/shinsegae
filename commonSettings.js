@@ -497,7 +497,7 @@ function setElementsValues(values) {
     });
 }
 
-// ✅ 이마트날짜변환
+// ✅ 이마트날짜변환(보류중)
 function changeDate() {
     const OUTBOUND_DATE_SELECTOR = '[name="OUTB_ECT_DATE"]';
     const EMART_RECEIVE_DATE_SELECTOR = '[name="EMART_CENTER_RCV_DATE"]';

@@ -101,7 +101,6 @@ const observer = new MutationObserver((mutations) => {
                     OUTB_TCD: '',
                     OUTB_WH: ''
                 });
-                changeDate();
             });
 
             // 축산 세린 ck 세팅

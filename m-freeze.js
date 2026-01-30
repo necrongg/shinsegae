@@ -122,7 +122,6 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
-                    changeDate();
                 });
                 // 세린중계 세팅
                 createButton(container, '이마트 중계', '중계', 'white', 'black', () => {
@@ -136,7 +135,6 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
-                    changeDate();
                 });
                 // 군납 냉동
                 createButton(container, '군납 냉동', '군-냉동', 'black', 'skyblue', () => {
@@ -267,7 +265,6 @@ function startFreezeObserver() {
                         OUTB_TCD: '',
                         OUTB_WH: ''
                     });
-                    changeDate();
                 });
 
                 freezeObserver.disconnect();  // observer 즉시 종료
