@@ -193,12 +193,11 @@ document.addEventListener('keydown', function (event) {
 
                 if (btn){
                     fireClick(btn);
-                    await sleep(300);
-
                 }else if (btn2){
                     fireClick(btn2);
-                    await sleep(300);
                 }else throw new Error(`인쇄 버튼 없음`);
+
+                await sleep(700);
 
                 // 2) 콤보 열기
                 await openCombo();
