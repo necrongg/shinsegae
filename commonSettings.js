@@ -367,6 +367,7 @@ function createSupport(container) {
         <ul style="margin: 0; padding-left: 20px;">
             <li><b>F1</b> : 조회</li>
             <li><b>F2</b> : 오더라인할당-피킹차수 단축키</li>
+            <li><b>F4</b> : 품목별 총량(LOT제외) 바로 인쇄</li>
         </ul>
     `;
 
