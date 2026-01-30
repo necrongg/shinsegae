@@ -190,7 +190,7 @@ document.addEventListener('keydown', function (event) {
                 const btn = document.getElementById(PICK_BUTTON_ID);
                 if (!btn) throw new Error(`버튼(${PICK_BUTTON_ID}) 없음`);
                 fireClick(btn);
-                await sleep(500);
+                await sleep(300);
 
                 // 2) 콤보 열기
                 await openCombo();
