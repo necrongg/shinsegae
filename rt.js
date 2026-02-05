@@ -87,7 +87,7 @@ const observer = new MutationObserver((mutations) => {
                 setElementsValues({
                     STRR_ID: '',
                     ITEM_GCD: '',
-                    ITEM_CD:'229914,241364,241365,318734,318735,318713,333149,342695,342696',
+                    ITEM_CD:'229914,342695,342696,337221,241365,318734,318735,318713,333149',
                     CUST_CD: '',
                     SHIPTO_ID: '',
                     SHIPTO_TCD: '',
