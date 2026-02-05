@@ -34,8 +34,8 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
         createClipboardButton('inspector', '📋 작업자/검수자',
             '작 업 자  : _________________(인)\n검 수 자  : _________________(인)');
 
-        createClipboardButton('transfer', '📋 평택->온라인',
-            '평택->용인온라인 이관');
+        createClipboardButton('transfer', '📋 평택->평온',
+            '평택->평택 온라인');
 
         createClipboardButton('exp', '📋 임박재고출고',
             '-임박재고출고-\n★소비기한 빨간라벨★ 꼭 부착!!!');
