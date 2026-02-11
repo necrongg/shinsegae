@@ -1,4 +1,4 @@
-console.log("11.06/12:05 패치");
+console.log("2026.02.11 패치");
 
 // 🖨️ OZ 작업자검수자 복붙버튼생성 (특정 URL에서만 실행)
 if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/')) {
