@@ -39,12 +39,6 @@ if (location.href.startsWith('https://slp-new.shinsegaefood.com/view/common/jsp/
 
         createClipboardButton('exp', '📋 임박재고출고',
             '-임박재고출고-\n★소비기한 빨간라벨★ 꼭 부착!!!');
-
-        createClipboardButton('exp', '📋 이마트24',
-            '※내일 17시 30분까지\n나-8번으로 이동 부탁 드립니다');
-
-        createClipboardButton('exp', '📋 로운',
-            '※내일 15시 까지\n가-10번 으로 이동 부탁 드립니다');
     });
 
     ozObserver.observe(document.body, {childList: true, subtree: true});
