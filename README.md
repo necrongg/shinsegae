@@ -1,3 +1,4 @@
+~~
 **
 모든 오류 및 분쟁에 대해 책임지지 않습니다.
 반박시 니말맞음**
@@ -32,3 +33,4 @@ https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmp
 **
 모든 오류 및 분쟁에 대해 책임지지 않습니다.
 반박시 니말맞음**
+~~
